@@ -1,0 +1,147 @@
+<!-- admin/index.html -->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Admin Panel</title>
+    <link rel="stylesheet" href="admin.css" />
+    <!-- Add Bootstrap CSS link here if you haven't already -->
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+    />
+  </head>
+  <body>
+    <!-- Side Menu -->
+    <!-- Horizontal Menu -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container-fluid">
+          <!-- Logo -->
+          <a class="navbar-brand" href="#">
+            <img
+              src="your-logo.png"
+              alt="Joachim Wambua"
+              class="img-fluid"
+            />
+          </a>
+          <!-- Menu Items -->
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item">
+              <a class="nav-link text-center" href="/">
+                <i class="fs-5 bi-house"></i> Home
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link text-center" href="projects.html">
+                <i class="fs-5 bi-speedometer2"></i> Projects
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link text-center" href="workexperience.html">
+                <i class="fs-5 bi-table"></i> Work Experience
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link text-center" href="clients.html">
+                <i class="fs-5 bi-grid"></i> Clients
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link text-center" href="contacts.html">
+                <i class="fs-5 bi-people"></i> Messages
+              </a>
+            </li>
+          </ul>
+        </div>
+      </nav>
+
+    <!-- Main Content -->
+    <div class="container mt-5">
+        <!-- Bootstrap Carousel for Multiple Cards -->
+        <div id="myCarousel" class="carousel slide" data-ride="carousel">
+          <!-- Indicators -->
+          <ol class="carousel-indicators">
+            <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+            <li data-target="#myCarousel" data-slide-to="1"></li>
+            <li data-target="#myCarousel" data-slide-to="2"></li>
+            <!-- Add more indicators for each card -->
+          </ol>
+      
+          <!-- Wrapper for slides -->
+          <div class="carousel-inner">
+            <!-- Card 1 (Active) -->
+            <div class="carousel-item active">
+                <a href="project-form.html">
+                    <div class="profile-card-2">
+                        <img src="https://cdn.pixabay.com/photo/2016/03/26/13/09/workspace-1280538_1280.jpg" class="img img-responsive" alt="Card 1">
+                        <div class="profile-name">ADD NEW PROJECT</div>
+                    </div>
+                </a>
+            </div>
+      
+            <!-- Card 2 -->
+            <div class="carousel-item">
+                <a href="experience-form.html">
+                    <div class="profile-card-2">
+                        <!-- Add content for Card 2 -->
+                        <img src="https://cdn.pixabay.com/photo/2016/03/27/18/54/technology-1283624_1280.jpg" class="img img-responsive" alt="Card 1">
+                        <div class="profile-name">ADD NEW WORK EXPERIENCE</div>
+                    </div>
+                </a>
+            </div>
+      
+            <!-- Card 3 -->
+            <div class="carousel-item">
+                <a href="client-form.html"> 
+                    <div class="profile-card-2">
+                        <!-- Add content for Card 3 -->
+                        <img src="https://cdn.pixabay.com/photo/2019/03/09/16/40/hands-4044426_1280.jpg" class="img img-responsive" alt="Card 1">
+                        <div class="profile-name">ADD NEW CLIENT</div>
+                    </div>
+                </a>
+            </div>
+      
+          </div>
+      
+          <!-- Left and right controls -->
+          <a class="carousel-control-prev" href="#myCarousel" data-slide="prev">
+            <span class="carousel-control-prev-icon"></span>
+          </a>
+          <a class="carousel-control-next" href="#myCarousel" data-slide="next">
+            <span class="carousel-control-next-icon"></span>
+          </a>
+        </div>
+      </div>
+      
+
+      <!-- Tables for Displaying Data -->
+      <div id="projects" class="mt-4">
+        <!-- Project table here -->
+        <!-- You can use Bootstrap table components to display data -->
+      </div>
+
+      <div id="clients" class="mt-4">
+        <!-- Client table here -->
+        <!-- You can use Bootstrap table components to display data -->
+      </div>
+
+      <div id="contacts" class="mt-4">
+        <!-- Contact table here -->
+        <!-- You can use Bootstrap table components to display data -->
+      </div>
+
+      <div id="workexperience" class="mt-4">
+        <!-- Work Experience table here -->
+        <!-- You can use Bootstrap table components to display data -->
+      </div>
+    </div>
+
+    <!-- Include JavaScript to handle form submissions and interactions -->
+    <script src="admin.js"></script>
+    <!-- Add Bootstrap JS and Popper.js scripts here if you haven't already -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@1.16.0/dist/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  </body>
+</html>

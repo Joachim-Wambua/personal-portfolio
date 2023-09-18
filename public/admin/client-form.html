@@ -1,0 +1,79 @@
+<!-- client-form.html -->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Add New Client</title>
+    <link rel="stylesheet" href="admin.css" />
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+    />
+  </head>
+  <body>
+    <!-- Horizontal Menu -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+      <div class="container-fluid">
+        <!-- Logo -->
+        <a class="navbar-brand" href="#">
+          <img src="your-logo.png" alt="Joachim Wambua" class="img-fluid" />
+        </a>
+        <!-- Menu Items -->
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item">
+            <a class="nav-link text-center" href="/">
+              <i class="fs-5 bi-house"></i> Home
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link text-center" href="projects.html">
+              <i class="fs-5 bi-speedometer2"></i> Projects
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link text-center" href="workexperience.html">
+              <i class="fs-5 bi-table"></i> Work Experience
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link text-center" href="clients.html">
+              <i class="fs-5 bi-grid"></i> Clients
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link text-center" href="contacts.html">
+              <i class="fs-5 bi-people"></i> Messages
+            </a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+
+    <div class="container mt-5">
+      <h2>Add New Client</h2>
+      <form id="client-form" action="/submit-client" method="POST">
+        <div class="form-group">
+          <label for="company">Company:</label>
+          <input
+            type="text"
+            class="form-control"
+            id="company"
+            name="company"
+            required
+          />
+        </div>
+        <div class="form-group">
+          <label for="logoUrl">Logo URL:</label>
+          <input type="url" class="form-control" id="logoUrl" name="logoUrl" />
+        </div>
+        <button type="submit" class="btn btn-primary">Submit</button>
+      </form>
+    </div>
+
+    <!-- Add Bootstrap JS and Popper.js scripts here if you haven't already -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@1.16.0/dist/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  </body>
+</html>
