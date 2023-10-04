@@ -64,6 +64,27 @@ class ClientController {
     }
   }
 
+  // GET A SINGLE CLIENT
+  async getClientById(req, res) {
+    try {
+      // Get ID from request params
+      const { id } = req.params;
+
+      const client = await Client.findById(id);
+
+      // Does experience exist?
+      if (!client) {
+        return res.status(404).json({ message: "Client Not Found!" });
+      }
+
+      res.status(200).json(client);
+    } catch (error) {
+      res
+        .status(500)
+        .json({ message: "An error occurred while retrieving the client" });
+    }
+  }
+
   async deleteClient(req, res) {
     try {
       const { id } = req.params; //Extract the Work XP ID from the URL

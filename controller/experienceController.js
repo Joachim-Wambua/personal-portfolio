@@ -25,11 +25,9 @@ class ExperienceController {
       res.status(201).json({ message: "Work Experience Added Successfully" });
     } catch (error) {
       console.error(error);
-      res
-        .status(500)
-        .json({
-          message: "An error occurred while adding the work experience",
-        });
+      res.status(500).json({
+        message: "An error occurred while adding the work experience",
+      });
     }
   }
 
@@ -41,7 +39,11 @@ class ExperienceController {
       res.status(200).json(workExperiences);
     } catch (error) {
       console.error(error);
-      res.status(500).json({ message: "An error occurred while retrieving work experiences!"});
+      res
+        .status(500)
+        .json({
+          message: "An error occurred while retrieving work experiences!",
+        });
     }
   }
 
@@ -52,17 +54,52 @@ class ExperienceController {
       const updatedData = req.body; // New data to update with
 
       // Find and update the work experience by its ID
-      const updatedWorkExperience = await Experience.findByIdAndUpdate(id, updatedData, { new: true });
+      const updatedWorkExperience = await Experience.findByIdAndUpdate(
+        id,
+        updatedData,
+        { new: true }
+      );
 
       if (!updatedWorkExperience) {
         return res.status(404).json({ message: "Work experience not found" });
       }
 
-      res.status(200).json({ message: "Work Experience updated successfully", updatedWorkExperience });;
-
+      res
+        .status(200)
+        .json({
+          message: "Work Experience updated successfully",
+          updatedWorkExperience,
+        });
     } catch (error) {
       console.error(error);
-      res.status(500).json({ message: "An error occurred while updating the work experience" });
+      res
+        .status(500)
+        .json({
+          message: "An error occurred while updating the work experience",
+        });
+    }
+  }
+
+  // GET A SINGLE WORK XP
+  async getWorkXpById(req, res) {
+    try {
+      // Get ID from request params
+      const { id } = req.params;
+
+      const experience = await Experience.findById(id);
+
+      // Does experience exist?
+      if (!experience) {
+        return res.status(404).json({ message: "Work Experience Not Found!" });
+      }
+
+      res.status(200).json(experience);
+    } catch (error) {
+      res
+        .status(500)
+        .json({
+          message: "An error occurred while retrieving the work experience",
+        });
     }
   }
 
@@ -79,10 +116,13 @@ class ExperienceController {
       }
 
       res.status(200).json({ message: "Work experience deleted successfully" });
-
     } catch (error) {
       console.error(error);
-      res.status(500).json({ message: "An error occurred while deleting the work experience"});
+      res
+        .status(500)
+        .json({
+          message: "An error occurred while deleting the work experience",
+        });
     }
   }
 }

@@ -1,4 +1,4 @@
-const Project = require('../dbSchemas/projectSchema');
+const Project = require("../dbSchemas/projectSchema");
 
 class ProjectController {
   //create a new project
@@ -40,7 +40,9 @@ class ProjectController {
       res.status(200).json(projects);
     } catch (error) {
       console.error(error);
-      res.status(500).json({ message: "An error occurred while retrieving projects!"});
+      res
+        .status(500)
+        .json({ message: "An error occurred while retrieving projects!" });
     }
   }
 
@@ -49,19 +51,45 @@ class ProjectController {
     try {
       const { id } = req.params; // Get the ID from the request parameters
       const updatedData = req.body; // Get the updated data from the request body
-  
+
       // Use Mongoose or your preferred database library to update the item by ID
-      const updatedProject = await Project.findByIdAndUpdate(id, updatedData, { new: true });
-  
+      const updatedProject = await Project.findByIdAndUpdate(id, updatedData, {
+        new: true,
+      });
+
       if (!updatedProject) {
         return res.status(404).json({ message: "Project not found" });
       }
-  
-      res.status(200).json({ message: "Project updated successfully", updatedProject });
+
+      res
+        .status(200)
+        .json({ message: "Project updated successfully", updatedProject });
     } catch (error) {
       console.error(error);
-      res.status(500).json({ error: "An error occurred while updating the project" });
+      res
+        .status(500)
+        .json({ error: "An error occurred while updating the project" });
+    }
+  }
+
+  // GET SINGLE PROJECT
+  async getProjectById(req, res) {
+    try {
+      const { id } = req.params; // Get the ID from the request parameters
+
+      // Find the project by its ID
+      const project = await Project.findById(id);
+
+      if (!project) {
+        return res.status(404).json({ message: "Project not found" });
       }
+
+      res.status(200).json(project);
+    } catch (error) {
+      res
+        .status(500)
+        .json({ message: "An error occurred while retrieving the projec" });
+    }
   }
 
   // DELETE PROJECT
@@ -79,7 +107,9 @@ class ProjectController {
       res.status(200).json({ message: "Project deleted successfully" });
     } catch (error) {
       console.error(error);
-      res.status(500).json({ message: "An error occurred while deleting the project"});
+      res
+        .status(500)
+        .json({ message: "An error occurred while deleting the project" });
     }
   }
 }

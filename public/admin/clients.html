@@ -51,8 +51,8 @@
 
     <div id="clients" class="mt-4">
       <h3>Clients</h3>
-      <table class="table table-striped">
-        <thead>
+      <table class="table table-striped table-bordered">
+        <thead class="thead-dark">
           <tr>
             <th>Company</th>
             <th>Logo</th>
@@ -65,9 +65,49 @@
       </table>
     </div>
 
+    <!-- Create the Edit Form (initially hidden) -->
+    <div id="edit-client-form" class="container d-none">
+      <h3>Edit Client</h3>
+      <form id="client-edit-form">
+        <!-- Form fields for editing project details go here -->
+        <div class="form-group">
+          <label for="edit-company">Company</label>
+          <input
+            type="text"
+            class="form-control"
+            id="edit-company"
+            name="company"
+            required
+          />
+        </div>
+        <!-- Add more form fields for other project details -->
+
+        <button type="submit" class="btn btn-primary">Save</button>
+        <button type="button" class="btn btn-secondary ml-2" id="cancel-edit">
+          Cancel
+        </button>
+      </form>
+    </div>
+
     <script>
       // get Table body element
       const clientTableBody = document.getElementById("client-table-body");
+      const editClientForm = document.getElementById("edit-client-form");
+      const clientEditForm = document.getElementById("client-edit-form");
+      const cancelEditButton = document.getElementById("cancel-edit");
+
+      let currentClientId = null; // To track the currently edited project
+
+      // Function to populate the edit form with project details
+      function populateClientForm(clientData) {
+        document.getElementById("edit-company").value = clientData.company;
+        // Populate other form fields in a similar way
+      }
+
+      // Function to clear the edit form
+      function clearEditForm() {
+        clientEditForm.reset();
+      }
 
       // API request to retrieve clients
       fetch("/get-clients")
@@ -82,8 +122,8 @@
             row.innerHTML = `
                 <td>${client.company}</td>
                 <td>${client.logoUrl}</td>
-                <button class="btn btn-primary">Edit</button>
-                <button class="btn btn-danger">Delete</button>
+                <button class="btn btn-primary ml-2 mt-1" id=${client._id} >Edit</button>
+                <button class="btn btn-danger ml-2 mt-1" id=${client._id} >Delete</button>
                 </td>
             `;
 
@@ -93,6 +133,100 @@
         .catch((error) => {
           console.error("Error retrieving clients", error);
         });
+
+      // Function to add event listeners for the "View" and "Delete" buttons
+      function addButtonsEventListeners() {
+        clientTableBody.addEventListener("click", (event) => {
+          if (event.target.classList.contains("btn-danger")) {
+            const clientId = event.target.getAttribute("id");
+
+            currentClientId = clientId;
+
+            // Confirm with the user before deleting
+            if (confirm("Are you sure you want to delete this client?")) {
+              // Send a DELETE request to the server
+              fetch(`/delete-client/${currentClientId}`, {
+                method: "DELETE",
+              })
+                .then((response) => response.json())
+                .then((data) => {
+                  // Handle success or show an alert message
+                  console.log("Deleting client with ID:", currentClientId);
+                  alert(data.message);
+                  // Reload the page or update the table as needed
+                  setTimeout(() => {
+                    location.reload();
+                  }, 2000);
+                })
+                .catch((error) => {
+                  console.error("Error deleting client:", error);
+                });
+            }
+          } else if (event.target.classList.contains("btn-primary")) {
+            const clientId = event.target.getAttribute("id");
+
+            // Store the current project ID
+            currentClientId = clientId;
+
+            // Populate the form with project details
+            // You can fetch the project details from the server using an API request
+            fetch(`/get-client/${currentClientId}`) // Replace with the actual URL
+              .then((response) => response.json())
+              .then((clientData) => {
+                // Populate the edit form with work experience details
+                populateClientForm(clientData);
+
+                // Show the edit form
+                editClientForm.classList.remove("d-none");
+              })
+              .catch((error) => {
+                console.error("Error fetching client details:", error);
+              });
+          }
+        });
+      }
+
+      // Call the function to add event listeners for buttons
+      addButtonsEventListeners();
+
+      // Add a submit event listener to the edit form for handling updates
+      clientEditForm.addEventListener("submit", (event) => {
+        event.preventDefault();
+
+        // Get the updated project details from the form
+        const updatedClient = {
+          company: document.getElementById("edit-company").value,
+          // Get other updated fields in a similar way
+        };
+
+        // Send an API request to update the project
+        fetch(`/update-client/${currentClientId}`, {
+          method: "PUT",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(updatedClient),
+        })
+          .then((response) => response.json())
+          .then((data) => {
+            // Handle success or show an alert message
+            alert(data.message);
+
+            // Clear the edit form
+            clearEditForm();
+
+            // Hide the edit form
+            editClientForm.classList.add("d-none");
+
+            // Reload the page or update the table as needed
+            setTimeout(() => {
+              location.reload();
+            }, 2000);
+          })
+          .catch((error) => {
+            console.error("Error updating client:", error);
+          });
+      });
     </script>
 
     <!-- Include JavaScript to handle form submissions and interactions -->

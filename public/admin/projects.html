@@ -22,7 +22,7 @@
         <!-- Menu Items -->
         <ul class="navbar-nav ml-auto">
           <li class="nav-item">
-            <a class="nav-link text-center" href="/">
+            <a class="nav-link text-center" href="admin.html">
               <i class="fs-5 bi-house"></i> Home
             </a>
           </li>
@@ -72,9 +72,49 @@
       </table>
     </div>
 
+    <!-- Create the Edit Form (initially hidden) -->
+    <div id="edit-project-form" class="container d-none">
+      <h3>Edit Project</h3>
+      <form id="project-edit-form">
+        <!-- Form fields for editing project details go here -->
+        <div class="form-group">
+          <label for="edit-title">Title</label>
+          <input
+            type="text"
+            class="form-control"
+            id="edit-title"
+            name="title"
+            required
+          />
+        </div>
+        <!-- Add more form fields for other project details -->
+
+        <button type="submit" class="btn btn-primary">Save</button>
+        <button type="button" class="btn btn-secondary ml-2" id="cancel-edit">
+          Cancel
+        </button>
+      </form>
+    </div>
+
     <script>
       // Inside your HTML file or in a separate JavaScript file
       const projectTableBody = document.getElementById("project-table-body");
+      const editProjectForm = document.getElementById("edit-project-form");
+      const projectEditForm = document.getElementById("project-edit-form");
+      const cancelEditButton = document.getElementById("cancel-edit");
+
+      let currentProjectId = null; // To track the currently edited project
+
+      // Function to populate the edit form with project details
+      function populateEditForm(projectData) {
+        document.getElementById("edit-title").value = projectData.title;
+        // Populate other form fields in a similar way
+      }
+
+      // Function to clear the edit form
+      function clearEditForm() {
+        projectEditForm.reset();
+      }
 
       // Make an API request to retrieve projects
       fetch("/get-projects") // Replace with the actual URL of your backend API
@@ -95,8 +135,8 @@
                         <td>${project.services}</td>
                         <td>${project.images}</td>
                         <td>
-                            <button class="btn btn-primary">Edit</button>
-                            <button class="btn btn-danger">Delete</button>
+                            <button class="btn btn-primary ml-2 mt-1" id=${project._id}>View</button>
+                            <button class="btn btn-danger ml-2 mt-1" id=${project._id}>Delete</button>
                         </td>
                     `;
             projectTableBody.appendChild(row);
@@ -105,6 +145,101 @@
         .catch((error) => {
           console.error("Error retrieving projects:", error);
         });
+
+      // Add a click event listener to the Delete buttons
+      projectTableBody.addEventListener("click", (event) => {
+        if (event.target.classList.contains("btn-danger")) {
+          const projectId = event.target.getAttribute("id");
+
+          // Confirm with the user before deleting
+          if (confirm("Are you sure you want to delete this project?")) {
+            // Send a DELETE request to the server
+            fetch(`/delete-project/${projectId}`, {
+              method: "DELETE",
+            })
+              .then((response) => response.json())
+              .then((data) => {
+                // Handle success or show an alert message
+                console.log("Deleting project with ID:", projectId);
+                alert(data.message);
+                // Reload the page or update the table as needed
+              })
+              .catch((error) => {
+                console.error("Error deleting project:", error);
+              });
+          }
+        }
+      });
+
+      // Add a click event listener to the View buttons
+      projectTableBody.addEventListener("click", (event) => {
+        if (event.target.classList.contains("btn-primary")) {
+          const projectId = event.target.getAttribute("id");
+
+          // Store the current project ID
+          currentProjectId = projectId;
+
+          // Populate the form with project details
+          // You can fetch the project details from the server using an API request
+          fetch(`/get-project/${projectId}`) // Replace with the actual URL
+            .then((response) => response.json())
+            .then((projectData) => {
+              // Populate the edit form with project details
+              populateEditForm(projectData);
+
+              // Show the edit form
+              editProjectForm.classList.remove("d-none");
+            })
+            .catch((error) => {
+              console.error("Error fetching project details:", error);
+            });
+        }
+      });
+
+      // Add a submit event listener to the edit form for handling updates
+      projectEditForm.addEventListener("submit", (event) => {
+        event.preventDefault();
+
+        // Get the updated project details from the form
+        const updatedProject = {
+          title: document.getElementById("edit-title").value,
+          // Get other updated fields in a similar way
+        };
+
+        // Send an API request to update the project
+        fetch(`/update-project/${currentProjectId}`, {
+          method: "PUT",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(updatedProject),
+        })
+          .then((response) => response.json())
+          .then((data) => {
+            // Handle success or show an alert message
+            alert(data.message);
+
+            // Clear the edit form
+            clearEditForm();
+
+            // Hide the edit form
+            editProjectForm.classList.add("d-none");
+
+            // Reload the page or update the table as needed
+          })
+          .catch((error) => {
+            console.error("Error updating project:", error);
+          });
+      });
+
+      // Add a click event listener to the Cancel button
+      cancelEditButton.addEventListener("click", () => {
+        // Clear the edit form
+        clearEditForm();
+
+        // Hide the edit form
+        editProjectForm.classList.add("d-none");
+      });
     </script>
 
     <!-- Include JavaScript to handle form submissions and interactions -->

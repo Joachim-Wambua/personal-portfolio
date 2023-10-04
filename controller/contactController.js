@@ -13,11 +13,10 @@ class ContactController {
         message,
       });
 
-    // Save the message 
+      // Save the message
       await newMessage.save();
 
       res.status(201).json({ message: "Message Added Successfully" });
-
     } catch (error) {
       console.error(error);
       res.status(500).json({
@@ -40,8 +39,28 @@ class ContactController {
     }
   }
 
+  // GET A SINGLE MESSAGE
+  async getMessageById(req, res) {
+    try {
+      // Get ID from request params
+      const { id } = req.params;
 
-// DELETE MESSAGES 
+      const contact = await Contact.findById(id);
+
+      // Does experience exist?
+      if (!contact) {
+        return res.status(404).json({ message: "Message Not Found!" });
+      }
+
+      res.status(200).json(contact);
+    } catch (error) {
+      res
+        .status(500)
+        .json({ message: "An error occurred while retrieving the message" });
+    }
+  }
+
+  // DELETE MESSAGES
   async deleteMessage(req, res) {
     try {
       const { id } = req.params; //Extract the Message ID from the URL
@@ -56,10 +75,11 @@ class ContactController {
       res.status(200).json({ message: "Message deleted successfully" });
     } catch (error) {
       console.error(error);
-      res.status(500).json({ message: "An error occurred while deleting the message"});
+      res
+        .status(500)
+        .json({ message: "An error occurred while deleting the message" });
     }
   }
-
 }
 
 module.exports = new ContactController();
