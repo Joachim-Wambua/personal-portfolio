@@ -25,7 +25,6 @@ const projectSchema = new mongoose.Schema({
   team: [
     {
       type: String,
-      required: true,
     },
   ],
 
@@ -39,7 +38,6 @@ const projectSchema = new mongoose.Schema({
   images: [
     {
       type: String,
-      required: true,
     },
   ],
 });

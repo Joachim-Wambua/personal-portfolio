@@ -6,24 +6,40 @@ const routes = require("./routes/index.js");
 const User = require("./dbSchemas/userSchema");
 const passport = require("passport");
 const LocalStrategy = require("passport-local").Strategy;
-const session = require("express-session"); // Import express-session
-const bcrypt = require("bcrypt"); // Import bcrypt
+const session = require("express-session");
+const bcrypt = require("bcrypt");
+const crypto = require("crypto"); // Import the crypto module
 
-const port = process.env.PORT || 8080; // Use process.env.PORT for dynamic port assignment
+const port = process.env.PORT || 8080;
 
 const app = express();
 
+// Generate a secure secret key
+const generateSecretKey = () => {
+  return crypto.randomBytes(32).toString("hex"); // 32 bytes is a good length for a secret key
+};
+
+const secretKey = generateSecretKey();
+
+const ensureAuthenticated = (req, res, next) => {
+  if (req.isAuthenticated()) {
+    // If the user is authenticated, allow access to the route
+    return next();
+  }
+  // If not authenticated, redirect to the login page or return an unauthorized response
+  res.redirect("/login"); // You can change this URL to your login page
+};
+
+
 // Serve static files from the "public" directory
 app.use(express.static(path.join(__dirname, "public")));
-
-// Use bodyParser to parse form data
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.json());
 
-// Initialize Passport and configure session management
+// Initialize express-session with the secret key
 app.use(
   session({
-    secret: "your-secret-key", // Replace with a strong and secure secret key
+    secret: secretKey,
     resave: false,
     saveUninitialized: false,
     // You can customize other options as needed
@@ -65,12 +81,40 @@ passport.deserializeUser((id, done) => {
   });
 });
 
+app.use(express.static(path.join(__dirname, "public")));
+
+
 // Serve your HTML form page
-app.get("/admin", (req, res) => {
+// Protect the "/admin" route with authentication
+app.get("/admin", ensureAuthenticated, (req, res) => {
+  // This route is only accessible to authenticated users
   const filePath = path.join(__dirname, "public", "admin", "admin.html");
-  console.log("File Path:", filePath);
+  // console.log("File Path:", filePath);
   res.sendFile(filePath);
 });
+
+// Login route
+app.get("/login", (req, res) => {
+  // Render your login page here
+  const loginPagePath = path.join(__dirname, "public", "admin", "login.html");
+  // console.log("Login Page Path:", loginPagePath);
+  res.sendFile(loginPagePath);
+});
+
+app.get("/register", (req, res) => {
+  // Render your login page here
+  const registerPagePath = path.join(__dirname, "public", "admin", "registration.html");
+  // console.log("Login Page Path:", loginPagePath);
+  res.sendFile(registerPagePath);
+});
+
+// Handle login form submission
+app.post("/login", passport.authenticate("local", {
+  successRedirect: "/admin", // Redirect to admin panel on successful login
+  failureRedirect: "/login", // Redirect to login page on failed login
+  failureFlash: true,
+}));
+
 
 // Define your routes
 app.use("/", routes); // Using "/admin" as a base route for your admin-related routes

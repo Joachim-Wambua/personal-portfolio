@@ -17,7 +17,7 @@
       <div class="container-fluid">
         <!-- Logo -->
         <a class="navbar-brand" href="#">
-          <img src="your-logo.png" alt="Joachim Wambua" class="img-fluid" />
+          <img src="#" alt="Joachim Wambua" class="img-fluid" />
         </a>
         <!-- Menu Items -->
         <ul class="navbar-nav ml-auto">
@@ -163,6 +163,14 @@
                 console.log("Deleting project with ID:", projectId);
                 alert(data.message);
                 // Reload the page or update the table as needed
+                // Add a 2-second (2000 milliseconds) delay before reloading
+            setTimeout(function () {
+                // Using location.reload()
+                // location.reload();
+
+                // Using window.location
+                window.location.href = window.location.href;
+            }, 2000); // 2000 milliseconds = 2 seconds
               })
               .catch((error) => {
                 console.error("Error deleting project:", error);

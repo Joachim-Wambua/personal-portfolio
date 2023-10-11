@@ -42,6 +42,7 @@ function handleProjectFormSubmit(event) {
         // Handle the server's response (e.g., show a success message)
         console.log('Project submitted successfully:', data);
         alert('Project submitted successfully.');
+        window.location.href = window.location.href;
     })
     .catch(error => {
         // Handle errors (e.g., show an error message)
