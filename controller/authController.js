@@ -7,6 +7,14 @@ class AuthController {
   async registerUser(req, res) {
     try {
       const { username, email, password } = req.body;
+
+      // Check if a user with the same email or username already exists
+      const existingUser = await User.findOne({ $or: [{ email }, { username }] });
+      if (existingUser) {
+        return res.status(400).json({ error: "Email or username already in use" });
+      }
+
+      // Hash the password
       const hashedPassword = await bcrypt.hash(password, 10);
 
       const newUser = new User({
@@ -19,12 +27,11 @@ class AuthController {
 
       res.status(201).json({ message: "User registered successfully" });
     } catch (error) {
-      console.error(error);
-      res
-        .status(500)
-        .json({ message: "An error occurred during registration" });
+      console.error("Registration Error:", error);
+      res.status(500).json({ error: "An error occurred during registration" });
     }
   }
+
 
   // Login logic
   loginUser(req, res) {

@@ -15,7 +15,7 @@ router.use(cors());
 
 // AUTHENTICATION ROUTES
 router.post("/register", AuthController.registerUser);
-router.post("/login", AuthController.loginUser);
+router.post("/user-login", AuthController.loginUser);
 
 // CREATING ITEMS
 router.post("/submit-project", ProjectController.createProject);

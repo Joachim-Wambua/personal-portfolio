@@ -37,18 +37,18 @@ function handleProjectFormSubmit(event) {
         method: 'POST',
         body: formData,
     })
-    .then(response => response.json())
-    .then(data => {
-        // Handle the server's response (e.g., show a success message)
-        console.log('Project submitted successfully:', data);
-        alert('Project submitted successfully.');
-        window.location.href = window.location.href;
-    })
-    .catch(error => {
-        // Handle errors (e.g., show an error message)
-        console.error('Error submitting project:', error);
-        alert('An error occurred while submitting the project.');
-    });
+        .then(response => response.json())
+        .then(data => {
+            // Handle the server's response (e.g., show a success message)
+            console.log('Project submitted successfully:', data);
+            alert('Project submitted successfully.');
+            window.location.href = window.location.href;
+        })
+        .catch(error => {
+            // Handle errors (e.g., show an error message)
+            console.error('Error submitting project:', error);
+            alert('An error occurred while submitting the project.');
+        });
 
 }
 
@@ -84,23 +84,23 @@ function handleExperienceFormSubmit(event) {
     formData.append('startDate', startDate);
     formData.append('endDate', endDate);
     formData.append('description', description);
-    
+
     // Send a POST request to your server (adjust the URL accordingly)
     fetch('/submit-work-experience', {
         method: 'POST',
         body: formData,
     })
-    .then(response => response.json())
-    .then(data => {
-        // Handle the server's response (e.g., show a success message)
-        console.log('Work Experience submitted successfully:', data);
-        alert('Work Experience submitted successfully.');
-    })
-    .catch(error => {
-        // Handle errors (e.g., show an error message)
-        console.error('Error submitting work experience:', error);
-        alert('An error occurred while submitting the work experience.');
-    });
+        .then(response => response.json())
+        .then(data => {
+            // Handle the server's response (e.g., show a success message)
+            console.log('Work Experience submitted successfully:', data);
+            alert('Work Experience submitted successfully.');
+        })
+        .catch(error => {
+            // Handle errors (e.g., show an error message)
+            console.error('Error submitting work experience:', error);
+            alert('An error occurred while submitting the work experience.');
+        });
 
 }
 
@@ -112,20 +112,20 @@ if (experienceForm) {
 
 // Client Submission Handler
 function handleClientFormSubmit(event) {
-     // Prevent the default form submission behavior 
-     event.preventDefault;
+    // Prevent the default form submission behavior 
+    event.preventDefault;
 
-     // Get form input values
-     const company = document.getElementById('company').value;
-     const logoUrl = document.getElementById('logoUrl').value;
+    // Get form input values
+    const company = document.getElementById('company').value;
+    const logoUrl = document.getElementById('logoUrl').value;
 
-     // Perform input validation (add more validation as needed)
+    // Perform input validation (add more validation as needed)
     if (!logoUrl || !company) {
         alert('Please fill in all required fields.');
         return;
     }
 
-    
+
     // Create a FormData object to send data as a multipart/form-data request
     const formData = new FormData();
     formData.append('company', company);
@@ -136,17 +136,17 @@ function handleClientFormSubmit(event) {
         method: 'POST',
         body: formData,
     })
-    .then(response => response.json())
-    .then(data => {
-        // Handle the server's response (e.g., show a success message)
-        console.log('Client submitted successfully:', data);
-        alert('Client submitted successfully.');
-    })
-    .catch(error => {
-        // Handle errors (e.g., show an error message)
-        console.error('Error submitting Client:', error);
-        alert('An error occurred while submitting the Client.');
-    });
+        .then(response => response.json())
+        .then(data => {
+            // Handle the server's response (e.g., show a success message)
+            console.log('Client submitted successfully:', data);
+            alert('Client submitted successfully.');
+        })
+        .catch(error => {
+            // Handle errors (e.g., show an error message)
+            console.error('Error submitting Client:', error);
+            alert('An error occurred while submitting the Client.');
+        });
 }
 
 const clientForm = document.getElementById('client-form');
@@ -155,17 +155,40 @@ if (clientForm) {
 }
 
 
-function togglePasswordVisibility() {
-    const passwordInput = document.getElementById("password");
-    const toggleIcon = document.getElementById("togglePassword");
+document.addEventListener("DOMContentLoaded", function () {
+    const registrationForm = document.getElementById("registrationForm");
 
-    if (passwordInput.type === "password") {
-        passwordInput.type = "text";
-        toggleIcon.classList.remove("fa-eye-slash");
-        toggleIcon.classList.add("fa-eye");
-    } else {
-        passwordInput.type = "password";
-        toggleIcon.classList.remove("fa-eye");
-        toggleIcon.classList.add("fa-eye-slash");
-    }
-}
+    registrationForm.addEventListener("submit", async function (e) {
+        // Prevent the form from submitting as a standard POST request
+        e.preventDefault();
+
+        const username = document.getElementById("username").value;
+        const email = document.getElementById("email").value;
+        const password = document.getElementById("password").value;
+
+        const registrationData = { username, email, password };
+
+        try {
+            const response = await fetch("/register", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json",
+                },
+                body: JSON.stringify(registrationData),
+            });
+
+            // Successful Registration
+            if (response.status === 201) {
+                // Registration successful
+                alert("Registration successful. You can now log in.");
+                // Redirect to login page or do something else
+            } else {
+                // Registration failed
+                alert("Registration failed. Please try again.");
+            }
+        } catch (error) {
+            console.error("Error:", error);
+            alert("An error occurred while registering. Please try again.");
+        }
+    });
+});
