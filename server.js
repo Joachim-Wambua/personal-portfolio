@@ -101,7 +101,7 @@ app.get("/login", (req, res) => {
   res.sendFile(loginPagePath);
 });
 
-app.get("/register", (req, res) => {
+app.get("/registration", (req, res) => {
   // Render your login page here
   const registerPagePath = path.join(__dirname, "public", "admin", "registration.html");
   // console.log("Login Page Path:", loginPagePath);
