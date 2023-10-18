@@ -23,7 +23,7 @@
       <div class="row">
         <div class="col-md-6 offset-md-3">
           <div class="card my-5">
-            <form class="card-body cardbody-color p-lg-5">
+            <form class="card-body cardbody-color p-lg-5" id="login-form"  action="/user-login" method="POST">
               <div class="text-center">
                 <img
                   src="#"
@@ -35,14 +35,16 @@
               </div>
 
               <div class="mb-3">
-                <label for="password" class="form-label">
+                <label for="email" class="form-label">
                   <i class="fas fa-envelope"></i> Email
                 </label>
                 <input
                   type="email"
                   class="form-control"
                   id="email"
+                  name="email"
                   aria-describedby="emailHelp"
+                  required
                 />
               </div>
               <div class="mb-3">
@@ -129,13 +131,44 @@
       }
 
       document.addEventListener("DOMContentLoaded", function () {
-        const loginForm = document.querySelector("form");
+        const loginForm = document.getElementById("login-form");
 
-        loginForm
+        loginForm.addEventListener("submit", async function (e) {
+          e.preventDefault(); // Prevent default form submission
+
+          const email = document.getElementById("email").value;
+          const password = document.getElementById("password").value;
+
+          const loginData = { email, password };
+
+
+          try {
+            const response = await fetch("/user-login", {
+              method: "POST",
+              headers: {
+                "Content-Type": "application/json",
+              },
+              body: JSON.stringify(loginData),
+            });
+
+            if (response.status === 200) {
+              // Successful Login
+                // Redirect to the admin page
+                window.location.href = "/admin";
+
+            } else {
+              // LogIn Failed
+              alert("Login failed. Please check your credentials.")
+            }
+          } catch (error) {
+            console.error("Error:", error);
+            alert("An error occurred while logging in. Please try again.");
+          }
+        })
       })
     </script>
     <!-- Add Bootstrap JS and Popper.js scripts here if you haven't already -->
-    <script src="admin.js"></script>
+    <script type="text/html" src="admin.js"></script>
 
     <script
       src="https://code.jquery.com/jquery-3.5.1.slim.min.js"

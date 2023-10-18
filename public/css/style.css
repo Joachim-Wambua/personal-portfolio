@@ -8,12 +8,15 @@
 @import "magnific-popup.css";
 @import "jquery.pagepiling.css";
 @import "owl.carousel.css";
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Alegreya+Sans:ital,wght@0,100;0,300;0,400;0,500;0,700;0,800;0,900;1,100;1,300;1,400;1,500;1,700;1,800;1,900&family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&display=swap');
+
 html {
   font-size: 12px;
   -webkit-font-smoothing: antialiased;
 }
 body {
-  font-family: poppins, sans-serif;
+  font-family: 'Open Sans', sans-serif;
   font-size: 1rem;
   font-weight: 400;
   letter-spacing: 0.025em;
@@ -43,16 +46,16 @@ body {
   color: #fff;
 }
 @font-face {
-  font-family: poppins;
-  src: url(../fonts/poppins-regular-webfont.html) format("woff2"),
-    url(../fonts/poppins-regular-webfont.woff) format("woff");
+  font-family: 'Open Sans';
+  src: url(../fonts/OpenSans-Italic-VariableFont_wdth,wght) format("ttf"),
+    url(../fonts/OpenSans-VariableFont_wdth\,wght.ttf) format("woff");
   font-weight: 400;
   font-style: normal;
 }
 h1,
 .h1 {
-  font-family: montserrat, sans-serif;
-  font-weight: 700;
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 900;
   font-size: 3.428rem;
   line-height: 1.2;
   font-weight: 600;
@@ -62,7 +65,7 @@ h1,
 }
 h2,
 .h2 {
-  font-family: montserrat, sans-serif;
+  font-family: 'Open Sans', sans-serif;
   font-weight: 600;
   font-size: 2.571rem;
   line-height: 1.166;
@@ -72,7 +75,7 @@ h2,
 }
 h3,
 .h3 {
-  font-family: montserrat, sans-serif;
+  font-family: 'Open Sans', sans-serif;
   font-weight: 600;
   font-size: 2.142rem;
   line-height: 1.2;
@@ -82,7 +85,7 @@ h3,
 }
 h4,
 .h4 {
-  font-family: montserrat, sans-serif;
+  font-family: 'Open Sans', sans-serif;
   font-weight: 600;
   font-size: 1.714rem;
   line-height: 1.25;
@@ -92,7 +95,7 @@ h4,
 }
 h5,
 .h5 {
-  font-family: montserrat, sans-serif;
+  font-family: 'Open Sans', sans-serif;
   font-weight: 600;
   font-size: 1.571rem;
   line-height: 1.1;
@@ -102,7 +105,7 @@ h5,
 }
 h6,
 .h6 {
-  font-family: montserrat, sans-serif;
+  font-family: 'Open Sans', sans-serif;
   font-weight: 600;
   font-size: 1.285rem;
   line-height: 1.3333;
@@ -420,13 +423,13 @@ a.brand:focus {
 }
 .brand-name {
   font-weight: 600;
-  font-size: 1.714rem;
+  font-size: 1.5rem;
   line-height: 1;
 }
 .brand-text {
   font-size: 0.857rem;
   font-weight: 300;
-  margin-top: -0.3rem;
+  margin-top: 0.09rem;
 }
 .navbar-toggle {
   float: right;
@@ -774,6 +777,14 @@ a.brand:focus {
   width: 10px;
   height: 10px;
 }
+
+.webgl {
+    position: fixed;
+    top: 0;
+    left: 0;
+    outline: none;
+}
+
 #pp-nav span,
 .pp-slidesNav span {
   left: 0;
@@ -905,6 +916,14 @@ a.brand:focus {
   margin-bottom: 2.8rem;
   letter-spacing: 0.1em;
 }
+
+.subtitle-bottom {
+  line-height: 1.714;
+  margin-top: 2.8rem;
+  letter-spacing: 0.1em;
+}
+
+
 .title-uppercase {
   text-transform: uppercase;
   letter-spacing: -0.025em;
