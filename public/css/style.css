@@ -31,18 +31,18 @@ body {
 }
 ::-webkit-scrollbar-thumb {
   cursor: pointer;
-  background: #f3ca2f;
+  background: #21E6C1;
 }
 ::selection {
-  background-color: #f3ca2f;
+  background-color: #21E6C1;
   color: #fff;
 }
 -webkit-::selection {
-  background-color: #f3ca2f;
+  background-color: #21E6C1;
   color: #fff;
 }
 ::-moz-selection {
-  background-color: #f3ca2f;
+  background-color: #21E6C1;
   color: #fff;
 }
 @font-face {
@@ -167,13 +167,13 @@ cite {
   font-style: normal;
 }
 a {
-  color: #f3ca2f;
+  color: #21E6C1;
   -webkit-transition: color 0.3s ease-out;
   -o-transition: color 0.3s ease-out;
   transition: color 0.3s ease-out;
 }
 a:hover {
-  color: #f3ca2f;
+  color: #21E6C1;
   outline: none;
 }
 a:focus {
@@ -219,7 +219,7 @@ input[type="email"]:focus,
 input[type="search"]:focus,
 input[type="tel"]:focus,
 textarea:focus {
-  border-color: #f3ca2f;
+  border-color: #21E6C1;
   outline: 0;
   color: #fff;
 }
@@ -265,7 +265,7 @@ label.error {
 }
 .btn:hover,
 .btn:focus {
-  background-color: #f3ca2f;
+  background-color: #21E6C1;
   color: #fff;
   -webkit-box-shadow: none;
   box-shadow: none;
@@ -288,8 +288,8 @@ label.error {
   transition: all 0.3s ease-out;
 }
 .ion-ios-play:hover {
-  color: #ffeb00;
-  border: 1px solid #ffeb00;
+  color: #21E6C1;
+  border: 1px solid #21E6C1;
 }
 .animsition {
   position: absolute;
@@ -328,7 +328,7 @@ label.error {
   width: 100%;
   height: 100%;
   border-radius: 50%;
-  background-color: #f3ca2f;
+  background-color: #21E6C1;
   opacity: 0.6;
   position: absolute;
   top: 0;
@@ -367,7 +367,7 @@ label.error {
   color: #fff;
 }
 .text-primary {
-  color: #ffeb00 !important;
+  color: #21E6C1 !important;
 }
 .masked {
   position: relative;
@@ -457,7 +457,7 @@ a.brand:focus {
   margin-top: 4px;
 }
 .navbar-toggle:hover .icon-bar {
-  background-color: #f3ca2f;
+  background-color: #21E6C1;
 }
 .navbar .social-list {
   float: right;
@@ -485,7 +485,7 @@ a.brand:focus {
   margin-left: 0;
 }
 .social-list a:hover {
-  color: #f3ca2f;
+  color: #21E6C1;
   text-decoration: none;
 }
 .navbar-spacer {
@@ -569,7 +569,7 @@ a.brand:focus {
   transition: all 0.3s ease;
 }
 .close-menu:hover {
-  color: #f3ca2f;
+  color: #21E6C1;
 }
 .menu .menu-lang {
   opacity: 0;
@@ -598,7 +598,7 @@ a.brand:focus {
 }
 .menu-lang .active,
 .menu-lang a:hover {
-  color: #f3ca2f;
+  color: #21E6C1;
   text-decoration: none;
 }
 .menu-list {
@@ -679,7 +679,7 @@ a.brand:focus {
   margin-right: 0;
 }
 .menu-footer .social-list a:hover {
-  color: #f3ca2f;
+  color: #21E6C1;
 }
 .menu-footer .copy {
   opacity: 0;
@@ -802,7 +802,7 @@ a.brand:focus {
 #pp-nav .pp-nav-down:hover,
 #pp-nav.white .pp-nav-up:hover,
 #pp-nav.white .pp-nav-down:hover {
-  color: #ffeb00;
+  color: #21E6C1;
 }
 #pp-nav.white .pp-nav-up,
 #pp-nav.white .pp-nav-down {
@@ -816,10 +816,10 @@ a.brand:focus {
 .pp-slidesNav .active span,
 #pp-nav span:hover,
 .pp-slidesNav span:hover {
-  background: #ffeb00;
+  background: #21E6C1;
 }
 .pagepiling .section {
-  background: #272727;
+  background: #0d0d45;
   padding-top: 10.3rem;
   padding-bottom: 6rem;
 }
@@ -969,7 +969,7 @@ a.brand:focus {
   vertical-align: middle;
   width: 20.15rem;
   height: 41.15rem;
-  border: 0.657rem solid #ffeb00;
+  border: 0.657rem solid #21E6C1;
   left: 5rem;
   top: -2rem;
 }
@@ -1010,7 +1010,7 @@ a.brand:focus {
   margin-bottom: 0;
 }
 .progress-bar {
-  background-color: #ffeb00;
+  background-color: #21E6C1;
 }
 .resume-title {
   position: relative;
@@ -1132,11 +1132,11 @@ a.brand:focus {
   margin-top: 0.5rem;
 }
 .project-box:hover {
-  color: #ffeb00;
+  color: #21E6C1;
   text-decoration: none;
 }
 .project-box:hover h5 {
-  color: #ffeb00 !important;
+  color: #21E6C1 !important;
 }
 .project-box:hover .project-category {
   color: #fff;
@@ -1166,12 +1166,12 @@ a.brand:focus {
 .icon-quote {
   display: inline-block;
   margin-top: -0.6rem;
-  color: #ffeb00;
+  color: #21E6C1;
   width: 5rem;
   height: 5rem;
   line-height: 4.2rem;
   text-align: center;
-  border: 2px solid #ffeb00;
+  border: 2px solid #21E6C1;
   border-radius: 50%;
   font-size: 2.454rem;
   margin-bottom: 5rem;
@@ -1241,13 +1241,13 @@ a.brand:focus {
   display: block;
   width: 12px;
   height: 12px;
-  border: #ffeb00 1px solid;
+  border: #21E6C1 1px solid;
   position: relative;
   margin: 5px;
   border-radius: 50%;
 }
 .owl-dot.active span {
-  background: #ffeb00;
+  background: #21E6C1;
 }
 .content {
   padding-top: 17rem;
