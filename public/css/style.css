@@ -923,6 +923,9 @@ a.brand:focus {
   letter-spacing: 0.1em;
 }
 
+.my-profile {
+  margin-left: 10rem;
+}
 
 .title-uppercase {
   text-transform: uppercase;
