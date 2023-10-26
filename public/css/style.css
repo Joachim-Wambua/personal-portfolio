@@ -8,15 +8,15 @@
 @import "magnific-popup.css";
 @import "jquery.pagepiling.css";
 @import "owl.carousel.css";
-@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Alegreya+Sans:ital,wght@0,100;0,300;0,400;0,500;0,700;0,800;0,900;1,100;1,300;1,400;1,500;1,700;1,800;1,900&family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Alegreya+Sans:ital,wght@0,100;0,300;0,400;0,500;0,700;0,800;0,900;1,100;1,300;1,400;1,500;1,700;1,800;1,900&family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&display=swap");
 
 html {
   font-size: 12px;
   -webkit-font-smoothing: antialiased;
 }
 body {
-  font-family: 'Open Sans', sans-serif;
+  font-family: "Open Sans", sans-serif;
   font-size: 1rem;
   font-weight: 400;
   letter-spacing: 0.025em;
@@ -31,30 +31,30 @@ body {
 }
 ::-webkit-scrollbar-thumb {
   cursor: pointer;
-  background: #21E6C1;
+  background: #21e6c1;
 }
 ::selection {
-  background-color: #21E6C1;
+  background-color: #21e6c1;
   color: #fff;
 }
 -webkit-::selection {
-  background-color: #21E6C1;
+  background-color: #21e6c1;
   color: #fff;
 }
 ::-moz-selection {
-  background-color: #21E6C1;
+  background-color: #21e6c1;
   color: #fff;
 }
 @font-face {
-  font-family: 'Open Sans';
-  src: url(../fonts/OpenSans-Italic-VariableFont_wdth,wght) format("ttf"),
-    url(../fonts/OpenSans-VariableFont_wdth\,wght.ttf) format("woff");
+  font-family: "Open Sans";
+  src: url(../fonts/OpenSans-Italic-VariableFont_wdthwght) format("ttf"),
+    url(../fonts/OpenSans-VariableFont_wdth\wght.ttf) format("woff");
   font-weight: 400;
   font-style: normal;
 }
 h1,
 .h1 {
-  font-family: 'Open Sans', sans-serif;
+  font-family: "Open Sans", sans-serif;
   font-weight: 900;
   font-size: 3.428rem;
   line-height: 1.2;
@@ -65,7 +65,7 @@ h1,
 }
 h2,
 .h2 {
-  font-family: 'Open Sans', sans-serif;
+  font-family: "Open Sans", sans-serif;
   font-weight: 700;
   font-size: 2.571rem;
   line-height: 1.166;
@@ -75,7 +75,7 @@ h2,
 }
 h3,
 .h3 {
-  font-family: 'Open Sans', sans-serif;
+  font-family: "Open Sans", sans-serif;
   font-weight: 600;
   font-size: 2.142rem;
   line-height: 1.2;
@@ -85,7 +85,7 @@ h3,
 }
 h4,
 .h4 {
-  font-family: 'Open Sans', sans-serif;
+  font-family: "Open Sans", sans-serif;
   font-weight: 600;
   font-size: 1.714rem;
   line-height: 1.25;
@@ -95,7 +95,7 @@ h4,
 }
 h5,
 .h5 {
-  font-family: 'Open Sans', sans-serif;
+  font-family: "Open Sans", sans-serif;
   font-weight: 600;
   font-size: 1.571rem;
   line-height: 1.1;
@@ -105,7 +105,7 @@ h5,
 }
 h6,
 .h6 {
-  font-family: 'Open Sans', sans-serif;
+  font-family: "Open Sans", sans-serif;
   font-weight: 600;
   font-size: 1.285rem;
   line-height: 1.3333;
@@ -167,13 +167,13 @@ cite {
   font-style: normal;
 }
 a {
-  color: #21E6C1;
+  color: #21e6c1;
   -webkit-transition: color 0.3s ease-out;
   -o-transition: color 0.3s ease-out;
   transition: color 0.3s ease-out;
 }
 a:hover {
-  color: #21E6C1;
+  color: #21e6c1;
   outline: none;
 }
 a:focus {
@@ -219,7 +219,7 @@ input[type="email"]:focus,
 input[type="search"]:focus,
 input[type="tel"]:focus,
 textarea:focus {
-  border-color: #21E6C1;
+  border-color: #21e6c1;
   outline: 0;
   color: #fff;
 }
@@ -265,7 +265,7 @@ label.error {
 }
 .btn:hover,
 .btn:focus {
-  background-color: #21E6C1;
+  background-color: #21e6c1;
   color: #fff;
   -webkit-box-shadow: none;
   box-shadow: none;
@@ -288,8 +288,8 @@ label.error {
   transition: all 0.3s ease-out;
 }
 .ion-ios-play:hover {
-  color: #21E6C1;
-  border: 1px solid #21E6C1;
+  color: #21e6c1;
+  border: 1px solid #21e6c1;
 }
 .animsition {
   position: absolute;
@@ -328,7 +328,7 @@ label.error {
   width: 100%;
   height: 100%;
   border-radius: 50%;
-  background-color: #21E6C1;
+  background-color: #21e6c1;
   opacity: 0.6;
   position: absolute;
   top: 0;
@@ -367,7 +367,7 @@ label.error {
   color: #fff;
 }
 .text-primary {
-  color: #21E6C1 !important;
+  color: #21e6c1 !important;
 }
 .masked {
   position: relative;
@@ -457,7 +457,7 @@ a.brand:focus {
   margin-top: 4px;
 }
 .navbar-toggle:hover .icon-bar {
-  background-color: #21E6C1;
+  background-color: #21e6c1;
 }
 .navbar .social-list {
   float: right;
@@ -485,7 +485,7 @@ a.brand:focus {
   margin-left: 0;
 }
 .social-list a:hover {
-  color: #21E6C1;
+  color: #21e6c1;
   text-decoration: none;
 }
 .navbar-spacer {
@@ -569,7 +569,7 @@ a.brand:focus {
   transition: all 0.3s ease;
 }
 .close-menu:hover {
-  color: #21E6C1;
+  color: #21e6c1;
 }
 .menu .menu-lang {
   opacity: 0;
@@ -598,7 +598,7 @@ a.brand:focus {
 }
 .menu-lang .active,
 .menu-lang a:hover {
-  color: #21E6C1;
+  color: #21e6c1;
   text-decoration: none;
 }
 .menu-list {
@@ -679,7 +679,7 @@ a.brand:focus {
   margin-right: 0;
 }
 .menu-footer .social-list a:hover {
-  color: #21E6C1;
+  color: #21e6c1;
 }
 .menu-footer .copy {
   opacity: 0;
@@ -779,10 +779,10 @@ a.brand:focus {
 }
 
 .webgl {
-    position: fixed;
-    top: 0;
-    left: 0;
-    outline: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  outline: none;
 }
 
 #pp-nav span,
@@ -802,7 +802,7 @@ a.brand:focus {
 #pp-nav .pp-nav-down:hover,
 #pp-nav.white .pp-nav-up:hover,
 #pp-nav.white .pp-nav-down:hover {
-  color: #21E6C1;
+  color: #21e6c1;
 }
 #pp-nav.white .pp-nav-up,
 #pp-nav.white .pp-nav-down {
@@ -816,7 +816,7 @@ a.brand:focus {
 .pp-slidesNav .active span,
 #pp-nav span:hover,
 .pp-slidesNav span:hover {
-  background: #21E6C1;
+  background: #21e6c1;
 }
 .pagepiling .section {
   background: #0d0d45;
@@ -925,6 +925,31 @@ a.brand:focus {
 
 .my-profile {
   margin-left: 10rem;
+  margin-top: 0;
+}
+
+.my-profile img {
+  --s: 15px; /* size of the frame */
+  --b: 2px; /* border thickness */
+  --w: 360px; /* width of the image */
+  --c: #f2f2f2;
+  width: var(--w);
+  aspect-ratio: 1;
+  object-fit: cover;
+  padding: calc(2 * var(--s));
+  --_g: var(--c) var(--b), #1e1e1e00 0 calc(100% - var(--b)), var(--c) 0;
+  background: linear-gradient(var(--_g)) 50%/100% var(--_i, 100%) no-repeat,
+    linear-gradient(90deg, var(--_g)) 50% / var(--_i, 100%) 100% no-repeat;
+  /* outline: calc(var(--w) / 2) solid rgba(120, 120, 120, 0.6); */
+  outline-offset: calc(var(--w) / -2 - 2 * var(--s));
+  transition: 0.4s;
+  cursor: pointer;
+}
+
+.my-profile img:hover {
+  outline: var(--b) solid var(--c);
+  outline-offset: calc(var(--s) / -2);
+  --_i: calc(100% - 2 * var(--s));
 }
 
 .title-uppercase {
@@ -972,7 +997,7 @@ a.brand:focus {
   vertical-align: middle;
   width: 20.15rem;
   height: 41.15rem;
-  border: 0.657rem solid #21E6C1;
+  border: 0.657rem solid #21e6c1;
   left: 5rem;
   top: -2rem;
 }
@@ -1013,7 +1038,7 @@ a.brand:focus {
   margin-bottom: 0;
 }
 .progress-bar {
-  background-color: #21E6C1;
+  background-color: #21e6c1;
 }
 .resume-title {
   position: relative;
@@ -1135,11 +1160,11 @@ a.brand:focus {
   margin-top: 0.5rem;
 }
 .project-box:hover {
-  color: #21E6C1;
+  color: #21e6c1;
   text-decoration: none;
 }
 .project-box:hover h5 {
-  color: #21E6C1 !important;
+  color: #21e6c1 !important;
 }
 .project-box:hover .project-category {
   color: #fff;
@@ -1169,12 +1194,12 @@ a.brand:focus {
 .icon-quote {
   display: inline-block;
   margin-top: -0.6rem;
-  color: #21E6C1;
+  color: #21e6c1;
   width: 5rem;
   height: 5rem;
   line-height: 4.2rem;
   text-align: center;
-  border: 2px solid #21E6C1;
+  border: 2px solid #21e6c1;
   border-radius: 50%;
   font-size: 2.454rem;
   margin-bottom: 5rem;
@@ -1244,13 +1269,13 @@ a.brand:focus {
   display: block;
   width: 12px;
   height: 12px;
-  border: #21E6C1 1px solid;
+  border: #21e6c1 1px solid;
   position: relative;
   margin: 5px;
   border-radius: 50%;
 }
 .owl-dot.active span {
-  background: #21E6C1;
+  background: #21e6c1;
 }
 .content {
   padding-top: 17rem;
