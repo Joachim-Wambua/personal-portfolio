@@ -952,6 +952,10 @@ a.brand:focus {
   --_i: calc(100% - 2 * var(--s));
 }
 
+.avatar {
+  width: 36rem;
+}
+
 .title-uppercase {
   text-transform: uppercase;
   letter-spacing: -0.025em;
