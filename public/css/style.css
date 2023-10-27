@@ -1034,6 +1034,21 @@ a.brand:focus {
 
 .clearfix {
   margin-top: 1.2rem;
+  margin-bottom: 0.5rem;
+}
+
+.tech-stack i {
+  font-size: 2.1rem;
+  padding-right: 0.9rem;
+  padding-top: 0.9rem;
+  opacity: 0.5;
+}
+
+.tech-stack:hover i {
+  opacity: 1;
+  -webkit-transition: all 0.5s;
+  -o-transition: all 0.5s;
+  transition: all 0.5s;
 }
 
 .progress-bars {
