@@ -960,7 +960,7 @@ a.brand:focus {
   text-transform: uppercase;
   letter-spacing: -0.025em;
   line-height: 1.33333;
-  margin: 0 0 3rem;
+  margin: 0 0 2rem;
 }
 .display-1 {
   font-size: 4.28rem;
@@ -1031,8 +1031,13 @@ a.brand:focus {
     margin-top: -1px;
   }
 }
+
+.clearfix {
+  margin-top: 1.2rem;
+}
+
 .progress-bars {
-  margin-top: 4rem;
+  margin-top: 1.2rem;
 }
 .progress {
   height: 5px;
