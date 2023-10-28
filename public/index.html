@@ -248,7 +248,7 @@
                               <span class="text-primary">Stack</span>
                             </h1>
 
-                            <!-- Logos for Web Development Tech Stacks --> 
+                            <!-- Logos for Web Development Tech Stacks -->
                             <div class="clearfix">
                               <div
                                 class="number float-left"
@@ -425,28 +425,95 @@
                       <div class="timeline">
                         <div id="experience-container">
                           <div class="tabs">
+                            <!-- Use JavaScript to generate input elements based on your data -->
+                            <!-- Add a common class to each input and set the "id" and "name" attributes accordingly -->
                             <input
-                              id="tab-1"
                               type="radio"
-                              class="tab tab-selector"
-                              checked="checked"
-                              name="tab"
+                              class="tab-input"
+                              id="tab1"
+                              name="tab-control"
+                              checked
                             />
-                            <label for="tab-1" class="tab tab-primary"
-                              >Experience 1</label
-                            >
-                            <!-- Repeat the above two lines for each experience tab -->
-                            <div class="tabsShadow"></div>
-                            <div class="glider"></div>
-                            <section class="content">
-                              <div class="item" id="content-1">
-                                <h2 class="tab-title tab-primary">
-                                  Experience 1 Title
-                                </h2>
-                                <p>Experience 1 Description</p>
-                              </div>
-                              <!-- Repeat the above content for each experience tab -->
-                            </section>
+                            <input
+                              type="radio"
+                              class="tab-input"
+                              id="tab2"
+                              name="tab-control"
+                            />
+                            <input
+                              type="radio"
+                              class="tab-input"
+                              id="tab3"
+                              name="tab-control"
+                            />
+                            <input
+                              type="radio"
+                              class="tab-input"
+                              id="tab4"
+                              name="tab-control"
+                            />
+
+                            <ul>
+                              <!-- Use JavaScript to generate list items based on your data -->
+                              <!-- Add a common class to each label and set the "for" attribute accordingly -->
+                              <li title="Features">
+                                <label
+                                  for="tab1"
+                                  class="tab-label"
+                                  role="button"
+                                  ><img src="#" alt="1" /><br
+                                /></label>
+                              </li>
+                              <li title="Delivery Contents">
+                                <label
+                                  for="tab2"
+                                  class="tab-label"
+                                  role="button"
+                                  ><img src="#" alt="2" /><br
+                                /></label>
+                              </li>
+                              <li title="Shipping">
+                                <label
+                                  for="tab3"
+                                  class="tab-label"
+                                  role="button"
+                                  ><img src="#" alt="3" /><br
+                                /></label>
+                              </li>
+                              <li title="Returns">
+                                <label
+                                  for="tab4"
+                                  class="tab-label"
+                                  role="button"
+                                  ><img src="#" alt="4" /><br
+                                /></label>
+                              </li>
+                            </ul>
+
+                            <div class="slider">
+                              <div class="indicator"></div>
+                            </div>
+
+                            <div class="content">
+                              <!-- Use JavaScript to generate content sections based on your data -->
+                              <!-- You can loop through your data and populate the sections dynamically -->
+                              <section>
+                                <h2>Features</h2>
+                                <!-- Add content here -->
+                              </section>
+                              <section>
+                                <h2>Delivery Contents</h2>
+                                <!-- Add content here -->
+                              </section>
+                              <section>
+                                <h2>Shipping</h2>
+                                <!-- Add content here -->
+                              </section>
+                              <section>
+                                <h2>Returns</h2>
+                                <!-- Add content here -->
+                              </section>
+                            </div>
                           </div>
                         </div>
                       </div>
@@ -976,82 +1043,66 @@
         .then((response) => response.json())
         .then((experiences) => {
           // Clear existing data
-          xpContainer.innerHTML = "";
-
-          // Check if experiences is an array and has items
-          if (Array.isArray(experiences) && experiences.length > 0) {
-            experiences.forEach((experience) => {
-              // Create your HTML structure for each experience
-              const entryDiv = document.createElement("div");
-              entryDiv.classList.add("entry");
-
-              const titleDiv = document.createElement("div");
-              titleDiv.classList.add("title");
-
-              const startDate = new Date(experience.startDate);
-              const endDate = new Date(experience.endDate);
-
-              const dateFormatOptions = { year: "numeric", month: "short" };
-
-              const formattedStartDate = startDate.toLocaleDateString(
-                "en-US",
-                dateFormatOptions
-              );
-              const formattedEndDate = endDate.toLocaleDateString(
-                "en-US",
-                dateFormatOptions
-              );
-
-              const jobHeading = document.createElement("h3");
-              jobHeading.style.color = "black";
-              jobHeading.style.fontSize = "1.75rem";
-              jobHeading.textContent = `${experience.role}`;
-
-              const titleInfo = document.createElement("p");
-              titleInfo.textContent = `${experience.company}, ${formattedStartDate} - ${formattedEndDate}`;
-
-              const bodyDiv = document.createElement("div");
-              bodyDiv.classList.add("body");
-
-              const description = experience.description;
-
-              // Split text into array for bullet point processing
-              const bulletPoints = description.split(". ");
-
-              const ul = document.createElement("ul");
-
-              bulletPoints.forEach((bulletPoint) => {
-                if (bulletPoint.trim() !== "") {
-                  const listItem = document.createElement("li");
-                  listItem.textContent = bulletPoint;
-                  ul.appendChild(listItem);
-                }
-              });
-
-              // Append elements to create the structure
-              titleDiv.appendChild(jobHeading);
-              titleDiv.appendChild(titleInfo);
-
-              // bodyDiv.appendChild(descriptionParagraph);
-              bodyDiv.appendChild(ul);
-
-              entryDiv.appendChild(titleDiv);
-              entryDiv.appendChild(bodyDiv);
-
-              // Append the entry to the container
-              xpContainer.appendChild(entryDiv);
-            });
-          } else {
-            // Handle the case where experiences array is empty
-            // For example, you can display a message saying no experiences are available.
-            // Create and append an error message or appropriate content.
-            const errorMessage = document.createElement("p");
-            errorMessage.textContent = "No work experiences available.";
-            xpContainer.appendChild(errorMessage);
-          }
-        })
-        .catch((error) => {
-          console.error("Error retrieving Work Experiences", error);
+          //   xpContainer.innerHTML = "";
+          //   // Check if experiences is an array and has items
+          //   if (Array.isArray(experiences) && experiences.length > 0) {
+          //     experiences.forEach((experience) => {
+          //       // Create your HTML structure for each experience
+          //       const entryDiv = document.createElement("div");
+          //       entryDiv.classList.add("entry");
+          //       const titleDiv = document.createElement("div");
+          //       titleDiv.classList.add("title");
+          //       const startDate = new Date(experience.startDate);
+          //       const endDate = new Date(experience.endDate);
+          //       const dateFormatOptions = { year: "numeric", month: "short" };
+          //       const formattedStartDate = startDate.toLocaleDateString(
+          //         "en-US",
+          //         dateFormatOptions
+          //       );
+          //       const formattedEndDate = endDate.toLocaleDateString(
+          //         "en-US",
+          //         dateFormatOptions
+          //       );
+          //       const jobHeading = document.createElement("h3");
+          //       jobHeading.style.color = "black";
+          //       jobHeading.style.fontSize = "1.75rem";
+          //       jobHeading.textContent = `${experience.role}`;
+          //       const titleInfo = document.createElement("p");
+          //       titleInfo.textContent = `${experience.company}, ${formattedStartDate} - ${formattedEndDate}`;
+          //       const bodyDiv = document.createElement("div");
+          //       bodyDiv.classList.add("body");
+          //       const description = experience.description;
+          //       // Split text into array for bullet point processing
+          //       const bulletPoints = description.split(". ");
+          //       const ul = document.createElement("ul");
+          //       bulletPoints.forEach((bulletPoint) => {
+          //         if (bulletPoint.trim() !== "") {
+          //           const listItem = document.createElement("li");
+          //           listItem.textContent = bulletPoint;
+          //           ul.appendChild(listItem);
+          //         }
+          //       });
+          //       // Append elements to create the structure
+          //       titleDiv.appendChild(jobHeading);
+          //       titleDiv.appendChild(titleInfo);
+          //       // bodyDiv.appendChild(descriptionParagraph);
+          //       bodyDiv.appendChild(ul);
+          //       entryDiv.appendChild(titleDiv);
+          //       entryDiv.appendChild(bodyDiv);
+          //       // Append the entry to the container
+          //       xpContainer.appendChild(entryDiv);
+          //     });
+          //   } else {
+          //     // Handle the case where experiences array is empty
+          //     // For example, you can display a message saying no experiences are available.
+          //     // Create and append an error message or appropriate content.
+          //     const errorMessage = document.createElement("p");
+          //     errorMessage.textContent = "No work experiences available.";
+          //     xpContainer.appendChild(errorMessage);
+          //   }
+          // })
+          // .catch((error) => {
+          //   console.error("Error retrieving Work Experiences", error);
         });
     </script>
 
