@@ -15,13 +15,18 @@
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
       <div class="container-fluid">
         <!-- Logo -->
-        <a class="navbar-brand" href="#">
-          <img src="your-logo.png" alt="Joachim Wambua" class="img-fluid" />
+        <a class="navbar-brand" href="/admin.html">
+          <img
+            src="/images/kim-brand-dark.png"
+            style="width: 72px"
+            alt="Joachim Wambua"
+            class="img-fluid"
+          />
         </a>
         <!-- Menu Items -->
         <ul class="navbar-nav ml-auto">
           <li class="nav-item">
-            <a class="nav-link text-center" href="/">
+            <a class="nav-link text-center" href="/admin">
               <i class="fs-5 bi-house"></i> Home
             </a>
           </li>
@@ -115,7 +120,7 @@
       // API request to retrieve work xp
       fetch("/get-work-xp")
         .then((response) => response.json())
-        .then(( experiences) => {
+        .then((experiences) => {
           // Clear existing data
           xpTableBody.innerHTML = "";
 
