@@ -23,13 +23,18 @@
       <div class="row">
         <div class="col-md-6 offset-md-3">
           <div class="card my-5">
-            <form class="card-body cardbody-color p-lg-5" id="login-form"  action="/user-login" method="POST">
+            <form
+              class="card-body cardbody-color p-lg-5"
+              id="login-form"
+              action="/user-login"
+              method="POST"
+            >
               <div class="text-center">
                 <img
-                  src="#"
+                  src="/images/brand-dark.png"
                   alt="my_logo"
                   class="img-fluid profile-image-pic img-thumbnail rounded-circle my-3"
-                  width="200px"
+                  width="180px"
                   alt="profile"
                 />
               </div>
@@ -99,9 +104,10 @@
       }
 
       .profile-image-pic {
-        height: 200px;
-        width: 200px;
-        object-fit: cover;
+        height: 180px;
+        width: 180px;
+        object-fit: contain;
+        padding: 1rem;
       }
 
       .cardbody-color {
@@ -141,7 +147,6 @@
 
           const loginData = { email, password };
 
-
           try {
             const response = await fetch("/user-login", {
               method: "POST",
@@ -153,19 +158,18 @@
 
             if (response.status === 200) {
               // Successful Login
-                // Redirect to the admin page
-                window.location.href = "/admin";
-
+              // Redirect to the admin page
+              window.location.href = "/admin";
             } else {
               // LogIn Failed
-              alert("Login failed. Please check your credentials.")
+              alert("Login failed. Please check your credentials.");
             }
           } catch (error) {
             console.error("Error:", error);
             alert("An error occurred while logging in. Please try again.");
           }
-        })
-      })
+        });
+      });
     </script>
     <!-- Add Bootstrap JS and Popper.js scripts here if you haven't already -->
     <script type="text/html" src="admin.js"></script>

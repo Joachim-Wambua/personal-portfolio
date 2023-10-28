@@ -1009,10 +1009,10 @@
               const jobHeading = document.createElement("h3");
               jobHeading.style.color = "black";
               jobHeading.style.fontSize = "1.75rem";
-              jobHeading.textContent = `${experience.role}, ${experience.company}`;
+              jobHeading.textContent = `${experience.role}`;
 
               const titleInfo = document.createElement("p");
-              titleInfo.textContent = `${formattedStartDate} - ${formattedEndDate}`;
+              titleInfo.textContent = `${experience.company}, ${formattedStartDate} - ${formattedEndDate}`;
 
               const bodyDiv = document.createElement("div");
               bodyDiv.classList.add("body");
