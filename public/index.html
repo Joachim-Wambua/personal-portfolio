@@ -1017,28 +1017,40 @@
               const bodyDiv = document.createElement("div");
               bodyDiv.classList.add("body");
 
-              const descriptionParagraph = document.createElement("p");
-              descriptionParagraph.textContent = experience.description;
+              // const descriptionParagraph = document.createElement("p");
+              // descriptionParagraph.textContent = experience.description;4
+
+              const description = experience.description;
+
+              // Split text into array for bullet point processing
+              const bulletPoints = description.split(". ");
 
               const ul = document.createElement("ul");
 
+              bulletPoints.forEach((bulletPoint) => {
+                if (bulletPoint.trim() !== "") {
+                  const listItem = document.createElement("li");
+                  listItem.textContent = bulletPoint;
+                  ul.appendChild(listItem);
+                }
+              });
               // Check if experience has a bulletPoints property and it's an array
-              if (
-                experience.bulletPoints &&
-                Array.isArray(experience.bulletPoints)
-              ) {
-                experience.bulletPoints.forEach((bulletPoint) => {
-                  const li = document.createElement("li");
-                  li.textContent = bulletPoint;
-                  ul.appendChild(li);
-                });
-              }
+              // if (
+              //   experience.bulletPoints &&
+              //   Array.isArray(experience.bulletPoints)
+              // ) {
+              //   experience.bulletPoints.forEach((bulletPoint) => {
+              //     const li = document.createElement("li");
+              //     li.textContent = bulletPoint;
+              //     ul.appendChild(li);
+              //   });
+              // }
 
               // Append elements to create the structure
               titleDiv.appendChild(jobHeading);
               titleDiv.appendChild(titleInfo);
 
-              bodyDiv.appendChild(descriptionParagraph);
+              // bodyDiv.appendChild(descriptionParagraph);
               bodyDiv.appendChild(ul);
 
               entryDiv.appendChild(titleDiv);

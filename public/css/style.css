@@ -408,6 +408,10 @@ label.error {
   }
 }
 
+.entry .body ul {
+  margin-top: 1rem !important;
+}
+
 .double-bounce1,
 .double-bounce2 {
   width: 100%;
