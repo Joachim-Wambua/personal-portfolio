@@ -1034,6 +1034,32 @@ a.brand:focus {
 
 .clearfix {
   margin-top: 1.2rem;
+  margin-bottom: 0.5rem;
+}
+
+.tech-stack i {
+  font-size: 1.8rem;
+  padding-right: 0.5rem;
+  padding-top: 0.9rem;
+  /* opacity: 0.5; */
+}
+
+.stack-logo {
+  display: inline-block; /* Horizonral alignment */
+  margin-right: 0.4rem; /* Logo Spacing*/
+  margin-bottom: 0.5rem;
+}
+
+.stack-logo i {
+  max-width: 100%;
+  opacity: 0.4;
+}
+
+.stack-logo:hover i {
+  opacity: 1;
+  -webkit-transition: all 0.5s;
+  -o-transition: all 0.5s;
+  transition: all 0.5s;
 }
 
 .progress-bars {
