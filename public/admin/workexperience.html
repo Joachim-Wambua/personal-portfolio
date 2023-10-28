@@ -115,7 +115,7 @@
       // API request to retrieve work xp
       fetch("/get-work-xp")
         .then((response) => response.json())
-        .then((experiences) => {
+        .then(( experiences) => {
           // Clear existing data
           xpTableBody.innerHTML = "";
 
