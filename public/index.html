@@ -240,15 +240,15 @@
                               internet even more exciting together!
                             </p>
 
-                            <h3
+                            <h1
                               class="title-uppercase"
-                              style="font-size: 1.5rem"
+                              style="font-size: 1.5rem; font-weight: 700"
                             >
-                              My
-                              <span class="text-primary">Tech Stack</span>
-                            </h3>
+                              Tech
+                              <span class="text-primary">Stack</span>
+                            </h1>
 
-                            <!-- Logos for Web Development Tech Stacks -->
+                            <!-- Logos for Web Development Tech Stacks --> 
                             <div class="clearfix">
                               <div
                                 class="number float-left"
@@ -424,34 +424,30 @@
                       <!-- Experience Design 1 -->
                       <div class="timeline">
                         <div id="experience-container">
-                          <!-- <div class="entry">
-                            <div class="title">
-                              <h3 style="color: black; font-size: 1.75rem">
-                                2014 - Present
-                              </h3>
-                              <p>Title, Company</p>
-                            </div>
-                            <div class="body">
-                              <p>
-                                Voluptatibus veniam ea reprehenderit atque
-                                reiciendis non laborum adipisci ipsa pariatur
-                                omnis.
-                              </p>
-                              <ul>
-                                <li>
-                                  Rerum sit libero possimus amet excepturi
-                                </li>
-                                <li>
-                                  Exercitationem enim dolores sunt praesentium
-                                  dolorum praesentium
-                                </li>
-                                <li>
-                                  Modi aut dolores dignissimos sequi sit ut
-                                  aliquid molestias deserunt illo
-                                </li>
-                              </ul>
-                            </div>
-                          </div> -->
+                          <div class="tabs">
+                            <input
+                              id="tab-1"
+                              type="radio"
+                              class="tab tab-selector"
+                              checked="checked"
+                              name="tab"
+                            />
+                            <label for="tab-1" class="tab tab-primary"
+                              >Experience 1</label
+                            >
+                            <!-- Repeat the above two lines for each experience tab -->
+                            <div class="tabsShadow"></div>
+                            <div class="glider"></div>
+                            <section class="content">
+                              <div class="item" id="content-1">
+                                <h2 class="tab-title tab-primary">
+                                  Experience 1 Title
+                                </h2>
+                                <p>Experience 1 Description</p>
+                              </div>
+                              <!-- Repeat the above content for each experience tab -->
+                            </section>
+                          </div>
                         </div>
                       </div>
 
@@ -1017,9 +1013,6 @@
               const bodyDiv = document.createElement("div");
               bodyDiv.classList.add("body");
 
-              // const descriptionParagraph = document.createElement("p");
-              // descriptionParagraph.textContent = experience.description;4
-
               const description = experience.description;
 
               // Split text into array for bullet point processing
@@ -1034,17 +1027,6 @@
                   ul.appendChild(listItem);
                 }
               });
-              // Check if experience has a bulletPoints property and it's an array
-              // if (
-              //   experience.bulletPoints &&
-              //   Array.isArray(experience.bulletPoints)
-              // ) {
-              //   experience.bulletPoints.forEach((bulletPoint) => {
-              //     const li = document.createElement("li");
-              //     li.textContent = bulletPoint;
-              //     ul.appendChild(li);
-              //   });
-              // }
 
               // Append elements to create the structure
               titleDiv.appendChild(jobHeading);
