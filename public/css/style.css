@@ -1048,6 +1048,7 @@ a.brand:focus {
   display: inline-block; /* Horizonral alignment */
   margin-right: 0.4rem; /* Logo Spacing*/
   margin-bottom: 0.5rem;
+  position: relative;
 }
 
 .stack-logo i {
@@ -1060,6 +1061,20 @@ a.brand:focus {
   -webkit-transition: all 0.5s;
   -o-transition: all 0.5s;
   transition: all 0.5s;
+}
+
+.stack-logo:hover::before {
+  content: attr(data-tooltip);
+  display: block;
+  position: absolute;
+  background: rgba(0, 0, 0, 0.7);
+  color: white;
+  padding: 0.3rem 0.6rem;
+  border-radius: 5px;
+  bottom: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  white-space: nowrap;
 }
 
 .progress-bars {
