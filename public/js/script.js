@@ -64,7 +64,6 @@
         "home",
         "about",
         "experience",
-        "clients",
         "projects",
         "certifications",
         "contact",
