@@ -75,18 +75,18 @@ h2,
 }
 h3,
 .h3 {
-  font-family: "Open Sans", sans-serif;
-  font-weight: 600;
-  font-size: 2.142rem;
+  font-family: "Alegreya Sans", sans-serif;
+  font-weight: 800;
+  font-size: 2.4rem;
   line-height: 1.2;
-  letter-spacing: -0.05em;
+  letter-spacing: 0em;
   color: #fff;
   margin: 2.6rem 0;
 }
 h4,
 .h4 {
   font-family: "Open Sans", sans-serif;
-  font-weight: 600;
+  font-weight: 700;
   font-size: 1.714rem;
   line-height: 1.25;
   letter-spacing: 0.025em;
@@ -400,7 +400,7 @@ label.error {
 
 .tabs ul li label img {
   fill: #929daf;
-  height: 1.5em;
+  height: 3.6em;
   vertical-align: bottom;
   margin-right: 0.2em;
   transition: all 0.2s ease-in-out;
@@ -415,15 +415,15 @@ label.error {
   margin-right: 0.2em;
   transition: all 0.2s ease-in-out;
 }
-.tabs ul li label:hover,
-.tabs ul li label:focus,
-.tabs ul li label:active {
-  outline: 0;
-  color: #bec5cf;
+.tabs ul li:hover,
+.tabs ul li:focus,
+.tabs ul li:active {
+  outline: 1;
+  /* background-color: #c9c9c9; */
 }
-.tabs ul li label:hover svg,
-.tabs ul li label:focus svg,
-.tabs ul li label:active svg {
+.tabs ul li label:hover img,
+.tabs ul li label:focus img,
+.tabs ul li label:active img {
   fill: #bec5cf;
 }
 .tabs .slider {
