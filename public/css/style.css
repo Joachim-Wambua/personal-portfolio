@@ -372,7 +372,7 @@ label.error {
 }
 
 .tabs .content .bullet-points ul li {
-  list-style-type: circle;
+  /* list-style-type: circle; */
   color: rgb(29, 29, 29);
   width: 75%;
   padding: 0 9px;
