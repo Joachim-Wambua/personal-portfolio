@@ -331,8 +331,7 @@ label.error {
   background: #f2f2f2;
   padding: 50px;
   margin-top: 4.5rem;
-  padding-bottom: 5
-  0px;
+  padding-bottom: 5 0px;
   width: 100%;
   /* height: 450px; */
   box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
@@ -344,11 +343,17 @@ label.error {
 }
 .tabs .content section h2,
 .tabs ul li label {
-  font-family: "Montserrat";
+  font-family: "Open Sans" sans-serif;
   font-weight: bold;
   font-size: 18px;
   color: #141414 !important;
 }
+
+.tabs .content section h3 span img {
+  width: 63px;
+  margin-top: -1rem;
+}
+
 .tabs ul {
   list-style-type: none;
   padding-left: 1rem;
