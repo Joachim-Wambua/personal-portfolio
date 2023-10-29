@@ -349,9 +349,9 @@ label.error {
 }
 .tabs ul {
   list-style-type: none;
-  padding-left: 0;
-  display: block;
-  /* flex-direction: row; */
+  padding-left: 1rem;
+  display: flex;
+  flex-direction: row;
   margin-bottom: 10px;
   justify-content: space-between;
   align-items: flex-end;
@@ -374,8 +374,9 @@ label.error {
 .tabs .content .bullet-points ul li {
   /* list-style-type: circle; */
   color: rgb(29, 29, 29);
-  width: 75%;
+  width: 100%;
   /* padding: 0 9px; */
+  padding-top: 1rem;
   padding-bottom: 1rem;
   margin-bottom: 10px;
 }
@@ -424,12 +425,12 @@ label.error {
 }
 .tabs .slider .indicator {
   position: relative;
-  width: 50px;
+  /* width: 50px; */
   max-width: 100%;
-  /* margin: 0 auto; */
-  height: 4px;
+  margin: 0 auto;
+  height: 3px;
   background: #428bff;
-  border-radius: 1px;
+  border-radius: 3px;
 }
 
 /* .tabs .content {
