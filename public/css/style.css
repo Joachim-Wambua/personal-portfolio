@@ -332,9 +332,9 @@ label.error {
   padding: 50px;
   padding-bottom: 80px;
   width: 100%;
-  height: 300px;
+  height: 390px;
   box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
-  border-radius: 5px;
+  border-radius: 9px;
   min-width: 360px;
 }
 .tabs input[name="tab-control"] {
@@ -345,7 +345,7 @@ label.error {
   font-family: "Montserrat";
   font-weight: bold;
   font-size: 18px;
-  color: #428bff;
+  color: #141414 !important;
 }
 .tabs ul {
   list-style-type: none;
@@ -361,12 +361,28 @@ label.error {
   box-sizing: border-box;
   flex: 1;
   width: 25%;
-  padding: 0 10px;
-  text-align: center;
+  padding: 0 9px;
+  padding-left: 0;
+  text-align: left;
 }
+
+.tabs .content .bullet-points ul {
+  display: block;
+  padding: 0;
+}
+
+.tabs .content .bullet-points ul li {
+  list-style-type: circle;
+  color: rgb(29, 29, 29);
+  width: 75%;
+  padding: 0 9px;
+  /* padding-left: 0; */
+  margin-bottom: 10px;
+}
+
 .tabs ul li label {
   transition: all 0.3s ease-in-out;
-  color: #929daf;
+  color: #141414 !important;
   padding: 5px auto;
   overflow: hidden;
   text-overflow: ellipsis;
@@ -410,14 +426,16 @@ label.error {
   position: relative;
   width: 50px;
   max-width: 100%;
-  margin: 0 auto;
+  /* margin: 0 auto; */
   height: 4px;
   background: #428bff;
   border-radius: 1px;
 }
-.tabs .content {
+
+/* .tabs .content {
   margin-top: 30px;
-}
+} */
+
 .tabs .content section {
   display: none;
   -webkit-animation-name: content;
@@ -1724,9 +1742,9 @@ a.brand:focus {
 .owl-dot.active span {
   background: #21e6c1;
 }
-.content {
+/* .content {
   padding-top: 17rem;
-}
+} */
 .row-project {
   margin-bottom: 10rem;
 }
