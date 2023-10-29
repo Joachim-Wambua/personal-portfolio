@@ -375,7 +375,7 @@ label.error {
   /* list-style-type: circle; */
   color: rgb(29, 29, 29);
   width: 75%;
-  padding: 0 9px;
+  /* padding: 0 9px; */
   /* padding-left: 0; */
   margin-bottom: 10px;
 }
