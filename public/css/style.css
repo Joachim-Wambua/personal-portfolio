@@ -328,7 +328,7 @@ label.error {
   left: 50%;
   transform: translateX(-50%);
   position: relative;
-  background: white;
+  background: #f2f2f2;
   padding: 50px;
   padding-bottom: 80px;
   width: 100%;
