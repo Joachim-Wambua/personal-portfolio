@@ -1,4 +1,3 @@
-bundler config controller controller/authController.js controller/clientController.js controller/contactController.js controller/experienceController.js controller/projectController.js dbSchemas dbSchemas/clientSchema.js dbSchemas/contactSchema.js dbSchemas/experienceSchema.js dbSchemas/projectSchema.js dbSchemas/userSchema.js node_modules public public/admin public/css public/fonts public/images public/js public/uploads ![
 ```
 KimPortfolio
 ├─ .env
