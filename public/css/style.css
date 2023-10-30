@@ -344,9 +344,9 @@ label.error {
 .tabs .content section h2,
 .tabs ul li label {
   font-family: "Open Sans" sans-serif;
-  font-weight: bold;
-  font-size: 18px;
-  color: #141414 !important;
+  font-weight: 700;
+  font-size: 27px;
+  color: #21e6c1 !important;
 }
 
 .tabs .content section h3 span img {
@@ -390,7 +390,7 @@ label.error {
 
 .tabs ul li label {
   transition: all 0.3s ease-in-out;
-  color: #141414 !important;
+  color: #004799 !important;
   padding: 5px auto;
   overflow: hidden;
   text-overflow: ellipsis;
@@ -426,13 +426,19 @@ label.error {
 .tabs ul li:focus,
 .tabs ul li:active {
   outline: 1;
-  /* background-color: #c9c9c9; */
+  color: #c9c9c9;
 }
 .tabs ul li label:hover img,
 .tabs ul li label:focus img,
 .tabs ul li label:active img {
-  fill: #bec5cf;
+  color: #494c50;
 }
+.tabs ul li label:hover,
+.tabs ul li label:focus,
+.tabs ul li label:active {
+  color: #494c50 !important;
+}
+
 .tabs .slider {
   position: relative;
   width: 25%;
@@ -444,7 +450,7 @@ label.error {
   max-width: 100%;
   margin: 0 auto;
   height: 3px;
-  background: #428bff;
+  background: #0062ff;
   border-radius: 3px;
 }
 
@@ -1469,7 +1475,7 @@ a.brand:focus {
 }
 
 .tech-stack i {
-  font-size: 1.8rem;
+  font-size: 2.4rem;
   padding-right: 0.5rem;
   padding-top: 0.9rem;
   /* opacity: 0.5; */
