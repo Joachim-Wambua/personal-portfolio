@@ -169,3 +169,4 @@ const contactForm = document.getElementById("contact-form");
 if (contactForm) {
   contactForm.addEventListener("submit", handleContactFormSubmit);
 }
+
