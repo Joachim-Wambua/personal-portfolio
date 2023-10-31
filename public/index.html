@@ -12,11 +12,13 @@
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
     <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
     <link rel="manifest" href="/site.webmanifest" />
+
     <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5" />
     <link
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.15.1/devicon.min.css"
     />
+
     <meta name="msapplication-TileColor" content="#00aba9" />
     <meta name="theme-color" content="#ffffff" />
     <title>Joachim | Portfolio</title>
@@ -27,6 +29,8 @@
       href="css/style.css"
       media="screen"
     />
+
+    <link rel="stylesheet" href="css/lightbox.css" />
   </head>
   <body>
     <div class="animsition">
@@ -997,6 +1001,11 @@
           <div class="scroll-wrap">
             <div class="section-bg" style="background-image: url()"></div>
             <div class="scrollable-content">
+              <!-- Certification Image PopUp Modal -->
+              <div id="imageModal" class="modal">
+                <span class="close" id="closeModal">&times;</span>
+                <img class="modal-content" id="modalImage" />
+              </div>
               <div class="vertical-centred">
                 <div class="boxed boxed-inner">
                   <div class="vertical-title d-none d-lg-block">
@@ -1011,37 +1020,53 @@
                               CERTIFICATIONS
                             </h2>
                             <figure class="snip1577">
-                              <img
-                                src="https://res.cloudinary.com/dltjv8zbh/image/upload/v1698772395/Joachim_DataAnalystCert_Udacity_pages-to-jpg-0001_kavawu.jpg"
-                                alt="Udacity Data Analyst"
-                              />
+                              <a
+                                href="images/certifications/dataanalyst-udacity.jpg"
+                                data-lightbox="data-analyst-cert"
+                              >
+                                <img
+                                  src="images/certifications/dataanalyst-udacity.jpg"
+                                  alt="Udacity Data Analyst"
+                                />
+                              </a>
+
                               <figcaption>
                                 <h3>Data Analyst Nanodegree</h3>
                                 <h4>Udacity</h4>
                               </figcaption>
-                              <a href="#"></a>
+                              <!-- <a type href="#" ></a> -->
                             </figure>
                             <figure class="snip1577">
-                              <img
-                                src="https://res.cloudinary.com/dltjv8zbh/image/upload/v1698772398/Joachim_Wambua_WebDevelopmentFoundations_Certificate_pages-to-jpg-0001_zstlhe.jpg"
-                                alt="Web Dev Certification"
-                              />
+                              <a
+                                href="images/certifications/webdev-udacity.jpg"
+                                data-lightbox="webdev-cert"
+                              >
+                                <img
+                                  src="images/certifications/webdev-udacity.jpg"
+                                  alt="Web Dev Certification"
+                                />
+                              </a>
                               <figcaption>
                                 <h3>Wev Development Foundations</h3>
                                 <h4>Udacity</h4>
                               </figcaption>
-                              <a href="#"></a>
+                              <!-- <a href="#"></a> -->
                             </figure>
                             <figure class="snip1577">
-                              <img
-                                src="https://res.cloudinary.com/dltjv8zbh/image/upload/v1698772398/Joachim_Wambua_PythonProgramming_Certificate_pages-to-jpg-0001_wmturb.jpg"
-                                alt="Python Programming Certification"
-                              />
+                              <a
+                                href="images/certifications/python-udacity.jpg"
+                                data-lightbox="python-udacity-cert"
+                              >
+                                <img
+                                  src="images/certifications/python-udacity.jpg"
+                                  alt="WebDev-Certification"
+                                />
+                              </a>
                               <figcaption>
                                 <h3>Python Programming Foundations</h3>
                                 <h4>Udacity</h4>
                               </figcaption>
-                              <a href="#"></a>
+                              <!-- <a href="#"></a> -->
                             </figure>
                             <!-- <figure class="snip1577" style="margin: auto">
                             <img
@@ -1196,7 +1221,14 @@
         spacing: 12.0, // Shininess of the waves
       });
     </script>
-    <script src="js/jquery.min.js"></script>
+    <script>
+      // lightbox.option({
+      //   resizeDuration: 200,
+      //   wrapAround: true,
+      // });
+    </script>
+    <!-- <script src="js/jquery.min.js"></script> -->
+    <script src="js/lightbox-plus-jquery.js"></script>
     <script src="js/wow.min.js"></script>
     <script src="js/smoothscroll.js"></script>
     <script src="js/animsition.js"></script>
@@ -1204,7 +1236,6 @@
     <script src="js/jquery.magnific-popup.min.js"></script>
     <script src="js/owl.carousel.min.js"></script>
     <script src="js/jquery.pagepiling.min.js"></script>
-
     <script type="module" src="js/script.js"></script>
   </body>
 </html>
