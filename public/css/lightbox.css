@@ -184,6 +184,9 @@ body.lb-disable-scrolling {
 
 .lb-data .lb-close {
   display: block;
+  position: absolute;
+  top: -40px;
+  margin-right: -50px;
   float: right;
   width: 30px;
   height: 30px;
