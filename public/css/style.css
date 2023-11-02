@@ -191,8 +191,8 @@ textarea {
   width: 100%;
   font-size: 1rem;
   border-radius: 0.75em;
-  color: #fff;
-  background-color: #333;
+  color: #000;
+  background-color: #d8d8d8;
   border: 0;
   border-radius: 0;
   padding: 0.7rem 1rem;
@@ -221,27 +221,27 @@ input[type="tel"]:focus,
 textarea:focus {
   border-color: #21e6c1;
   outline: 0;
-  color: #fff;
+  color: #000;
 }
 input::-moz-placeholder {
-  color: #999;
+  color: #676767;
   opacity: 1;
 }
 input:-ms-input-placeholder {
-  color: #999;
+  color: #676767;
 }
 input::-webkit-input-placeholder {
-  color: #999;
+  color: #676767;
 }
 textarea::-moz-placeholder {
-  color: #999;
+  color: #676767;
   opacity: 1;
 }
 textarea:-ms-input-placeholder {
-  color: #999;
+  color: #676767;
 }
 textarea::-webkit-input-placeholder {
-  color: #999;
+  color: #676767;
 }
 .form-group {
   margin-bottom: 30px;
@@ -251,14 +251,15 @@ label.error {
   margin: 0.8rem 0 0;
 }
 .btn {
-  color: #fff;
+  color: #000;
   letter-spacing: 0.025em;
   font-size: 1rem;
   display: inline-block;
+  font-weight: 700;
   border: 0;
   border-radius: 0;
   padding: 1.1em 2.28em 1em;
-  background-color: #000;
+  background-color: #f2f2f2;
   text-decoration: none;
   -webkit-transition: all 0.3s ease-out !important;
   transition: all 0.3s ease-out !important;
@@ -953,7 +954,7 @@ a.brand:focus {
   opacity: 0.3;
 }
 .contact-address {
-  margin-top: 5rem;
+  margin-top: 2.7rem;
 }
 .contact-address .mail {
   text-decoration: underline;
