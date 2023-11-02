@@ -1094,7 +1094,11 @@
           <div class="scroll-wrap">
             <div
               class="section-bg"
-              style="background-image: url(images/bg/contact.jpg)"
+              style="
+                background-image: url(images/bg/ContactPageBG2.jpg);
+                background-color: rgba(0, 47, 200, 0.5);
+                background-blend-mode: multiply;
+              "
             ></div>
             <div class="scrollable-content">
               <div class="vertical-centred">
@@ -1107,13 +1111,18 @@
                       <div class="intro overflow-hidden">
                         <div class="row">
                           <div class="col-md-6">
-                            <h1 class="title-uppercase">
+                            <h3
+                              class="title-uppercase"
+                              style="font-size: 2.7rem; letter-spacing: 0.1rem"
+                            >
+                              LET'S CONNECT
+                            </h3>
+                            <h3
+                              class="title-uppercase"
+                              style="font-size: 2.4rem; margin-bottom: 1rem"
+                            >
                               <span class="text-primary">NAIROBI</span>, KENYA
-                            </h1>
-                            <!-- <h5 class="text-muted">
-                                166 Main Street, Beverly Hills, CA 90210
-                              </h5> -->
-
+                            </h3>
                             <section class="contact-address">
                               <h3>
                                 <!-- TODO: MAKE THIS PROMPT AN EMAIL SENT TO ATTACHED EMAIL -->
@@ -1180,7 +1189,7 @@
                                   </div>
                                   <div class="col-sm-12">
                                     <button type="submit" class="btn">
-                                      Contact me
+                                      SEND
                                     </button>
                                   </div>
                                 </div>
@@ -1222,12 +1231,13 @@
       });
     </script>
     <script>
-      // lightbox.option({
-      //   resizeDuration: 200,
-      //   wrapAround: true,
-      // });
+      lightbox.option({
+        resizeDuration: 200,
+        wrapAround: true,
+      });
     </script>
     <!-- <script src="js/jquery.min.js"></script> -->
+
     <script src="js/lightbox-plus-jquery.js"></script>
     <script src="js/wow.min.js"></script>
     <script src="js/smoothscroll.js"></script>
