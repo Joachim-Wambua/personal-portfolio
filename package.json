@@ -10,6 +10,7 @@
   "author": "Joachim Wambua",
   "license": "ISC",
   "dependencies": {
+    "@emailjs/browser": "^3.11.0",
     "@popperjs/core": "^2.11.8",
     "bcrypt": "^5.1.1",
     "connect-flash": "^0.1.1",
