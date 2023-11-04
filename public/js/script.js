@@ -132,7 +132,7 @@ currentYearElement.textContent = currentYear;
 // Contact Submission Handler
 function handleContactFormSubmit(event) {
   // Prevent the default form submission behavior
-  event.preventDefault;
+  event.preventDefault();
 
   // emailjs.init("TSlQjXoP1_LNtrBVA");
 
@@ -142,12 +142,24 @@ function handleContactFormSubmit(event) {
   const email = document.getElementById("email").value;
   const message = document.getElementById("message").value;
 
+  // Perform input validation (add more validation as needed)
+  if (!name || !email || !message) {
+    alert("Please fill in all required fields.");
+    return;
+  }
+
   // Create a FormData object to send data as a multipart/form-data request
   const formData = new FormData();
   formData.append("name", name);
   formData.append("subject", subject);
   formData.append("email", email);
   formData.append("message", message);
+
+  // DEBUG
+  // console.log("Name:", name);
+  // console.log("Email:", email);
+  // console.log("Subject:", subject);
+  // console.log("Message:", message);
 
   // Send a POST request to your server (adjust the URL accordingly)
   fetch("/submit-contact-message", {
@@ -157,7 +169,12 @@ function handleContactFormSubmit(event) {
     .then((response) => response.json())
     .then((data) => {
       // Handle the server's response (e.g., show a success message)
-      console.log(formData);
+      // Debug
+      // console.log(formData);
+      // formData.forEach((value, key) => {
+      //   console.log(key, value);
+      // });
+
       console.log("Message submitted successfully:", data);
       alert("Message submitted successfully.");
     })
@@ -166,15 +183,6 @@ function handleContactFormSubmit(event) {
       console.error("Error submitting Message:", error);
       alert("An error occurred while submitting the Message.");
     });
-  // })
-  // .catch(function (error) {
-  //   // Email Send Failed
-  //   console.error("Email Not Sent", error);
-
-  //   // You can add code here to handle the error, like showing an error message
-  //   document.getElementById("success").style.display = "none";
-  //   document.getElementById("error").style.display = "block";
-  // });
 }
 
 const contactForm = document.getElementById("contact-form");
