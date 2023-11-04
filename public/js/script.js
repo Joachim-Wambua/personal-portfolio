@@ -94,30 +94,30 @@
       .eq(index)
       .addClass("active");
   });
-  if ($(".js-form").length) {
-    $(".js-form").each(function () {
-      $(this).validate({
-        errorClass: "error",
-        submitHandler: function (form) {
-          $.ajax({
-            type: "POST",
-            url: "mail.php",
-            data: $(form).serialize(),
-            success: function () {
-              $(".form-group-message").show();
-              $("#error").hide();
-              $("#success").show();
-            },
-            error: function () {
-              $(".form-group-message").show();
-              $("#success").hide();
-              $("#error").show();
-            },
-          });
-        },
-      });
-    });
-  }
+  // if ($(".js-form").length) {
+  //   $(".js-form").each(function () {
+  //     $(this).validate({
+  //       errorClass: "error",
+  //       submitHandler: function (form) {
+  //         $.ajax({
+  //           type: "POST",
+  //           url: "mail.php",
+  //           data: $(form).serialize(),
+  //           success: function () {
+  //             $(".form-group-message").show();
+  //             $("#error").hide();
+  //             $("#success").show();
+  //           },
+  //           error: function () {
+  //             $(".form-group-message").show();
+  //             $("#success").hide();
+  //             $("#error").show();
+  //           },
+  //         });
+  //       },
+  //     });
+  //   });
+  // }
 })(jQuery);
 
 // Get the current year
@@ -133,6 +133,8 @@ currentYearElement.textContent = currentYear;
 function handleContactFormSubmit(event) {
   // Prevent the default form submission behavior
   event.preventDefault;
+
+  // emailjs.init("TSlQjXoP1_LNtrBVA");
 
   // Get form input values
   const name = document.getElementById("name").value;
@@ -155,6 +157,7 @@ function handleContactFormSubmit(event) {
     .then((response) => response.json())
     .then((data) => {
       // Handle the server's response (e.g., show a success message)
+      console.log(formData);
       console.log("Message submitted successfully:", data);
       alert("Message submitted successfully.");
     })
@@ -163,10 +166,18 @@ function handleContactFormSubmit(event) {
       console.error("Error submitting Message:", error);
       alert("An error occurred while submitting the Message.");
     });
+  // })
+  // .catch(function (error) {
+  //   // Email Send Failed
+  //   console.error("Email Not Sent", error);
+
+  //   // You can add code here to handle the error, like showing an error message
+  //   document.getElementById("success").style.display = "none";
+  //   document.getElementById("error").style.display = "block";
+  // });
 }
 
 const contactForm = document.getElementById("contact-form");
 if (contactForm) {
   contactForm.addEventListener("submit", handleContactFormSubmit);
 }
-

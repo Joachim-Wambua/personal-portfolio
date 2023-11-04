@@ -12,7 +12,48 @@
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
     <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
     <link rel="manifest" href="/site.webmanifest" />
+    <script
+      type="text/javascript"
+      src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"
+    ></script>
+    <script type="text/javascript">
+      (function () {
+        // https://dashboard.emailjs.com/admin/account
+        emailjs.init("tiafEIHi0ikrfYrPc");
+      })();
+    </script>
+    <script type="text/javascript">
+      window.onload = function () {
+        document
+          .getElementById("contact-form")
+          .addEventListener("submit", function (event) {
+            event.preventDefault();
 
+            // Prepping form data for EmailJS
+            // Get form data
+            const formData_ = new FormData(this);
+
+            // Prepare email params
+            const emailParams = {
+              to_email: "kimwambua96@gmail.com",
+              from_name: formData_.get("name"),
+              from_email: formData_.get("email"),
+              subject: formData_.get("subject"),
+              message: formData_.get("message"),
+            };
+
+            // these IDs from the previous steps
+            emailjs.sendForm("service_0azk7z2", "template_fo2fg2o", this).then(
+              function () {
+                console.log("SUCCESS!");
+              },
+              function (error) {
+                console.log("FAILED...", error);
+              }
+            );
+          });
+      };
+    </script>
     <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5" />
     <link
       rel="stylesheet"
@@ -1143,27 +1184,31 @@
                                 class="js-form"
                                 id="contact-form"
                                 novalidate="novalidate"
+                                method="POST"
                               >
                                 <div class="row">
                                   <div class="form-group col-sm-6">
                                     <input
+                                      id="name"
                                       type="text"
                                       name="name"
-                                      required=""
+                                      required
                                       placeholder="Name*"
                                       aria-required="true"
                                     />
                                   </div>
                                   <div class="form-group col-sm-6">
                                     <input
+                                      id="email"
                                       type="email"
-                                      required=""
+                                      required
                                       name="email"
                                       placeholder="Email*"
                                     />
                                   </div>
                                   <div class="form-group col-sm-12">
                                     <input
+                                      id="subject"
                                       type="text"
                                       name="subject"
                                       placeholder="Subject (Optional)"
@@ -1171,8 +1216,9 @@
                                   </div>
                                   <div class="form-group col-sm-12">
                                     <textarea
+                                      id="message"
                                       name="message"
-                                      required=""
+                                      required
                                       placeholder="Message*"
                                     ></textarea>
                                   </div>
@@ -1208,7 +1254,7 @@
       </div>
     </div>
 
-    <script data-cfasync="false" src="./js/email.decode.min.js"></script>
+    <script data-cfasync="false" src="/js/email.decode.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
     <script src="js/vanta.net.min.js"></script>
 
@@ -1230,13 +1276,12 @@
         spacing: 12.0, // Shininess of the waves
       });
     </script>
-    <script>
-      lightbox.option({
-        resizeDuration: 200,
-        wrapAround: true,
-      });
-    </script>
     <!-- <script src="js/jquery.min.js"></script> -->
+
+    <script
+      type="text/javascript"
+      src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"
+    ></script>
 
     <script src="js/lightbox-plus-jquery.js"></script>
     <script src="js/wow.min.js"></script>
@@ -1247,5 +1292,6 @@
     <script src="js/owl.carousel.min.js"></script>
     <script src="js/jquery.pagepiling.min.js"></script>
     <script type="module" src="js/script.js"></script>
+    <!-- <script type="text/javascript" src="js/contact.js"></script> -->
   </body>
 </html>
