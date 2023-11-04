@@ -174,7 +174,7 @@ function handleContactFormSubmit(event) {
       // formData.forEach((value, key) => {
       //   console.log(key, value);
       // });
-      
+
       console.log("Message submitted successfully:", data);
       alert("Message submitted successfully.");
     })

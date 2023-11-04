@@ -1,5 +1,6 @@
 const express = require("express");
 const cors = require("cors");
+const multer = require("multer"); // Add multer
 const ProjectController = require("../controller/projectController.js");
 const ClientController = require("../controller/clientController.js");
 const ExperienceController = require("../controller/experienceController.js");
@@ -11,6 +12,10 @@ const router = express.Router();
 // Enable CORS for all routes
 router.use(cors());
 
+// Configure multer to handle file uploads and form data
+const storage = multer.memoryStorage();
+const upload = multer({ storage });
+
 // Defining Routes
 
 // AUTHENTICATION ROUTES
@@ -21,7 +26,11 @@ router.post("/user-login", AuthController.loginUser);
 router.post("/submit-project", ProjectController.createProject);
 router.post("/submit-work-experience", ExperienceController.createWorkXp);
 router.post("/submit-client", ClientController.createClient);
-router.post("/submit-contact-message", ContactController.createMessage);
+router.post(
+  "/submit-contact-message",
+  upload.none(),
+  ContactController.createMessage
+);
 
 // READING ITEMS
 router.get("/get-projects", ProjectController.readProjects);
