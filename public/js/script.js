@@ -142,6 +142,12 @@ function handleContactFormSubmit(event) {
   const email = document.getElementById("email").value;
   const message = document.getElementById("message").value;
 
+  // Perform input validation (add more validation as needed)
+  if (!name || !email || !message) {
+    alert("Please fill in all required fields.");
+    return;
+  }
+
   // Create a FormData object to send data as a multipart/form-data request
   const formData = new FormData();
   formData.append("name", name);
@@ -168,6 +174,7 @@ function handleContactFormSubmit(event) {
       // formData.forEach((value, key) => {
       //   console.log(key, value);
       // });
+      
       console.log("Message submitted successfully:", data);
       alert("Message submitted successfully.");
     })
