@@ -29,6 +29,9 @@
           .addEventListener("submit", function (event) {
             event.preventDefault();
 
+            // Initialise EmailJS
+            emailjs.init("tiafEIHi0ikrfYrPc");
+
             // Prepping form data for EmailJS
             // Get form data
             const formData_ = new FormData(this);
@@ -43,7 +46,7 @@
             };
 
             // these IDs from the previous steps
-            emailjs.sendForm("service_0azk7z2", "template_fo2fg2o", this).then(
+            emailjs.sendForm("service_iwmjtkh", "template_fo2fg2o", this).then(
               function () {
                 console.log("SUCCESS!");
               },

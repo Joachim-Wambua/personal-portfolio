@@ -134,8 +134,6 @@ function handleContactFormSubmit(event) {
   // Prevent the default form submission behavior
   event.preventDefault();
 
-  // emailjs.init("TSlQjXoP1_LNtrBVA");
-
   // Get form input values
   const name = document.getElementById("name").value;
   const subject = document.getElementById("subject").value;
