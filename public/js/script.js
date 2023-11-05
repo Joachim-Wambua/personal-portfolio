@@ -134,8 +134,6 @@ function handleContactFormSubmit(event) {
   // Prevent the default form submission behavior
   event.preventDefault();
 
-  // emailjs.init("TSlQjXoP1_LNtrBVA");
-
   // Get form input values
   const name = document.getElementById("name").value;
   const subject = document.getElementById("subject").value;
@@ -176,12 +174,12 @@ function handleContactFormSubmit(event) {
       // });
 
       console.log("Message submitted successfully:", data);
-      alert("Message submitted successfully.");
+      // alert("Message submitted successfully.");
     })
     .catch((error) => {
       // Handle errors (e.g., show an error message)
       console.error("Error submitting Message:", error);
-      alert("An error occurred while submitting the Message.");
+      // alert("An error occurred while submitting the Message.");
     });
 }
 
