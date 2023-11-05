@@ -174,12 +174,12 @@ function handleContactFormSubmit(event) {
       // });
 
       console.log("Message submitted successfully:", data);
-      alert("Message submitted successfully.");
+      // alert("Message submitted successfully.");
     })
     .catch((error) => {
       // Handle errors (e.g., show an error message)
       console.error("Error submitting Message:", error);
-      alert("An error occurred while submitting the Message.");
+      // alert("An error occurred while submitting the Message.");
     });
 }
 
