@@ -1555,7 +1555,7 @@ a.brand:focus {
 }
 @media (min-width: 992px) {
   .experience-box {
-    margin-top: 6rem;
+    margin-top: 1rem;
   }
 }
 .experience-border {
@@ -1923,6 +1923,7 @@ a.brand:focus {
   margin: 5px;
   border-radius: 50%;
 }
+
 .owl-dot.active span {
   background: #21e6c1;
 }

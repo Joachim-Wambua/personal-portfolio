@@ -63,6 +63,7 @@
       anchors: [
         "home",
         "about",
+        "tech-stack",
         "experience",
         "projects",
         "certifications",
