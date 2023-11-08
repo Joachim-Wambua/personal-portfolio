@@ -188,3 +188,27 @@ const contactForm = document.getElementById("contact-form");
 if (contactForm) {
   contactForm.addEventListener("submit", handleContactFormSubmit);
 }
+
+// HANDLING TECH STACK INTERACTIVE BEHAVIOUR
+document.addEventListener("DOMContentLoaded", function () {
+  // Get accordion items
+  const accordionItems = document.querySelectorAll(".accordion-item");
+
+  // Loop through accordion links
+  accordionItems.forEach((item) => {
+    const accordionLink = item.querySelector(".accordion-link");
+
+    accordionLink.addEventListener("click", (e) => {
+      e.preventDefault(); //Prevent default anchor click beahaviour
+
+      if (item.classList.contains("active")) {
+        item.classList.remove("active");
+      } else {
+        accordionItems.forEach((otherItem) => {
+          otherItem.classList.remove("active");
+        });
+        item.classList.add("active");
+      }
+    });
+  });
+});
