@@ -1604,6 +1604,7 @@ a.brand:focus {
   font-size: 2.4rem;
   padding-right: 0.5rem;
   padding-top: 0.9rem;
+  text-align: center;
   /* opacity: 0.5; */
 }
 
