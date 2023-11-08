@@ -1600,17 +1600,20 @@ a.brand:focus {
   margin-bottom: 0.5rem;
 }
 
+.tech-stack {
+  text-align: center;
+}
+
 .tech-stack i {
-  font-size: 2.4rem;
+  font-size: 3.6rem;
   padding-right: 0.5rem;
   padding-top: 0.9rem;
-  text-align: center;
   /* opacity: 0.5; */
 }
 
 .stack-logo {
   display: inline-block; /* Horizonral alignment */
-  margin-right: 0.4rem; /* Logo Spacing*/
+  margin-right: 1.8rem; /* Logo Spacing*/
   margin-bottom: 0.5rem;
   position: relative;
 }
@@ -2046,7 +2049,7 @@ a.brand:focus {
 }
 
 /* TECH STACK STYLING */
-section {
+.stack-section {
   width: 100%;
   height: 100vh;
   background-color: #0d0d45;
@@ -2075,13 +2078,13 @@ section {
 .accordion-link {
   font-size: 1.6rem;
   color: rgba(255, 255, 255, 0.8);
-  text-decoration: none;
   background-color: #0d0d45;
   width: 100%;
   display: flex;
   align-items: center;
   justify-content: space-between;
   padding: 1rem 0;
+  text-decoration: none !important;
 }
 
 .accordion-link h3 {
@@ -2090,9 +2093,17 @@ section {
   margin: auto;
 }
 
+.accordion-link h3:hover .accordion-link h3:focus {
+  color: #21e6c1 !important;
+}
+
 .accordion-link i {
   color: #e7d5ff;
   padding: 0.5rem;
+}
+
+.accordion-link i:hover .accordion-link i:focus {
+  color: #21e6c1 !important;
 }
 
 .accordion-link ul {
@@ -2100,6 +2111,10 @@ section {
   align-items: flex-end;
   list-style-type: none;
   margin: inherit;
+}
+
+.accordion-link ul:hover .accordion-link ul:focus {
+  color: #21e6c1 !important;
 }
 
 .accordion-link li {
@@ -2144,7 +2159,7 @@ section {
 
 /* Add this to your CSS to style the active accordion items */
 .accordion-item.active .answer {
-  max-height: 20rem; /* Adjust the value as needed */
+  max-height: 18rem; /* Adjust the value as needed */
 }
 
 .accordion-item.active .accordion-link .ion-md-arrow-forward {
