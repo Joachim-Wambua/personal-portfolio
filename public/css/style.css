@@ -167,7 +167,7 @@ cite {
   font-style: normal;
 }
 a {
-  color: #21e6c1;
+  color: #fff;
   -webkit-transition: color 0.3s ease-out;
   -o-transition: color 0.3s ease-out;
   transition: color 0.3s ease-out;
@@ -177,6 +177,7 @@ a:hover {
   outline: none;
 }
 a:focus {
+  color: #21e6c1;
   text-decoration: none;
 }
 input[type="text"],
@@ -330,7 +331,7 @@ label.error {
   transform: translateX(-50%);
   position: relative;
   background: #f2f2f2;
-  padding: 50px;
+  padding: 36px;
   margin-top: 4.5rem;
   padding-bottom: 5 0px;
   width: 100%;
@@ -406,36 +407,18 @@ label.error {
   user-select: none;
 }
 
-.tabs ul li label img {
-  fill: #929daf;
-  height: 3.6em;
-  vertical-align: bottom;
-  margin-right: 0.2em;
-  transition: all 0.2s ease-in-out;
-}
-.tabs ul li label br {
+/* .tabs ul li label br {
   display: none;
-}
-.tabs ul li label svg {
-  fill: #929daf;
-  height: 1.2em;
-  vertical-align: bottom;
-  margin-right: 0.2em;
-  transition: all 0.2s ease-in-out;
-}
-.tabs ul li:hover,
+} */
+
+/* .tabs ul li:hover,
 .tabs ul li:focus,
 .tabs ul li:active {
   outline: 1;
   color: #c9c9c9;
-}
-.tabs ul li label:hover img,
-.tabs ul li label:focus img,
-.tabs ul li label:active img {
-  color: #494c50;
-}
+} */
+
 .tabs ul li label:hover,
-.tabs ul li label:focus,
 .tabs ul li label:active {
   color: #494c50 !important;
 }
@@ -1270,7 +1253,7 @@ a.brand:focus {
 }
 .pp-scrollable .vertical-centred {
   padding-top: 3rem;
-  padding-bottom: 6rem;
+  /* padding-bottom: 6rem; */
 }
 .scroll-wrap {
   position: relative;
@@ -1613,8 +1596,8 @@ a.brand:focus {
 
 .stack-logo {
   display: inline-block; /* Horizonral alignment */
-  margin-right: 1.8rem; /* Logo Spacing*/
-  margin-bottom: 0.5rem;
+  margin-right: 1.2rem;
+  margin-left: 1.2rem;
   position: relative;
 }
 
@@ -2093,16 +2076,12 @@ a.brand:focus {
   margin: auto;
 }
 
-.accordion-link h3:hover .accordion-link h3:focus {
-  color: #21e6c1 !important;
-}
-
 .accordion-link i {
   color: #e7d5ff;
   padding: 0.5rem;
 }
 
-.accordion-link i:hover .accordion-link i:focus {
+.accordion-link a:hover .accordion-link a:focus {
   color: #21e6c1 !important;
 }
 
