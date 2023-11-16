@@ -1930,7 +1930,7 @@ a.brand:focus {
   color: #333;
 }
 .pcss3t .typography h1 {
-  font-size: 2.7rem;
+  font-size: 2.1rem;
   line-height: 60px;
 }
 .pcss3t .typography h2 {
@@ -2966,8 +2966,9 @@ a.brand:focus {
   margin-bottom: 0;
   padding-bottom: 5px;
   border-bottom-right-radius: 0;
+  font-weight: 800;
   border-bottom-left-radius: 0;
-  color: #2b82d9;
+  color: #0d0d45;
   opacity: 1;
 }
 .pcss3t-theme-1 > ul {
@@ -2979,8 +2980,7 @@ a.brand:focus {
 }
 
 .role-logo {
-  width: 4.5rem;
-  height: 4.5rem;
+  height: 5rem;
 }
 
 @media screen and (max-width: 767px) {
