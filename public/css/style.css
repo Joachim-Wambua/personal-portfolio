@@ -23,7 +23,7 @@ body {
   letter-spacing: 0.025em;
   line-height: 2.1428;
   color: #868686;
-  background: #272727;
+  background: #0d0d45;
   -webkit-overflow-scrolling: touch;
 }
 ::-webkit-scrollbar {
@@ -1502,6 +1502,7 @@ a.brand:focus {
 } */
 .row-project {
   margin-bottom: 10rem;
+  margin-top: 10rem;
 }
 .image-holder {
   display: block;
