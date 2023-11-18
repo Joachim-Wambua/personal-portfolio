@@ -610,7 +610,6 @@ a.brand:focus {
   position: absolute;
   left: 0;
   top: 5rem;
-  bottom: 10.5rem;
   padding-left: 15%;
   overflow-x: hidden;
   overflow-y: auto;
@@ -1594,7 +1593,6 @@ a.brand:focus {
   }
   .menu-list {
     top: 9rem;
-    bottom: 20rem;
   }
   .menu-list > li {
     font-size: 1.7rem;
@@ -2967,7 +2965,7 @@ a.brand:focus {
   margin-bottom: 0;
   padding-bottom: 5px;
   border-bottom-right-radius: 0;
-  font-weight: 800;
+  font-weight: 700;
   border-bottom-left-radius: 0;
   color: #0d0d45;
   opacity: 1;
