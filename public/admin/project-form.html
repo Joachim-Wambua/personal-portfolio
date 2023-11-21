@@ -12,7 +12,7 @@
     />
   </head>
   <body>
-    <!-- Horizontal Menu -->
+    <!-- Navigation Menu -->
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
       <div class="container-fluid">
         <!-- Logo -->
@@ -68,14 +68,48 @@
             required
           />
         </div>
+
+        <div class="form-group">
+          <label for="date">Date:</label>
+          <input
+            type="date"
+            class="form-control"
+            id="date"
+            name="date"
+            required
+          />
+        </div>
+
+        <div class="form-group">
+          <label for="author">Authors:</label>
+          <input type="text" class="form-control" id="author" name="author" />
+          
+        </div>
+
         <div class="form-group">
           <label for="client">Client:</label>
-          <input type="text" class="form-control" id="client" name="client" />
+          <input
+            type="text"
+            class="form-control"
+            id="client"
+            name="client"
+            required
+          />
         </div>
+
         <div class="form-group">
-          <label for="team">Team:</label>
-          <input type="text" class="form-control" id="team" name="team" />
+          <label for="category">Category:</label>
+          <select class="form-control" id="category" name="category" required>
+            <option value="Web Development">Web Development</option>
+            <option value="Mobile App Development">
+              Mobile App Development
+            </option>
+            <option value="UX/UI Design">UX/UI Design</option>
+            <option value="Data Analytics">Data Analytics</option>
+            <option value="Machine Learning">Machine Learning</option>
+          </select>
         </div>
+
         <div class="form-group">
           <label for="services">Services:</label>
           <input
@@ -83,18 +117,10 @@
             class="form-control"
             id="services"
             name="services"
-          />
-        </div>
-        <div class="form-group">
-          <label for="year">Year:</label>
-          <input
-            type="number"
-            class="form-control"
-            id="year"
-            name="year"
             required
           />
         </div>
+
         <div class="form-group">
           <label for="description">Description:</label>
           <textarea
@@ -105,20 +131,57 @@
             required
           ></textarea>
         </div>
+
         <div class="form-group">
-          <label for="images">Images:</label>
+          <label for="imagesBackground">Background Image:</label>
           <input
             type="file"
             class="form-control-file"
-            id="images"
-            name="images"
+            id="imagesBackground"
+            name="imagesBackground"
+            accept="image/*"
+            required
+          />
+        </div>
+
+        <div class="form-group">
+          <label for="images1">Additional Image 1:</label>
+          <input
+            type="file"
+            class="form-control-file"
+            id="images1"
+            name="images1"
             accept="image/*"
           />
         </div>
+
+        <div class="form-group">
+          <label for="images2">Additional Image 2:</label>
+          <input
+            type="file"
+            class="form-control-file"
+            id="images2"
+            name="images2"
+            accept="image/*"
+          />
+        </div>
+
+        <div class="form-group">
+          <label for="images3">Additional Image 3:</label>
+          <input
+            type="file"
+            class="form-control-file"
+            id="images3"
+            name="images3"
+            accept="image/*"
+          />
+        </div>
+
         <div class="form-group">
           <label for="url">URL:</label>
-          <input type="url" class="form-control" id="url" name="url" />
+          <input type="url" class="form-control" id="url" name="url" required />
         </div>
+
         <button type="submit" class="btn btn-primary">Submit</button>
       </form>
     </div>

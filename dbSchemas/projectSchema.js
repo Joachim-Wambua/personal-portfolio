@@ -1,19 +1,17 @@
 const mongoose = require("mongoose");
 
-// Define the Projects Schema
 const projectSchema = new mongoose.Schema({
   title: {
     type: String,
     required: true,
   },
-
-  description: {
-    type: String,
+  date: {
+    type: Date,
     required: true,
   },
 
-  year: {
-    type: Number,
+  author: {
+    type: String,
     required: true,
   },
 
@@ -21,25 +19,39 @@ const projectSchema = new mongoose.Schema({
     type: String,
     required: true,
   },
-
-  team: [
-    {
-      type: String,
-    },
-  ],
-
+  category: {
+    type: String,
+    enum: [
+      "Web Development",
+      "Mobile App Development",
+      "UX/UI Design",
+      "Data Analytics",
+      "Machine Learning",
+    ], // Adjust as needed
+    required: true,
+  },
   services: [
     {
       type: String,
       required: true,
     },
   ],
-
-  images: [
-    {
+  description: {
+    type: String,
+    required: true,
+  },
+  url: {
+    type: String,
+    required: true,
+  },
+  images: {
+    background: {
       type: String,
     },
-  ],
+    image1: String,
+    image2: String,
+    image3: String,
+  },
 });
 
 const Project = mongoose.model("Project", projectSchema);

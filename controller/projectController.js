@@ -5,19 +5,29 @@ class ProjectController {
   async createProject(req, res) {
     try {
       // Get data from the request body
-      const { title, client, team, services, year, description, images, url } =
-        req.body;
+      const {
+        title,
+        date,
+        author,
+        client,
+        category,
+        services,
+        description,
+        url,
+        images,
+      } = req.body;
 
       // Create a new Project instance
       const newProject = new Project({
         title,
+        date,
+        author,
         client,
-        team,
+        category,
         services,
-        year,
         description,
-        images, // Assuming images is an array of image URLs
         url,
+        images,
       });
 
       // Save the new project to the database
