@@ -57,7 +57,12 @@
 
     <div class="container mt-5">
       <h2>Add New Project</h2>
-      <form id="project-form" action="/submit-project" method="POST">
+      <form
+        id="project-form"
+        action="/submit-project"
+        method="POST"
+        enctype="multipart/form-data"
+      >
         <div class="form-group">
           <label for="title">Title:</label>
           <input
@@ -83,7 +88,6 @@
         <div class="form-group">
           <label for="author">Authors:</label>
           <input type="text" class="form-control" id="author" name="author" />
-          
         </div>
 
         <div class="form-group">
@@ -149,8 +153,8 @@
           <input
             type="file"
             class="form-control-file"
-            id="images1"
-            name="images1"
+            id="image1"
+            name="image1"
             accept="image/*"
           />
         </div>
@@ -160,8 +164,8 @@
           <input
             type="file"
             class="form-control-file"
-            id="images2"
-            name="images2"
+            id="image2"
+            name="image2"
             accept="image/*"
           />
         </div>
@@ -171,8 +175,8 @@
           <input
             type="file"
             class="form-control-file"
-            id="images3"
-            name="images3"
+            id="image3"
+            name="image3"
             accept="image/*"
           />
         </div>
@@ -182,7 +186,7 @@
           <input type="url" class="form-control" id="url" name="url" required />
         </div>
 
-        <button type="submit" class="btn btn-primary">Submit</button>
+        <button type="submit" class="btn btn-primary mb-5">Submit</button>
       </form>
     </div>
 

@@ -1,4 +1,10 @@
+const path = require("path");
+const DatauriParser = require("datauri/parser");
+const cloudinary = require("cloudinary").v2;
+
 const Project = require("../dbSchemas/projectSchema");
+
+const parser = new DatauriParser();
 
 class ProjectController {
   //create a new project
@@ -14,8 +20,42 @@ class ProjectController {
         services,
         description,
         url,
-        images,
       } = req.body;
+
+      // console.log("Req Body: ", req.body);
+      // console.log("Req Files: ", req.files);
+
+      // Convert file buffer to Data URI
+      const extName = path
+        .extname(req.files.imagesBackground[0].originalname)
+        .toString();
+      const bgDataUri = parser.format(
+        extName,
+        req.files.imagesBackground[0].buffer
+      );
+
+      const ext1Name = path
+        .extname(req.files.image1[0].originalname)
+        .toString();
+      const img1DataUri = parser.format(ext1Name, req.files.image1[0].buffer);
+
+      const ext2Name = path
+        .extname(req.files.image2[0].originalname)
+        .toString();
+      const img2DataUri = parser.format(ext2Name, req.files.image2[0].buffer);
+
+      const ext3Name = path
+        .extname(req.files.image3[0].originalname)
+        .toString();
+      const img3DataUri = parser.format(ext3Name, req.files.image3[0].buffer);
+
+      // Upload Images' Data URI to Cloudinary
+      const [bgUpload, img1Upload, img2Upload, img3Upload] = await Promise.all([
+        cloudinary.uploader.upload(bgDataUri.content),
+        cloudinary.uploader.upload(img1DataUri.content),
+        cloudinary.uploader.upload(img2DataUri.content),
+        cloudinary.uploader.upload(img3DataUri.content),
+      ]);
 
       // Create a new Project instance
       const newProject = new Project({
@@ -27,7 +67,12 @@ class ProjectController {
         services,
         description,
         url,
-        images,
+        images: {
+          background: bgUpload.secure_url,
+          image1: img1Upload.secure_url,
+          image2: img2Upload.secure_url,
+          image3: img3Upload.secure_url,
+        },
       });
 
       // Save the new project to the database
