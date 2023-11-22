@@ -207,3 +207,32 @@ document.addEventListener("DOMContentLoaded", function () {
     }
   });
 });
+
+document.addEventListener("DOMContentLoaded", () => {
+  const logoutLink = document.getElementById("logout-link");
+
+  // Add event listener to logout link
+  logoutLink.addEventListener("click", async (event) => {
+    event.preventDefault(); //Prevent default anchor behaviour
+
+    try {
+      //  Make HTTP request to server
+      const response = await fetch("/logout", {
+        method: "GET",
+        headers: {
+          "Content-Type": "application/json",
+        },
+      });
+
+      if (response.ok) {
+        // Redirect user to the login page on successful logout
+        window.location.href = "/login";
+      } else {
+        // Logout failed
+        console.error("Logout Failed! ", response.statusText);
+      }
+    } catch (error) {
+      console.error("An error occurred during Logout attempt! ", error);
+    }
+  });
+});
