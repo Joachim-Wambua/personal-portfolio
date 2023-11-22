@@ -50,10 +50,12 @@ class ProjectController {
       const img3DataUri = parser.format(ext3Name, req.files.image3[0].buffer);
 
       // Upload Images' Data URI to Cloudinary
-      const bgUpload = await cloudinary.uploader.upload(bgDataUri.content);
-      const img1Upload = await cloudinary.uploader.upload(img1DataUri.content);
-      const img2Upload = await cloudinary.uploader.upload(img2DataUri.content);
-      const img3Upload = await cloudinary.uploader.upload(img3DataUri.content);
+      const [bgUpload, img1Upload, img2Upload, img3Upload] = await Promise.all([
+        cloudinary.uploader.upload(bgDataUri.content),
+        cloudinary.uploader.upload(img1DataUri.content),
+        cloudinary.uploader.upload(img2DataUri.content),
+        cloudinary.uploader.upload(img3DataUri.content),
+      ]);
 
       // Create a new Project instance
       const newProject = new Project({

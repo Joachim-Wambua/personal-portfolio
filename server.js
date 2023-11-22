@@ -18,7 +18,6 @@ cloudinary.config({
   cloud_name: "dltjv8zbh",
   api_key: "231522156545457",
   api_secret: "wfTTiBKo39ru4SJuPmgZld1TEB0",
-  http_timeout: 60000, // Set a higher timeout value (in milliseconds)
 });
 
 // Generate a secure secret key
