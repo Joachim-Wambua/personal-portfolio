@@ -17,21 +17,25 @@ class ProjectController {
         url,
       } = req.body;
 
-      console.log("Req Body: ", req.body);
-      console.log("Req Files: ", req.files);
+      // console.log("Req Body: ", req.body);
+      // console.log("Req Files: ", req.files);
 
       // Upload Images to Cloudinary
       const bgUpload = await cloudinary.uploader.upload(
-        req.files.imagesBackground[0].path
+        req.files.imagesBackground[0].buffer,
+        { resource_type: "auto" }
       );
       const image1Upload = await cloudinary.uploader.upload(
-        req.files.image1[0].path
+        req.files.image1[0].buffer,
+        { resource_type: "auto" }
       );
       const image2Upload = await cloudinary.uploader.upload(
-        req.files.image2[0].path
+        req.files.image2[0].buffer,
+        { resource_type: "auto" }
       );
       const image3Upload = await cloudinary.uploader.upload(
-        req.files.image3[0].path
+        req.files.image3[0].buffer,
+        { resource_type: "auto" }
       );
 
       // Create a new Project instance
