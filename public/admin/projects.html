@@ -12,9 +12,9 @@
   </head>
 
   <body>
-    <!-- Horizontal Menu -->
+    <!-- Responsive Navigation Menu -->
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
-      <div class="container-fluid">
+      <div class="container">
         <!-- Logo -->
         <a class="navbar-brand" href="/admin">
           <img
@@ -24,34 +24,51 @@
             class="img-fluid"
           />
         </a>
-        <!-- Menu Items -->
-        <ul class="navbar-nav ml-auto">
-          <li class="nav-item">
-            <a class="nav-link text-center" href="admin.html">
-              <i class="fs-5 bi-house"></i> Home
-            </a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link text-center" href="projects.html">
-              <i class="fs-5 bi-speedometer2"></i> Projects
-            </a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link text-center" href="workexperience.html">
-              <i class="fs-5 bi-table"></i> Work Experience
-            </a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link text-center" href="clients.html">
-              <i class="fs-5 bi-grid"></i> Clients
-            </a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link text-center" href="contacts.html">
-              <i class="fs-5 bi-people"></i> Messages
-            </a>
-          </li>
-        </ul>
+        <!-- Responsive Menu Button (Hamburger Icon) -->
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-toggle="collapse"
+          data-target="#navbarNav"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <!-- Menu Items (Collapsible on Smaller Screens) -->
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item">
+              <a class="nav-link text-center" href="admin.html">
+                <i class="fs-5 bi-house"></i> Home
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link text-center" href="projects.html">
+                <i class="fs-5 bi-speedometer2"></i> Projects
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link text-center" href="workexperience.html">
+                <i class="fs-5 bi-table"></i> Work Experience
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link text-center" href="clients.html">
+                <i class="fs-5 bi-grid"></i> Clients
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link text-center" href="contacts.html">
+                <i class="fs-5 bi-people"></i> Messages
+              </a>
+            </li>
+            <!-- Add a Logout Button -->
+            <li class="nav-item">
+              <a class="nav-link text-center" href="/logout">
+                <i class="fs-5 bi-box-arrow-right"></i> Logout
+              </a>
+            </li>
+          </ul>
+        </div>
       </div>
     </nav>
 
@@ -169,13 +186,13 @@
                 alert(data.message);
                 // Reload the page or update the table as needed
                 // Add a 2-second (2000 milliseconds) delay before reloading
-            setTimeout(function () {
-                // Using location.reload()
-                // location.reload();
+                setTimeout(function () {
+                  // Using location.reload()
+                  // location.reload();
 
-                // Using window.location
-                window.location.href = window.location.href;
-            }, 2000); // 2000 milliseconds = 2 seconds
+                  // Using window.location
+                  window.location.href = window.location.href;
+                }, 2000); // 2000 milliseconds = 2 seconds
               })
               .catch((error) => {
                 console.error("Error deleting project:", error);
