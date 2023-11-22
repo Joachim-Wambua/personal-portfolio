@@ -8,9 +8,17 @@ const session = require("express-session");
 const bcrypt = require("bcrypt");
 const crypto = require("crypto"); // Import the crypto module;
 const flash = require("connect-flash");
+const cloudinary = require("cloudinary").v2;
 
 const port = process.env.PORT || 8080;
 const app = express();
+
+// Configure Cloudinary
+cloudinary.config({
+  cloud_name: "dltjv8zbh",
+  api_key: "231522156545457",
+  api_secret: "wfTTiBKo39ru4SJuPmgZld1TEB0",
+});
 
 // Generate a secure secret key
 const generateSecretKey = () => {
@@ -73,7 +81,12 @@ app.get("/login", (req, res) => {
 
 app.get("/registration", (req, res) => {
   // Render your login page here
-  const registerPagePath = path.join(__dirname, "public", "admin", "registration.html");
+  const registerPagePath = path.join(
+    __dirname,
+    "public",
+    "admin",
+    "registration.html"
+  );
   res.sendFile(registerPagePath);
 });
 

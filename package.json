@@ -13,6 +13,7 @@
     "@emailjs/browser": "^3.11.0",
     "@popperjs/core": "^2.11.8",
     "bcrypt": "^5.1.1",
+    "cloudinary": "^1.41.0",
     "connect-flash": "^0.1.1",
     "cors": "^2.8.5",
     "css": "^3.0.0",

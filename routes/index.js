@@ -23,7 +23,16 @@ router.post("/register", AuthController.registerUser);
 router.post("/user-login", AuthController.loginUser);
 
 // CREATING ITEMS
-router.post("/submit-project", ProjectController.createProject);
+router.post(
+  "/submit-project",
+  upload.fields([
+    { name: "imagesBackground", maxCount: 1 },
+    { name: "image1", maxCount: 1 },
+    { name: "image2", maxCount: 1 },
+    { name: "image3", maxCount: 1 },
+  ]),
+  ProjectController.createProject
+);
 router.post("/submit-work-experience", ExperienceController.createWorkXp);
 router.post("/submit-client", ClientController.createClient);
 router.post(

@@ -1,3 +1,4 @@
+const cloudinary = require("cloudinary").v2;
 const Project = require("../dbSchemas/projectSchema");
 
 class ProjectController {
@@ -14,8 +15,24 @@ class ProjectController {
         services,
         description,
         url,
-        images,
       } = req.body;
+
+      console.log("Req Body: ", req.body);
+      console.log("Req Files: ", req.files);
+
+      // Upload Images to Cloudinary
+      const bgUpload = await cloudinary.uploader.upload(
+        req.files.imagesBackground[0].path
+      );
+      const image1Upload = await cloudinary.uploader.upload(
+        req.files.image1[0].path
+      );
+      const image2Upload = await cloudinary.uploader.upload(
+        req.files.image2[0].path
+      );
+      const image3Upload = await cloudinary.uploader.upload(
+        req.files.image3[0].path
+      );
 
       // Create a new Project instance
       const newProject = new Project({
@@ -27,7 +44,12 @@ class ProjectController {
         services,
         description,
         url,
-        images,
+        images: {
+          background: bgUpload.secure_url,
+          image1: image1Upload.secure_url,
+          image2: image2Upload.secure_url,
+          image3: image3Upload.secure_url,
+        },
       });
 
       // Save the new project to the database

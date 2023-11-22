@@ -1,7 +1,7 @@
 // Function to handle project form submission
 function handleProjectFormSubmit(event) {
   // Prevent the default form submission behavior
-  event.preventDefault;
+  event.preventDefault();
 
   // Get form input values
   const title = document.getElementById("title").value;
@@ -18,9 +18,9 @@ function handleProjectFormSubmit(event) {
 
   // Retrieve image files
   const imagesBackground = document.getElementById("imagesBackground").files[0];
-  const images1 = document.getElementById("images1").files[0];
-  const images2 = document.getElementById("images2").files[0];
-  const images3 = document.getElementById("images3").files[0];
+  const image1 = document.getElementById("image1").files[0];
+  const image2 = document.getElementById("image2").files[0];
+  const image3 = document.getElementById("image3").files[0];
 
   // Perform input validation (add more validation as needed)
   if (
@@ -40,16 +40,16 @@ function handleProjectFormSubmit(event) {
   const formData = new FormData();
   formData.append("title", title);
   formData.append("date", date);
-  formData.append("authors", JSON.stringify(authors));
+  formData.append("author", author);
   formData.append("client", client);
   formData.append("category", category);
   formData.append("services", services);
   formData.append("description", description);
   formData.append("url", url);
   formData.append("imagesBackground", imagesBackground);
-  formData.append("images1", images1);
-  formData.append("images2", images2);
-  formData.append("images3", images3);
+  formData.append("image1", image1);
+  formData.append("image2", image2);
+  formData.append("image3", image3);
 
   // Send a POST request to your server (adjust the URL accordingly)
   fetch("/submit-project", {
