@@ -20,47 +20,11 @@ class ProjectController {
         services,
         description,
         url,
+        imagesBackground,
+        image1,
+        image2,
+        image3,
       } = req.body;
-
-      // console.log("Req Body: ", req.body);
-      // console.log("Req Files: ", req.files);
-
-      // Convert file buffer to Data URI
-      const extName = path
-        .extname(req.files.imagesBackground[0].originalname)
-        .toString();
-      const bgDataUri = parser.format(
-        extName,
-        req.files.imagesBackground[0].buffer
-      );
-
-      const ext1Name = path
-        .extname(req.files.image1[0].originalname)
-        .toString();
-      const img1DataUri = parser.format(ext1Name, req.files.image1[0].buffer);
-
-      const ext2Name = path
-        .extname(req.files.image2[0].originalname)
-        .toString();
-      const img2DataUri = parser.format(ext2Name, req.files.image2[0].buffer);
-
-      const ext3Name = path
-        .extname(req.files.image3[0].originalname)
-        .toString();
-      const img3DataUri = parser.format(ext3Name, req.files.image3[0].buffer);
-
-      console.log("BG Image", bgDataUri);
-      console.log("Image 1", img1DataUri);
-      console.log("Image 2", img2DataUri);
-      console.log("Image 3", img3DataUri);
-
-      // // Upload Images' Data URI to Cloudinary
-      // const [bgUpload, img1Upload, img2Upload, img3Upload] = await Promise.all([
-      //   cloudinary.uploader.upload(bgDataUri.content),
-      //   cloudinary.uploader.upload(img1DataUri.content),
-      //   cloudinary.uploader.upload(img2DataUri.content),
-      //   cloudinary.uploader.upload(img3DataUri.content),
-      // ]);
 
       // Create a new Project instance
       const newProject = new Project({
@@ -72,12 +36,12 @@ class ProjectController {
         services,
         description,
         url,
-        // images: {
-        //   background: bgUpload.secure_url,
-        //   image1: img1Upload.secure_url,
-        //   image2: img2Upload.secure_url,
-        //   image3: img3Upload.secure_url,
-        // },
+        images: {
+          background: imagesBackground,
+          image1,
+          image2,
+          image3,
+        },
       });
 
       // Save the new project to the database
@@ -144,11 +108,13 @@ class ProjectController {
         return res.status(404).json({ message: "Project not found" });
       }
 
-      res.status(200).json(project);
+      // Render the project detail page dynamically
+      res.render("project-detail", { project });
+      // res.status(200).json(project);
     } catch (error) {
       res
         .status(500)
-        .json({ message: "An error occurred while retrieving the projec" });
+        .json({ message: "An error occurred while retrieving the project!" });
     }
   }
 

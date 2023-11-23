@@ -9,6 +9,7 @@ const bcrypt = require("bcrypt");
 const crypto = require("crypto"); // Import the crypto module;
 const flash = require("connect-flash");
 const cloudinary = require("cloudinary").v2;
+const Project = require("./dbSchemas/projectSchema.js");
 
 const port = process.env.PORT || 8080;
 const app = express();
@@ -32,6 +33,10 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.json());
 
 app.use(flash());
+
+// Set EJS as the view engine
+app.set("view engine", "ejs");
+app.set("views", path.join(__dirname, "views"));
 
 // Initialize express-session with custom options
 app.use(
@@ -116,6 +121,28 @@ app.post("/user-login", async (req, res) => {
     console.error(err);
     req.flash("error_msg", "An error occurred");
     res.redirect("/login");
+  }
+});
+
+// Handle requests for project details by ID
+app.get("/project/:id", (req, res) => {
+  try {
+    const { id } = req.params; // Get the ID from the request parameters
+
+    // Find the project by its ID
+    const project = Project.findById(id);
+
+    if (!project) {
+      return res.status(404).json({ message: "Project not found" });
+    }
+
+    // Render the project detail page dynamically
+    res.render("project-detail", { project });
+    // res.status(200).json(project);
+  } catch (error) {
+    res
+      .status(500)
+      .json({ message: "An error occurred while retrieving the project!" });
   }
 });
 
