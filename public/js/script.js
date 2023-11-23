@@ -212,3 +212,72 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   });
 });
+
+// HANDLING DYNAMIC PROJECT RENDERING
+document.addEventListener("DOMContentLoaded", () => {
+  // Fetching project & background images from the server
+  fetch("/get-projects")
+    .then((response) => response.json())
+    .then((projects) => {
+      const projectsContainer = document.querySelector(".row-project-box");
+      const bgChanger = document.querySelector(".bg-changer");
+
+      // Render Projects
+      projects.forEach((project) => {
+        // Render Project box
+        const projectBox = document.createElement("div");
+        projectBox.classList.add(
+          "col-project-box",
+          "col-sm-6",
+          "col-md-4",
+          "col-lg-4"
+        );
+
+        // Render Project Link
+        const projectLink = document.createElement("a");
+        projectLink.href = `/project-detail/${project._id}`;
+        projectLink.classList.add("project-box");
+
+        // Render project box inner
+        const projectBoxInner = document.createElement("div");
+        projectBoxInner.classList.add("project-box-inner");
+
+        // Render project box inner
+        const projectTitle = document.createElement("h5");
+        projectTitle.textContent = project.title;
+
+        // Render project category
+        const projectCategory = document.createElement("div");
+        projectCategory.classList.add("project-category");
+        projectCategory.textContent = `${new Date(
+          project.date
+        ).getFullYear()} / ${project.category}`;
+
+        // Append Project Title & Category to ProjectBox Inner
+        projectBoxInner.appendChild(projectTitle);
+        projectBoxInner.appendChild(projectCategory);
+
+        // Append project box inner to project link
+        projectLink.appendChild(projectBoxInner);
+
+        // Append project link to project box
+        projectBox.appendChild(projectLink);
+
+        // Append project box to projects container
+        projectsContainer.appendChild(projectBox);
+
+        // Render background image
+        const sectionBg = document.createElement("div");
+        sectionBg.classList.add("section-bg");
+        sectionBg.style.backgroundImage = `url(${project.images.background})`;
+        sectionBg.style.backgroundBlendMode = "multiply";
+        sectionBg.style.opacity = 0.5;
+
+        // Append BG image to bg changer class
+        bgChanger.appendChild(sectionBg);
+      });
+    })
+    .catch((error) => {
+      console.error("Error Fetching Projects:", error);
+    });
+});
