@@ -47,9 +47,17 @@ function handleProjectFormSubmit(event) {
   formData.append("description", description);
   formData.append("url", url);
   formData.append("imagesBackground", imagesBackground);
-  formData.append("image1", image1);
-  formData.append("image2", image2);
-  formData.append("image3", image3);
+
+  // Append image files if they are selected
+  if (image1) {
+    formData.append("image1", image1);
+  }
+  if (image2) {
+    formData.append("image2", image2);
+  }
+  if (image3) {
+    formData.append("image3", image3);
+  }
 
   // Send a POST request to your server (adjust the URL accordingly)
   fetch("/submit-project", {
@@ -204,6 +212,35 @@ document.addEventListener("DOMContentLoaded", function () {
     } catch (error) {
       console.error("Error:", error);
       alert("An error occurred while registering. Please try again.");
+    }
+  });
+});
+
+document.addEventListener("DOMContentLoaded", () => {
+  const logoutLink = document.getElementById("logout-link");
+
+  // Add event listener to logout link
+  logoutLink.addEventListener("click", async (event) => {
+    event.preventDefault(); //Prevent default anchor behaviour
+
+    try {
+      //  Make HTTP request to server
+      const response = await fetch("/logout", {
+        method: "GET",
+        headers: {
+          "Content-Type": "application/json",
+        },
+      });
+
+      if (response.ok) {
+        // Redirect user to the login page on successful logout
+        window.location.href = "/login";
+      } else {
+        // Logout failed
+        console.error("Logout Failed! ", response.statusText);
+      }
+    } catch (error) {
+      console.error("An error occurred during Logout attempt! ", error);
     }
   });
 });

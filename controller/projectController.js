@@ -49,13 +49,18 @@ class ProjectController {
         .toString();
       const img3DataUri = parser.format(ext3Name, req.files.image3[0].buffer);
 
-      // Upload Images' Data URI to Cloudinary
-      const [bgUpload, img1Upload, img2Upload, img3Upload] = await Promise.all([
-        cloudinary.uploader.upload(bgDataUri.content),
-        cloudinary.uploader.upload(img1DataUri.content),
-        cloudinary.uploader.upload(img2DataUri.content),
-        cloudinary.uploader.upload(img3DataUri.content),
-      ]);
+      console.log("BG Image", bgDataUri);
+      console.log("Image 1", img1DataUri);
+      console.log("Image 2", img2DataUri);
+      console.log("Image 3", img3DataUri);
+
+      // // Upload Images' Data URI to Cloudinary
+      // const [bgUpload, img1Upload, img2Upload, img3Upload] = await Promise.all([
+      //   cloudinary.uploader.upload(bgDataUri.content),
+      //   cloudinary.uploader.upload(img1DataUri.content),
+      //   cloudinary.uploader.upload(img2DataUri.content),
+      //   cloudinary.uploader.upload(img3DataUri.content),
+      // ]);
 
       // Create a new Project instance
       const newProject = new Project({
@@ -67,12 +72,12 @@ class ProjectController {
         services,
         description,
         url,
-        images: {
-          background: bgUpload.secure_url,
-          image1: img1Upload.secure_url,
-          image2: img2Upload.secure_url,
-          image3: img3Upload.secure_url,
-        },
+        // images: {
+        //   background: bgUpload.secure_url,
+        //   image1: img1Upload.secure_url,
+        //   image2: img2Upload.secure_url,
+        //   image3: img3Upload.secure_url,
+        // },
       });
 
       // Save the new project to the database

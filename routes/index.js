@@ -21,6 +21,7 @@ const upload = multer({ storage });
 // AUTHENTICATION ROUTES
 router.post("/register", AuthController.registerUser);
 router.post("/user-login", AuthController.loginUser);
+router.post("/logout", AuthController.logoutUser);
 
 // CREATING ITEMS
 router.post(
