@@ -47,9 +47,17 @@ function handleProjectFormSubmit(event) {
   formData.append("description", description);
   formData.append("url", url);
   formData.append("imagesBackground", imagesBackground);
-  formData.append("image1", image1);
-  formData.append("image2", image2);
-  formData.append("image3", image3);
+
+  // Append image files if they are selected
+  if (image1) {
+    formData.append("image1", image1);
+  }
+  if (image2) {
+    formData.append("image2", image2);
+  }
+  if (image3) {
+    formData.append("image3", image3);
+  }
 
   // Send a POST request to your server (adjust the URL accordingly)
   fetch("/submit-project", {
