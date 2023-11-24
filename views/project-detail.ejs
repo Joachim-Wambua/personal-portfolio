@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="" />
+    <meta name="author" content="Joachim Wambua" />
+
+    <link rel="shortcut icon" href="favicon.ico" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+    <link rel="manifest" href="/site.webmanifest" />
+    <title><%= project.title %> | Project Details</title>
+
+    <link href="<%= url('/css/style.css') %>" rel="stylesheet" media="screen" />
+    <link rel="stylesheet" href="<%= url('/css/lightbox.css') %>" />
+  </head>
+
+  <body>
+    <div class="animsition">
+      <!-- Add your existing HTML content here, such as header, navigation, etc. -->
+
+      <div class="content">
+        <div class="container">
+          <div class="row row-project">
+            <div class="col-project-name col-md-6 mt-5 mb-5 mb-md-0">
+              <h1><%= project.title %></h1>
+              <div class="social-list social-list-detail">
+                <a href="#" class="icon ion-social-googleplus"></a>
+                <a href="#" class="icon ion-social-linkedin"></a>
+              </div>
+            </div>
+            <div class="col-project-info col-md-6">
+              <div class="row">
+                <div class="col-md-6 mt-5">
+                  <h5>Client</h5>
+                  <p><%= project.client %></p>
+                </div>
+                <div class="col-md-6 mt-5">
+                  <h5>Team</h5>
+                  <p><%= project.author %></p>
+                </div>
+                <div class="col-md-6 mt-5">
+                  <h5>Services</h5>
+                  <p><%= project.services %></p>
+                </div>
+                <div class="col-md-6 mt-5">
+                  <h5>Date</h5>
+                  <p><%= project.date %></p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- Add images and other project details dynamically based on your project structure -->
+        <img
+          alt=""
+          class="image-holder wow fadeIn"
+          src="<%= project.images.image1 %>"
+        />
+        <div class="container">
+          <p class="project-detail-text text-center">
+            <%= project.description %>
+            <a
+              href="<%= project.description %>"
+              target="_blank"
+              class="underline"
+              ><%= project.url %></a
+            >
+          </p>
+          <!-- Add more content dynamically based on your project structure -->
+          <!-- Example: -->
+          <img
+            alt=""
+            class="image-holder wow fadeInLeft"
+            src="<%= project.images.image2 %>"
+          />
+          <img
+            alt=""
+            class="image-holder wow fadeInRight"
+            src="<%= project.images.image3 %>"
+          />
+          <!-- More dynamic content goes here -->
+        </div>
+      </div>
+      <!-- Add your existing HTML content here, such as footer, scripts, etc. -->
+    </div>
+
+    <script
+      type="text/javascript"
+      src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"
+    ></script>
+    <script src="<%= url('/js/lightbox-plus-jquery.js') %>"></script>
+    <script src="<%= url('/js/wow.min.js') %>"></script>
+    <script src="<%= url('/js/smoothscroll.js') %>"></script>
+    <script src="<%= url('/js/animsition.js') %>"></script>
+    <script src="<%= url('/js/jquery.validate.min.js') %>"></script>
+    <script src="<%= url('/js/jquery.magnific-popup.min.js') %>"></script>
+    <script src="<%= url('/js/owl.carousel.min.js') %>"></script>
+    <script src="<%= url('/js/jquery.pagepiling.min.js') %>"></script>
+    <script type="module" src="<%= url('/js/script.js') %>"></script>
+  </body>
+</html>
