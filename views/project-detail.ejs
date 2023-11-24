@@ -11,10 +11,10 @@
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
     <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
     <link rel="manifest" href="/site.webmanifest" />
-    <title>Project Details | Joachim</title>
+    <title><%= project.title %> | Project Details</title>
 
-    <link href="../public/css/style.css" rel="stylesheet" media="screen" />
-    <link rel="stylesheet" href="../public/css/lightbox.css" />
+    <link href="<%= url('/css/style.css') %>" rel="stylesheet" media="screen" />
+    <link rel="stylesheet" href="<%= url('/css/lightbox.css') %>" />
   </head>
 
   <body>
@@ -43,11 +43,11 @@
                 </div>
                 <div class="col-md-6 mt-5">
                   <h5>Services</h5>
-                  <p><%= project.services.join(', ') %></p>
+                  <p><%= project.services %></p>
                 </div>
                 <div class="col-md-6 mt-5">
                   <h5>Date</h5>
-                  <p><%= project.date.toDateString() %></p>
+                  <p><%= project.date %></p>
                 </div>
               </div>
             </div>
@@ -57,12 +57,15 @@
         <img
           alt=""
           class="image-holder wow fadeIn"
-          src="<%= project.images.background %>"
+          src="<%= project.images.image1 %>"
         />
         <div class="container">
           <p class="project-detail-text text-center">
             <%= project.description %>
-            <a href="<%= project.url %>" target="_blank" class="underline"
+            <a
+              href="<%= project.description %>"
+              target="_blank"
+              class="underline"
               ><%= project.url %></a
             >
           </p>
@@ -71,12 +74,12 @@
           <img
             alt=""
             class="image-holder wow fadeInLeft"
-            src="<%= project.images.image1 %>"
+            src="<%= project.images.image2 %>"
           />
           <img
             alt=""
             class="image-holder wow fadeInRight"
-            src="<%= project.images.image2 %>"
+            src="<%= project.images.image3 %>"
           />
           <!-- More dynamic content goes here -->
         </div>
@@ -88,14 +91,14 @@
       type="text/javascript"
       src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"
     ></script>
-    <script src="js/lightbox-plus-jquery.js"></script>
-    <script src="js/wow.min.js"></script>
-    <script src="js/smoothscroll.js"></script>
-    <script src="js/animsition.js"></script>
-    <script src="js/jquery.validate.min.js"></script>
-    <script src="js/jquery.magnific-popup.min.js"></script>
-    <script src="js/owl.carousel.min.js"></script>
-    <script src="js/jquery.pagepiling.min.js"></script>
-    <script type="module" src="js/script.js"></script>
+    <script src="<%= url('/js/lightbox-plus-jquery.js') %>"></script>
+    <script src="<%= url('/js/wow.min.js') %>"></script>
+    <script src="<%= url('/js/smoothscroll.js') %>"></script>
+    <script src="<%= url('/js/animsition.js') %>"></script>
+    <script src="<%= url('/js/jquery.validate.min.js') %>"></script>
+    <script src="<%= url('/js/jquery.magnific-popup.min.js') %>"></script>
+    <script src="<%= url('/js/owl.carousel.min.js') %>"></script>
+    <script src="<%= url('/js/jquery.pagepiling.min.js') %>"></script>
+    <script type="module" src="<%= url('/js/script.js') %>"></script>
   </body>
 </html>

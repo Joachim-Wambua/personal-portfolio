@@ -108,6 +108,9 @@ class ProjectController {
         return res.status(404).json({ message: "Project not found" });
       }
 
+      // Debug Project reading from Database
+      // console.log(project);
+
       // Render the project detail page dynamically
       res.render("project-detail", { project });
       // res.status(200).json(project);
