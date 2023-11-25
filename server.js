@@ -9,6 +9,8 @@ const bcrypt = require("bcrypt");
 const crypto = require("crypto"); // Import the crypto module;
 const flash = require("connect-flash");
 const cloudinary = require("cloudinary").v2;
+const Project = require("./dbSchemas/projectSchema.js");
+const ProjectController = require("./controller/projectController.js");
 
 const port = process.env.PORT || 8080;
 const app = express();
@@ -32,6 +34,16 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.json());
 
 app.use(flash());
+
+// Set EJS as the view engine
+app.set("view engine", "ejs");
+app.set("views", path.join(__dirname, "views"));
+
+// Add the following middleware to provide the url filter
+app.use((req, res, next) => {
+  res.locals.url = (path) => `${req.protocol}://${req.get("host")}${path}`;
+  next();
+});
 
 // Initialize express-session with custom options
 app.use(
@@ -118,6 +130,9 @@ app.post("/user-login", async (req, res) => {
     res.redirect("/login");
   }
 });
+
+// Handle requests for project details by ID
+app.get("/project/:id", ProjectController.getProjectById);
 
 app.use("/", routes);
 

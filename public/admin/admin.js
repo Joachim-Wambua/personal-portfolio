@@ -16,11 +16,11 @@ function handleProjectFormSubmit(event) {
   const description = document.getElementById("description").value;
   const url = document.getElementById("url").value;
 
-  // Retrieve image files
-  const imagesBackground = document.getElementById("imagesBackground").files[0];
-  const image1 = document.getElementById("image1").files[0];
-  const image2 = document.getElementById("image2").files[0];
-  const image3 = document.getElementById("image3").files[0];
+  // Retrieve images
+  const imagesBackground = document.getElementById("imagesBackground").value;
+  const image1 = document.getElementById("image1").value;
+  const image2 = document.getElementById("image2").value;
+  const image3 = document.getElementById("image3").value;
 
   // Perform input validation (add more validation as needed)
   if (
@@ -47,17 +47,9 @@ function handleProjectFormSubmit(event) {
   formData.append("description", description);
   formData.append("url", url);
   formData.append("imagesBackground", imagesBackground);
-
-  // Append image files if they are selected
-  if (image1) {
-    formData.append("image1", image1);
-  }
-  if (image2) {
-    formData.append("image2", image2);
-  }
-  if (image3) {
-    formData.append("image3", image3);
-  }
+  formData.append("image1", image1);
+  formData.append("image2", image2);
+  formData.append("image3", image3);
 
   // Send a POST request to your server (adjust the URL accordingly)
   fetch("/submit-project", {
