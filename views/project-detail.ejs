@@ -6,11 +6,25 @@
     <meta name="description" content="" />
     <meta name="author" content="Joachim Wambua" />
 
-    <link rel="shortcut icon" href="favicon.ico" />
-    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
-    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
-    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
-    <link rel="manifest" href="/site.webmanifest" />
+    <link rel="shortcut icon" href="<%= url('favicon.ico') %>" />
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="<%= url('/apple-touch-icon.png') %>"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="<%= url('/favicon-32x32.png') %>"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="<%= url('/favicon-16x16.png') %>"
+    />
+    <link rel="manifest" href="<%= url('/site.webmanifest')%>" />
     <title><%= project.title %> | Project Details</title>
 
     <link href="<%= url('/css/style.css') %>" rel="stylesheet" media="screen" />
@@ -19,7 +33,81 @@
 
   <body>
     <div class="animsition">
-      <!-- Add your existing HTML content here, such as header, navigation, etc. -->
+      <div class="loader">
+        <div class="spinner">
+          <div class="double-bounce1"></div>
+          <div class="double-bounce2"></div>
+        </div>
+      </div>
+
+      <div class="click-capture"></div>
+
+      <!-- MENU BAR -->
+      <div class="menu">
+        <span class="close-menu icon-cross2 right-boxed"></span>
+        <ul class="menu-list right-boxed">
+          <li data-menuanchor="home">
+            <a href="/">Home</a>
+          </li>
+          <li data-menuanchor="about">
+            <a href="/#about">About</a>
+          </li>
+          <li data-menuanchor="experience">
+            <a href="/#experience">Work Experience</a>
+          </li>
+          <li data-menuanchor="clients">
+            <a href="/#clients">Clients</a>
+          </li>
+          <li data-menuanchor="projects">
+            <a href="/#projects">Projects</a>
+          </li>
+          <!-- TODO: Add a Certifications Section = -->
+          <li data-menuanchor="certifications">
+            <a href="/#certifications">Certifications</a>
+          </li>
+
+          <li data-menuanchor="contact">
+            <a href="/#contact">Contact</a>
+          </li>
+        </ul>
+        <div class="menu-footer right-boxed">
+          <div class="social-list">
+            <a href="#" class="icon ion-social-googleplus"></a>
+            <a href="#" class="icon ion-social-linkedin"></a>
+          </div>
+        </div>
+      </div>
+
+      <header class="navbar boxed">
+        <div class="navbar-bg"></div>
+        <a class="brand" href="/">
+          <img class="brand-img" alt="" src="<%= url('/images/brand.png') %>" />
+          <div class="brand-info">
+            <div class="brand-name">Joachim</div>
+            <div class="brand-text">Mwengi</div>
+          </div>
+        </a>
+        <button
+          type="button"
+          class="navbar-toggle"
+          data-toggle="collapse"
+          data-target="#navbar-collapse"
+          aria-expanded="false"
+        >
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <div class="contacts d-none d-md-block">
+          <div class="contact-item">+254 719 417 307</div>
+          <div class="contact-item spacer">/</div>
+          <div class="contact-item">
+            <a href="mailto:kimwambua96@gmail.com"
+              ><span class="__cf_email__">kimwambua96@gmail.com</span></a
+            >
+          </div>
+        </div>
+      </header>
 
       <div class="content">
         <div class="container">
@@ -46,8 +134,8 @@
                   <p><%= project.services %></p>
                 </div>
                 <div class="col-md-6 mt-5">
-                  <h5>Date</h5>
-                  <p><%= project.date %></p>
+                  <h5>Year</h5>
+                  <p><%= project.date.getFullYear() %></p>
                 </div>
               </div>
             </div>
@@ -62,10 +150,7 @@
         <div class="container">
           <p class="project-detail-text text-center">
             <%= project.description %>
-            <a
-              href="<%= project.description %>"
-              target="_blank"
-              class="underline"
+            <a href="<%= project.url %>" target="_blank" class="underline"
               ><%= project.url %></a
             >
           </p>
@@ -85,6 +170,15 @@
         </div>
       </div>
       <!-- Add your existing HTML content here, such as footer, scripts, etc. -->
+    </div>
+
+    <!-- FOOTER SECTION -->
+    <div class="copy-bottom white boxed">
+      © Joachim <span id="currentYear">2019</span>.
+    </div>
+    <div class="social-list social-list-bottom boxed">
+      <a href="#" class="icon ion-social-googleplus"></a>
+      <a href="#" class="icon ion-social-linkedin"></a>
     </div>
 
     <script
