@@ -47,27 +47,27 @@
         <span class="close-menu icon-cross2 right-boxed"></span>
         <ul class="menu-list right-boxed">
           <li data-menuanchor="home">
-            <a href="#home">Home</a>
+            <a href="/">Home</a>
           </li>
           <li data-menuanchor="about">
-            <a href="#about">About</a>
+            <a href="/#about">About</a>
           </li>
           <li data-menuanchor="experience">
-            <a href="#experience">Work Experience</a>
+            <a href="/#experience">Work Experience</a>
           </li>
           <li data-menuanchor="clients">
-            <a href="#clients">Clients</a>
+            <a href="/#clients">Clients</a>
           </li>
           <li data-menuanchor="projects">
-            <a href="#projects">Projects</a>
+            <a href="/#projects">Projects</a>
           </li>
           <!-- TODO: Add a Certifications Section = -->
           <li data-menuanchor="certifications">
-            <a href="#certifications">Certifications</a>
+            <a href="/#certifications">Certifications</a>
           </li>
 
           <li data-menuanchor="contact">
-            <a href="#contact">Contact</a>
+            <a href="/#contact">Contact</a>
           </li>
         </ul>
         <div class="menu-footer right-boxed">
@@ -80,7 +80,7 @@
 
       <header class="navbar boxed">
         <div class="navbar-bg"></div>
-        <a class="brand" href="#home">
+        <a class="brand" href="/">
           <img class="brand-img" alt="" src="<%= url('/images/brand.png') %>" />
           <div class="brand-info">
             <div class="brand-name">Joachim</div>
@@ -150,10 +150,7 @@
         <div class="container">
           <p class="project-detail-text text-center">
             <%= project.description %>
-            <a
-              href="<%= project.description %>"
-              target="_blank"
-              class="underline"
+            <a href="<%= project.url %>" target="_blank" class="underline"
               ><%= project.url %></a
             >
           </p>
