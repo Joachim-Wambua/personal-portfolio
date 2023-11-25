@@ -6,11 +6,25 @@
     <meta name="description" content="" />
     <meta name="author" content="Joachim Wambua" />
 
-    <link rel="shortcut icon" href="favicon.ico" />
-    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
-    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
-    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
-    <link rel="manifest" href="/site.webmanifest" />
+    <link rel="shortcut icon" href="<%= url('favicon.ico') %>" />
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="<%= url('/apple-touch-icon.png') %>"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="<%= url('/favicon-32x32.png') %>"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="<%= url('/favicon-16x16.png') %>"
+    />
+    <link rel="manifest" href="<%= url('/site.webmanifest')%>" />
     <title><%= project.title %> | Project Details</title>
 
     <link href="<%= url('/css/style.css') %>" rel="stylesheet" media="screen" />
@@ -67,8 +81,7 @@
       <header class="navbar boxed">
         <div class="navbar-bg"></div>
         <a class="brand" href="#home">
-          <!-- TODO;  -->
-          <img class="brand-img" alt="" src="images/brand.png" />
+          <img class="brand-img" alt="" src="<%= url('/images/brand.png') %>" />
           <div class="brand-info">
             <div class="brand-name">Joachim</div>
             <div class="brand-text">Mwengi</div>
@@ -96,15 +109,6 @@
         </div>
       </header>
 
-      <!-- FOOTER SECTION -->
-      <div class="copy-bottom white boxed">
-        © Joachim <span id="currentYear">2019</span>.
-      </div>
-      <div class="social-list social-list-bottom boxed">
-        <a href="#" class="icon ion-social-googleplus"></a>
-        <a href="#" class="icon ion-social-linkedin"></a>
-      </div>
-
       <div class="content">
         <div class="container">
           <div class="row row-project">
@@ -130,8 +134,8 @@
                   <p><%= project.services %></p>
                 </div>
                 <div class="col-md-6 mt-5">
-                  <h5>Date</h5>
-                  <p><%= project.date %></p>
+                  <h5>Year</h5>
+                  <p><%= project.date.getFullYear() %></p>
                 </div>
               </div>
             </div>
@@ -169,6 +173,15 @@
         </div>
       </div>
       <!-- Add your existing HTML content here, such as footer, scripts, etc. -->
+    </div>
+
+    <!-- FOOTER SECTION -->
+    <div class="copy-bottom white boxed">
+      © Joachim <span id="currentYear">2019</span>.
+    </div>
+    <div class="social-list social-list-bottom boxed">
+      <a href="#" class="icon ion-social-googleplus"></a>
+      <a href="#" class="icon ion-social-linkedin"></a>
     </div>
 
     <script

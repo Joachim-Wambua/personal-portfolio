@@ -188,3 +188,25 @@ const contactForm = document.getElementById("contact-form");
 if (contactForm) {
   contactForm.addEventListener("submit", handleContactFormSubmit);
 }
+
+// Add this JavaScript code after your HTML content.
+document.addEventListener("DOMContentLoaded", function () {
+  const accordionItems = document.querySelectorAll(".accordion-item");
+
+  accordionItems.forEach((item) => {
+    const accordionLink = item.querySelector(".accordion-link");
+
+    accordionLink.addEventListener("click", (e) => {
+      e.preventDefault(); // Prevent the default anchor link behavior
+
+      if (item.classList.contains("active")) {
+        item.classList.remove("active");
+      } else {
+        accordionItems.forEach((otherItem) => {
+          otherItem.classList.remove("active");
+        });
+        item.classList.add("active");
+      }
+    });
+  });
+});
