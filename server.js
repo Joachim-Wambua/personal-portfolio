@@ -9,18 +9,17 @@ const bcrypt = require("bcrypt");
 const crypto = require("crypto"); // Import the crypto module;
 const flash = require("connect-flash");
 const cloudinary = require("cloudinary").v2;
-const Project = require("./dbSchemas/projectSchema.js");
 const ProjectController = require("./controller/projectController.js");
 
 const port = process.env.PORT || 8080;
 const app = express();
 
-// Configure Cloudinary
-cloudinary.config({
-  cloud_name: process.env.CLOUDINARY_CLOUD_NAME,
-  api_key: process.env.CLOUDINARY_API_KEY,
-  api_secret: process.env.CLOUDINARY_API_SECRET,
-});
+// // Configure Cloudinary
+// cloudinary.config({
+//   cloud_name: process.env.CLOUDINARY_CLOUD_NAME,
+//   api_key: process.env.CLOUDINARY_API_KEY,
+//   api_secret: process.env.CLOUDINARY_API_SECRET,
+// });
 
 // Generate a secure secret key
 const generateSecretKey = () => {

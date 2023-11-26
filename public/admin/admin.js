@@ -12,7 +12,7 @@ function handleProjectFormSubmit(event) {
 
   const client = document.getElementById("client").value;
   const category = document.getElementById("category").value;
-  const services = document.getElementById("services").value;
+  const tech_stack = document.getElementById("tech_stack").value;
   const description = document.getElementById("description").value;
   const url = document.getElementById("url").value;
 
@@ -28,7 +28,7 @@ function handleProjectFormSubmit(event) {
     !date ||
     !client ||
     !category ||
-    !services ||
+    !tech_stack ||
     !description ||
     !url
   ) {
@@ -43,7 +43,7 @@ function handleProjectFormSubmit(event) {
   formData.append("author", author);
   formData.append("client", client);
   formData.append("category", category);
-  formData.append("services", services);
+  formData.append("tech_stack", tech_stack);
   formData.append("description", description);
   formData.append("url", url);
   formData.append("imagesBackground", imagesBackground);

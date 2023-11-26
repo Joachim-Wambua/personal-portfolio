@@ -5,7 +5,7 @@
   "main": "server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node server.js"
+    "start": "nodemon server.js"
   },
   "author": "Joachim Wambua",
   "license": "ISC",
@@ -29,13 +29,13 @@
     "mongoose": "^7.6.4",
 
     "multer": "^1.4.5-lts.1",
-    "nodemon": "^3.0.1",
     "passport": "^0.6.0",
     "passport-local": "^1.0.0",
     "style-loader": "^3.3.3",
     "three": "^0.158.0"
   },
   "devDependencies": {
+    "nodemon": "^3.0.1",
     "parcel-bundler": "^1.12.5",
     "vite": "^4.5.0"
   }

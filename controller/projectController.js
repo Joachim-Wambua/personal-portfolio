@@ -17,7 +17,7 @@ class ProjectController {
         author,
         client,
         category,
-        services,
+        tech_stack,
         description,
         url,
         imagesBackground,
@@ -33,7 +33,7 @@ class ProjectController {
         author,
         client,
         category,
-        services,
+        tech_stack,
         description,
         url,
         images: {
