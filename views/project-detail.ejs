@@ -130,8 +130,8 @@
                   <p><%= project.author %></p>
                 </div>
                 <div class="col-md-6 mt-5">
-                  <h5>Services</h5>
-                  <p><%= project.services %></p>
+                  <h5>Tech Stack</h5>
+                  <p><%- project.tech_stack.join('<br />') %></p>
                 </div>
                 <div class="col-md-6 mt-5">
                   <h5>Year</h5>
@@ -163,7 +163,7 @@
           />
           <img
             alt=""
-            class="image-holder wow fadeInRight"
+            class="image-holder wow fadeInRight pb-5"
             src="<%= project.images.image3 %>"
           />
           <!-- More dynamic content goes here -->

@@ -30,7 +30,7 @@ const projectSchema = new mongoose.Schema({
     ], // Adjust as needed
     required: true,
   },
-  services: [
+  tech_stack: [
     {
       type: String,
       required: true,
