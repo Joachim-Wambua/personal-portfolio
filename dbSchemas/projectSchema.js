@@ -36,10 +36,21 @@ const projectSchema = new mongoose.Schema({
       required: true,
     },
   ],
-  description: {
+  project_overview: {
     type: String,
     required: true,
   },
+
+  project_objectives: {
+    type: String,
+    required: true,
+  },
+
+  key_features: {
+    type: String,
+    required: true,
+  },
+
   url: {
     type: String,
     required: true,

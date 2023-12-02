@@ -13,7 +13,10 @@ function handleProjectFormSubmit(event) {
   const client = document.getElementById("client").value;
   const category = document.getElementById("category").value;
   const tech_stack = document.getElementById("tech_stack").value;
-  const description = document.getElementById("description").value;
+  const project_overview = document.getElementById("project_overview").value;
+  const project_objectives =
+    document.getElementById("project_objectives").value;
+  const key_features = document.getElementById("key_features").value;
   const url = document.getElementById("url").value;
 
   // Retrieve images
@@ -29,12 +32,34 @@ function handleProjectFormSubmit(event) {
     !client ||
     !category ||
     !tech_stack ||
-    !description ||
+    !project_overview ||
+    !project_objectives ||
+    !key_features ||
     !url
   ) {
     alert("Please fill in all required fields.");
     return;
   }
+
+  // // Converting Key Features to array
+  // const keyFeatures = key_features.split("\n");
+
+  // // Get UL element to append key_features
+  // const keyFeaturesList = document.getElementById("key_features");
+
+  // // Clear existing list items
+  // keyFeaturesList.innerHTML = "";
+
+  // keyFeatures.forEach(function (feature) {
+  //   feature = feature.trim(); // trim() removes leading/trailing whitespaces
+
+  //   // New LI element
+  //   const listItem = document.createElement("li");
+  //   listItem.textContent = feature;
+
+  //   // Append li element to ul
+  //   keyFeaturesList.appendChild(listItem);
+  // });
 
   // Create a FormData object to send data as a multipart/form-data request
   const formData = new FormData();
@@ -44,7 +69,9 @@ function handleProjectFormSubmit(event) {
   formData.append("client", client);
   formData.append("category", category);
   formData.append("tech_stack", tech_stack);
-  formData.append("description", description);
+  formData.append("project_overview", project_overview);
+  formData.append("project_objectives", project_objectives);
+  formData.append("key_features", key_features);
   formData.append("url", url);
   formData.append("imagesBackground", imagesBackground);
   formData.append("image1", image1);
