@@ -13,7 +13,9 @@ function handleProjectFormSubmit(event) {
   const client = document.getElementById("client").value;
   const category = document.getElementById("category").value;
   const tech_stack = document.getElementById("tech_stack").value;
-  const description = document.getElementById("description").value;
+  const project_overview = document.getElementById("project_overview").value;
+  const project_objectives = document.getElementById("project_objectives").value;
+  const key_features = document.getElementById("key_features").value;
   const url = document.getElementById("url").value;
 
   // Retrieve images
@@ -29,7 +31,9 @@ function handleProjectFormSubmit(event) {
     !client ||
     !category ||
     !tech_stack ||
-    !description ||
+    !project_overview ||
+    !project_objectives ||
+    !key_features ||
     !url
   ) {
     alert("Please fill in all required fields.");
@@ -44,7 +48,9 @@ function handleProjectFormSubmit(event) {
   formData.append("client", client);
   formData.append("category", category);
   formData.append("tech_stack", tech_stack);
-  formData.append("description", description);
+  formData.append("project_overview", project_overview);
+  formData.append("project_objectives", project_objectives);
+  formData.append("key_features", key_features);
   formData.append("url", url);
   formData.append("imagesBackground", imagesBackground);
   formData.append("image1", image1);

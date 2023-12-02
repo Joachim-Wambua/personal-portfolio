@@ -147,13 +147,23 @@
           class="image-holder wow fadeIn"
           src="<%= project.images.image1 %>"
         />
+
         <div class="container">
-          <p class="project-detail-text text-center">
-            <%= project.description %>
-            <a href="<%= project.url %>" target="_blank" class="underline"
-              ><%= project.url %></a
-            >
-          </p>
+          <h3>About Project</h3>
+
+          <h5>Project Overview</h5>
+          <p class="project-detail-text"><%= project.project_overview %></p>
+
+          <h5>Project Objectives</h5>
+          <p class="project-detail-text"><%= project.project_objectives %></p>
+
+          <h5>Key Features</h5>
+          <p class="project-detail-text"><%= project.key_features %></p>
+
+          <h3 style="font-weight: 500; font-size: 1.8rem">Project Link</h3>
+          <a href="<%= project.url %>" target="_blank" class="underline"
+            ><%= project.url %></a
+          >
           <!-- Add more content dynamically based on your project structure -->
           <!-- Example: -->
           <img
