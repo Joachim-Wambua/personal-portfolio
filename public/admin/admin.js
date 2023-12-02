@@ -14,7 +14,8 @@ function handleProjectFormSubmit(event) {
   const category = document.getElementById("category").value;
   const tech_stack = document.getElementById("tech_stack").value;
   const project_overview = document.getElementById("project_overview").value;
-  const project_objectives = document.getElementById("project_objectives").value;
+  const project_objectives =
+    document.getElementById("project_objectives").value;
   const key_features = document.getElementById("key_features").value;
   const url = document.getElementById("url").value;
 
@@ -39,6 +40,26 @@ function handleProjectFormSubmit(event) {
     alert("Please fill in all required fields.");
     return;
   }
+
+  // // Converting Key Features to array
+  // const keyFeatures = key_features.split("\n");
+
+  // // Get UL element to append key_features
+  // const keyFeaturesList = document.getElementById("key_features");
+
+  // // Clear existing list items
+  // keyFeaturesList.innerHTML = "";
+
+  // keyFeatures.forEach(function (feature) {
+  //   feature = feature.trim(); // trim() removes leading/trailing whitespaces
+
+  //   // New LI element
+  //   const listItem = document.createElement("li");
+  //   listItem.textContent = feature;
+
+  //   // Append li element to ul
+  //   keyFeaturesList.appendChild(listItem);
+  // });
 
   // Create a FormData object to send data as a multipart/form-data request
   const formData = new FormData();
