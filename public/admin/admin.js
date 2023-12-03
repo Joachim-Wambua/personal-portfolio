@@ -41,26 +41,6 @@ function handleProjectFormSubmit(event) {
     return;
   }
 
-  // // Converting Key Features to array
-  // const keyFeatures = key_features.split("\n");
-
-  // // Get UL element to append key_features
-  // const keyFeaturesList = document.getElementById("key_features");
-
-  // // Clear existing list items
-  // keyFeaturesList.innerHTML = "";
-
-  // keyFeatures.forEach(function (feature) {
-  //   feature = feature.trim(); // trim() removes leading/trailing whitespaces
-
-  //   // New LI element
-  //   const listItem = document.createElement("li");
-  //   listItem.textContent = feature;
-
-  //   // Append li element to ul
-  //   keyFeaturesList.appendChild(listItem);
-  // });
-
   // Create a FormData object to send data as a multipart/form-data request
   const formData = new FormData();
   formData.append("title", title);

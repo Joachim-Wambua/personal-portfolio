@@ -157,20 +157,6 @@
           <h5>Project Objectives</h5>
           <p class="project-detail-text"><%= project.project_objectives %></p>
 
-          <h5>Key Features</h5>
-          <ul class="project-detail-text" id="key_features">
-            <!-- To Dynamically Append Key Features Here -->
-            <% const keyFeaturesArray = project.key_features.split('\n');
-            keyFeaturesArray.forEach(function (feature) { %>
-            <li><%= feature.trim() %></li>
-
-            <% }); %>
-          </ul>
-
-          <h3 style="font-weight: 500; font-size: 1.8rem">Project Link</h3>
-          <a href="<%= project.url %>" target="_blank" class="underline"
-            ><%= project.url %></a
-          >
           <!-- Add more content dynamically based on your project structure -->
           <!-- Example: -->
           <img
@@ -178,6 +164,24 @@
             class="image-holder wow fadeInLeft"
             src="<%= project.images.image2 %>"
           />
+
+          <h5>Key Features</h5>
+          <ul class="project-detail-text" id="key_features">
+            <!-- To Dynamically Append Key Features Here -->
+            <% const keyFeaturesArray = project.key_features.split('\n');
+            keyFeaturesArray.forEach(function (feature) { %>
+            <li><%= feature.trim() %></li>
+            <% }); %>
+          </ul>
+
+          <a
+            href="<%= project.url %>"
+            style="font-weight: 500; font-size: 1.8rem"
+            target="_blank"
+            class="underline"
+            >Project Link</a
+          >
+
           <img
             alt=""
             class="image-holder wow fadeInRight"
