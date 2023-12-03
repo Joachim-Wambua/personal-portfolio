@@ -157,6 +157,14 @@
           <h5>Project Objectives</h5>
           <p class="project-detail-text"><%= project.project_objectives %></p>
 
+          <!-- Add more content dynamically based on your project structure -->
+          <!-- Example: -->
+          <img
+            alt=""
+            class="image-holder wow fadeInLeft"
+            src="<%= project.images.image2 %>"
+          />
+
           <h5>Key Features</h5>
           <ul class="project-detail-text" id="key_features">
             <!-- To Dynamically Append Key Features Here -->
@@ -166,17 +174,14 @@
             <% }); %>
           </ul>
 
-          <h3 style="font-weight: 500; font-size: 1.8rem">Project Link</h3>
-          <a href="<%= project.url %>" target="_blank" class="underline"
-            ><%= project.url %></a
+          <a
+            href="<%= project.url %>"
+            style="font-weight: 500; font-size: 1.8rem"
+            target="_blank"
+            class="underline"
+            >Project Link</a
           >
-          <!-- Add more content dynamically based on your project structure -->
-          <!-- Example: -->
-          <img
-            alt=""
-            class="image-holder wow fadeInLeft"
-            src="<%= project.images.image2 %>"
-          />
+
           <img
             alt=""
             class="image-holder wow fadeInRight"
