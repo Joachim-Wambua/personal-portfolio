@@ -1505,7 +1505,7 @@ a.brand:focus {
 }
 .image-holder {
   display: block;
-  margin: 12rem auto 7rem;
+  margin: 6.3rem auto 6.3rem;
   max-width: 100%;
 }
 .social-list-detail {
@@ -3183,4 +3183,10 @@ a.brand:focus {
 
 .role-duty li {
   list-style: none;
+}
+
+.project-link-btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
