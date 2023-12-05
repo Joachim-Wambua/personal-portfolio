@@ -174,13 +174,13 @@
             <% }); %>
           </ul>
 
+          <% if (project.url) { %>
           <div class="project-link-btn">
-            <a
-              href="<%= project.url %>"
-              target="_blank"
-              ><button class="btn">Project Link</button></a
-            >
+            <a href="<%= project.url %>" target="_blank"
+              ><button class="btn" id="projectButton"></button
+            ></a>
           </div>
+          <% } %>
 
           <img
             alt=""
@@ -206,6 +206,24 @@
       <a href="#" class="icon ion-social-googleplus"></a>
       <a href="#" class="icon ion-social-linkedin"></a>
     </div>
+
+    <script>
+      // Check Project URL Link
+      document.addEventListener("DOMContentLoaded", function () {
+        var projectUrl = "<%= project.url %>";
+        var button = document.getElementById("projectButton");
+
+        if (isGithubLink(projectUrl)) {
+          button.textContent = "View Source Code";
+        } else {
+          button.textContent = "View Project";
+        }
+
+        function isGithubLink(url) {
+          return url.toLowerCase().includes("github.com");
+        }
+      });
+    </script>
 
     <script
       type="text/javascript"
