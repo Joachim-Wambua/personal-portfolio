@@ -210,8 +210,12 @@
     if (Math.abs(deltaY) > 1.2) {
       deltaY *= options.stepSize / 120;
     }
+
+    if (event.cancelable) {
+      event.preventDefault();
+    }
+
     scrollArray(overflowing, deltaX, deltaY);
-    event.preventDefault();
     scheduleClearCache();
   }
   function keydown(event) {
