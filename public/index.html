@@ -5,83 +5,20 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="description" content="" />
     <meta name="author" content="Joachim Wambua" />
+    <meta name="msapplication-TileColor" content="#00aba9" />
+    <meta name="theme-color" content="#ffffff" />
 
     <link rel="shortcut icon" href="favicon.ico" />
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
     <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
     <link rel="manifest" href="/site.webmanifest" />
-    <script
-      type="text/javascript"
-      src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"
-    ></script>
-    <script type="text/javascript">
-      (function () {
-        // https://dashboard.emailjs.com/admin/account
-        emailjs.init("tiafEIHi0ikrfYrPc");
-      })();
-    </script>
-    <script type="text/javascript">
-      document.addEventListener("DOMContentLoaded", function () {
-        const modal = document.getElementById("popup-modal");
-        const closeBtn = document.getElementById("close-modal");
-        const popupText = document.getElementById("popup-text");
-
-        document
-          .getElementById("contact-form")
-          .addEventListener("submit", function (event) {
-            event.preventDefault();
-
-            // Initialise EmailJS
-            emailjs.init("tiafEIHi0ikrfYrPc");
-
-            // Prepping form data for EmailJS
-            // Get form data
-            const formData_ = new FormData(this);
-
-            // Prepare email params
-            const emailParams = {
-              to_email: "kimwambua96@gmail.com",
-              from_name: formData_.get("name"),
-              from_email: formData_.get("email"),
-              subject: formData_.get("subject"),
-              message: formData_.get("message"),
-            };
-
-            // these IDs from the previous steps
-            emailjs
-              .sendForm("service_iwmjtkh", "template_fo2fg2o", this)
-              .then(function () {
-                popupText.innerHTML =
-                  "Message Sent! Thank You For Reaching Out!";
-
-                // Clear the form after successful submission
-                document.getElementById("contact-form").reset();
-                console.log("SUCCESS!");
-              })
-              .catch(function (error) {
-                popupText.innerHTML =
-                  "Message Not Sent! Please Try Again!" + error;
-                console.log("FAILED...", error);
-              })
-              .finally(function () {
-                modal.style.display = "block";
-              });
-          });
-        // Close Button When X is clicked
-        closeBtn.addEventListener("click", function () {
-          modal.style.display = "none";
-        });
-      });
-    </script>
     <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5" />
     <link
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.15.1/devicon.min.css"
     />
 
-    <meta name="msapplication-TileColor" content="#00aba9" />
-    <meta name="theme-color" content="#ffffff" />
     <title>Joachim | Portfolio</title>
 
     <link
@@ -187,14 +124,6 @@
           class="pp-scrollable text-white section section-1"
         >
           <div class="scroll-wrap">
-            <!-- To restore image + bg style-->
-            <!-- 
-                style="
-                  background-image: url(images/bg/working.jpg); 
-                  background-color: rgba(200, 100, 0, 0.5);
-                  background-blend-mode: multiply;
-                "
-               -->
             <div
               id="background"
               class="section-bg"
@@ -216,7 +145,7 @@
                         <div class="row">
                           <div class="col-md-8 col-lg-6">
                             <p class="subtitle-top" style="font-size: 1.2rem">
-                              Amplify Your Web Prescence
+                              Amplifying Your Web Prescence
                             </p>
 
                             <h2 class="display-2 text-white">
@@ -421,7 +350,6 @@
                                 <li>#Python</li>
                                 <li>#Flask</li>
                                 <li>#PHP</li>
-                                <!-- <li>#Python - Django</li> -->
                               </ul>
                             </div>
                             <i class="icon ion-md-arrow-forward"></i>
@@ -431,8 +359,6 @@
                             <div class="tech-stack" style="color: aliceblue">
                               <!-- NodeJS -->
                               <div class="stack-logo">
-                                <!-- <i class="devicon-nodejs-plain"></i> -->
-                                <!-- Alrternate NodeJS -->
                                 <i
                                   class="devicon-nodejs-plain-wordmark"
                                   data-tooltip="NodeJS"
@@ -488,7 +414,6 @@
                                 <li>#Adobe Photoshop</li>
                                 <li>#Adobe Illustrator</li>
                                 <li>#Adobe After Effects</li>
-                                <!-- <li>#Protopie</li> TODO: Learn & Add WebFlow -->
                               </ul>
                             </div>
                             <i class="icon ion-md-arrow-forward"></i>
@@ -531,10 +456,8 @@
                               <ul>
                                 <li>#Jupyter Notebook</li>
                                 <li>#Python</li>
-                                <!-- <li>#Google Looker Studio</li> -->
                                 <li>#Pandas</li>
                                 <li>#Numpy</li>
-                                <!-- <li>#SciKit Learn</li> -->
                               </ul>
                             </div>
                             <i class="icon ion-md-arrow-forward"></i>
@@ -1244,9 +1167,7 @@
     </div>
 
     <script data-cfasync="false" src="/js/email.decode.min.js"></script>
-    <script
-      src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"
-    ></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
     <script src="js/vanta.net.min.js"></script>
 
     <script>
@@ -1268,6 +1189,70 @@
       });
     </script>
 
+    <script
+      type="text/javascript"
+      src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"
+    ></script>
+    <script async type="text/javascript">
+      (function () {
+        // https://dashboard.emailjs.com/admin/account
+        emailjs.init("tiafEIHi0ikrfYrPc");
+      })();
+    </script>
+    <script async type="text/javascript">
+      document.addEventListener("DOMContentLoaded", function () {
+        const modal = document.getElementById("popup-modal");
+        const closeBtn = document.getElementById("close-modal");
+        const popupText = document.getElementById("popup-text");
+
+        document
+          .getElementById("contact-form")
+          .addEventListener("submit", function (event) {
+            event.preventDefault();
+
+            // Initialise EmailJS
+            emailjs.init("tiafEIHi0ikrfYrPc");
+
+            // Prepping form data for EmailJS
+            // Get form data
+            const formData_ = new FormData(this);
+
+            // Prepare email params
+            const emailParams = {
+              to_email: "kimwambua96@gmail.com",
+              from_name: formData_.get("name"),
+              from_email: formData_.get("email"),
+              subject: formData_.get("subject"),
+              message: formData_.get("message"),
+            };
+
+            // these IDs from the previous steps
+            emailjs
+              .sendForm("service_iwmjtkh", "template_fo2fg2o", this)
+              .then(function () {
+                popupText.innerHTML =
+                  "Message Sent! Thank You For Reaching Out!";
+
+                // Clear the form after successful submission
+                document.getElementById("contact-form").reset();
+                console.log("SUCCESS!");
+              })
+              .catch(function (error) {
+                popupText.innerHTML =
+                  "Message Not Sent! Please Try Again!" + error;
+                console.log("FAILED...", error);
+              })
+              .finally(function () {
+                modal.style.display = "block";
+              });
+          });
+        // Close Button When X is clicked
+        closeBtn.addEventListener("click", function () {
+          modal.style.display = "none";
+        });
+      });
+    </script>
+
     <script src="js/lightbox-plus-jquery.js"></script>
     <script src="js/wow.min.js"></script>
     <script src="js/smoothscroll.js"></script>
@@ -1276,7 +1261,6 @@
     <script src="js/jquery.magnific-popup.min.js"></script>
     <script src="js/owl.carousel.min.js"></script>
     <script src="js/jquery.pagepiling.min.js"></script>
-    <script type="module" src="js/script.js"></script>
-    <!-- <script type="text/javascript" src="js/contact.js"></script> -->
+    <script async type="module" src="js/script.js"></script>
   </body>
 </html>
