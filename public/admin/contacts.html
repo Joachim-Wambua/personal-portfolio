@@ -1,130 +1,76 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Contact Messages</title>
-    <link rel="stylesheet" href="admin.css" />
-    <link
-      rel="stylesheet"
-      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
-    />
-  </head>
-  <body>
-    <!-- Responsive Navigation Menu -->
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
-      <div class="container">
-        <!-- Logo -->
-        <a class="navbar-brand" href="/admin">
-          <img
-            src="/images/kim-brand-dark.png"
-            style="width: 72px"
-            alt="Joachim Wambua"
-            class="img-fluid"
-          />
-        </a>
-        <!-- Responsive Menu Button (Hamburger Icon) -->
-        <button
-          class="navbar-toggler"
-          type="button"
-          data-toggle="collapse"
-          data-target="#navbarNav"
-        >
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <!-- Menu Items (Collapsible on Smaller Screens) -->
-        <div class="collapse navbar-collapse" id="navbarNav">
-          <ul class="navbar-nav ml-auto">
-            <li class="nav-item">
-              <a class="nav-link text-center" href="admin.html">
-                <i class="fs-5 bi-house"></i> Home
-              </a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link text-center" href="projects.html">
-                <i class="fs-5 bi-speedometer2"></i> Projects
-              </a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link text-center" href="workexperience.html">
-                <i class="fs-5 bi-table"></i> Work Experience
-              </a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link text-center" href="clients.html">
-                <i class="fs-5 bi-grid"></i> Clients
-              </a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link text-center" href="contacts.html">
-                <i class="fs-5 bi-people"></i> Messages
-              </a>
-            </li>
-            <!-- Add a Logout Button -->
-            <li class="nav-item">
-              <a class="nav-link text-center" href="/logout">
-                <i class="fs-5 bi-box-arrow-right"></i> Logout
-              </a>
-            </li>
-          </ul>
-        </div>
-      </div>
-    </nav>
-
-    <div id="contacts" class="mt-4">
-      <h3>Contact Messages</h3>
-      <table class="table table-striped table-bordered">
-        <thead class="thead-dark">
-          <tr>
-            <th>Name</th>
-            <th>Email</th>
-            <th>Message</th>
-            <th>Actions</th>
-          </tr>
-        </thead>
-        <tbody id="contact-table-body">
-          <!-- Data from the API will be inserted here -->
-        </tbody>
-      </table>
-    </div>
-
-    <script>
-      const contactTableBody = document.getElementById("contact-table-body");
-
-      // API request to retrieve messages
-      fetch("get-clients")
-        .then((response) => response.json())
-        .then((messages) => {
-          // Clear existing data
-          contactTableBody.innerHTML = "";
-
-          // Loop through experiences in dp & append to table
-          messages.forEach((message) => {
-            const row = document.createElement("tr");
-            row.innerHTML = `
-                <td>${message.role}</td>
-                <td>${message.company}</td>
-                <td>${message.startDate}</td>
-                <td>${message.endDate}</td>
-                <td>${message.description}</td>
-                <td>
-                    <button class="btn btn-primary ml-2 mt-1" id=${message._id} >View</button>
-                    <button class="btn btn-danger ml-2 mt-1" id=${message._id} >Delete</button>
-                </td>
-                `;
-            contactTableBody.appendChild(row);
-          });
-        })
-        .catch((error) => {
-          console.error("Error retrieving Messages", error);
-        });
-    </script>
-
-    <!-- Include JavaScript to handle form submissions and interactions -->
-    <script src="admin.js"></script>
-    <!-- Add Bootstrap JS and Popper.js scripts here if you haven't already -->
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@1.16.0/dist/umd/popper.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-  </body>
+<!doctype html>
+<html lang=en>
+<head>
+<meta charset=UTF-8>
+<meta name=viewport content="width=device-width,initial-scale=1">
+<title>Contact Messages</title>
+<link rel=stylesheet href=admin.css>
+<link rel=stylesheet href=https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css>
+</head>
+<body>
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+<div class=container>
+<a class=navbar-brand href=/admin>
+<img src=/images/kim-brand-dark.png style=width:72px alt="Joachim Wambua" class=img-fluid>
+</a>
+<button class=navbar-toggler type=button data-toggle=collapse data-target=#navbarNav>
+<span class=navbar-toggler-icon></span>
+</button>
+<div class="collapse navbar-collapse" id=navbarNav>
+<ul class="navbar-nav ml-auto">
+<li class=nav-item>
+<a class="nav-link text-center" href=admin.html>
+<i class="fs-5 bi-house"></i> Home
+</a>
+</li>
+<li class=nav-item>
+<a class="nav-link text-center" href=projects.html>
+<i class="fs-5 bi-speedometer2"></i> Projects
+</a>
+</li>
+<li class=nav-item>
+<a class="nav-link text-center" href=workexperience.html>
+<i class="fs-5 bi-table"></i> Work Experience
+</a>
+</li>
+<li class=nav-item>
+<a class="nav-link text-center" href=clients.html>
+<i class="fs-5 bi-grid"></i> Clients
+</a>
+</li>
+<li class=nav-item>
+<a class="nav-link text-center" href=contacts.html>
+<i class="fs-5 bi-people"></i> Messages
+</a>
+</li>
+<li class=nav-item>
+<a class="nav-link text-center" href=/logout>
+<i class="fs-5 bi-box-arrow-right"></i> Logout
+</a>
+</li>
+</ul>
+</div>
+</div>
+</nav>
+<div id=contacts class=mt-4>
+<h3>Contact Messages</h3>
+<table class="table table-striped table-bordered">
+<thead class=thead-dark>
+<tr>
+<th>Name</th>
+<th>Email</th>
+<th>Message</th>
+<th>Actions</th>
+</tr>
+</thead>
+<tbody id=contact-table-body>
+</tbody>
+</table>
+</div>
+<script>const contactTableBody=document.getElementById("contact-table-body");fetch("get-messages").then((t=>t.json())).then((t=>{contactTableBody.innerHTML="",t.forEach((t=>{const n=document.createElement("tr");n.innerHTML=`\n                <td>${t.role}</td>\n                <td>${t.company}</td>\n                <td>${t.startDate}</td>\n                <td>${t.endDate}</td>\n                <td>${t.description}</td>\n                <td>\n                    <button class="btn btn-primary ml-2 mt-1" id=${t._id} >View</button>\n                    <button class="btn btn-danger ml-2 mt-1" id=${t._id} >Delete</button>\n                </td>\n                `,contactTableBody.appendChild(n)}))})).catch((t=>{console.error("Error retrieving Messages",t)}))</script>
+<script src=admin.js></script>
+<script src=https://code.jquery.com/jquery-3.5.1.slim.min.js></script>
+<script src=https://cdn.jsdelivr.net/npm/@popperjs/core@1.16.0/dist/umd/popper.min.js></script>
+<script src=https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js></script>
+</body>
 </html>
