@@ -1,226 +1,79 @@
-<!-- public/registration.html -->
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Registration</title>
-    <link rel="stylesheet" type="text/html" href="admin.css" />
-    <!-- Use the same admin.css file for styling -->
-    <link
-      rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css"
-      integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2"
-      crossorigin="anonymous"
-    />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"
-    />
-  </head>
-  <body>
-    <div class="container mt-5">
-      <div class="row">
-        <div class="col-md-6 offset-md-3">
-          <div class="card my-5">
-            <form class="card-body cardbody-color p-lg-5" id="registrationForm" action="/register" method="POST">
-              <div class="text-center">
-                <img
-                  src="/images/brand-dark.png"
-                  alt="my_logo"
-                  class="img-fluid profile-image-pic img-thumbnail rounded-circle my-3"
-                  width="200px"
-                  alt="profile"
-                />
-              </div>
 
-              <div class="mb-3">
-                <label for="username" class="form-label">
-                  <i class="fas fa-user"></i> Username                  
-                </label>
-                <input
-                  type="text"
-                  class="form-control"
-                  id="username"
-                  name="username"
-                  required
-                />
-              </div>
-
-              <div class="mb-3">
-                <label for="email" class="form-label">
-                  <i class="fas fa-envelope"></i> Email
-                </label>
-                <input
-                  type="text"
-                  class="form-control"
-                  id="email"
-                  name="email"
-                  required
-                />
-              </div>
-
-              <div class="mb-3">
-                <label for="password" class="form-label">
-                  <i class="fas fa-lock"></i> Password
-                </label>
-                <div class="input-group">
-                  <input
-                    type="password"
-                    class="form-control"
-                    id="password"
-                    name="password"
-                    required
-                  />
-                  <span class="input-group-text">
-                    <i
-                      class="fa-regular fa-eye-slash"
-                      id="togglePassword"
-                      style="cursor: pointer"
-                      onclick="togglePasswordVisibility()"
-                    ></i>
-                  </span>
-                </div>
-              </div>
-              
-              <button type="submit" class="btn btn-color px-5 mb-5 w-100">Register</button>
-
-              <div id="emailHelp" class="form-text text-center mb-5 text-dark">
-                Already have an account?
-                <a href="/login" class="text-dark fw-bold">
-                  Log In</a
-                >
-              </div>
-
-            </form>
-          </div>
-        </div>
-      </div>
-
-      <!-- Registration Success Modal -->
-      <div class="modal fade" id="registrationSuccessModal" tabindex="-1" role="dialog" aria-labelledby="registrationSuccessModalLabel" aria-hidden="true">
-        <div class="modal-dialog modal-dialog-centered" role="document">
-          <div class="modal-content">
-            <div class="modal-header">
-              <h5 class="modal-title" id="registrationSuccessModalLabel">Registration Successful</h5>
-              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                <span aria-hidden="true">&times;</span>
-              </button>
-            </div>
-            <div class="modal-body">
-              Your account has been successfully registered.
-            </div>
-            <div class="modal-footer">
-              <a href="/login" class="btn btn-color">Log In</a>
-            </div>
-          </div>
-        </div>
-      </div>
-
-    <style>
-      .btn-color {
-        background-color: #0e1c36;
-        color: #fff;
-      }
-
-      .profile-image-pic {
-        height: 180px;
-        width: 180px;
-        object-fit: contain;
-        padding: 1rem;
-      }
-
-      .cardbody-color {
-        background-color: #ebf2fa;
-      }
-
-      a {
-        text-decoration: none;
-      }
-    </style>
-
-    <script>
-      // Toggle Password Visibility
-      function togglePasswordVisibility() {
-      const passwordInput = document.getElementById("password");
-      const toggleIcon = document.getElementById("togglePassword");
-
-      if (passwordInput.type === "password") {
-        passwordInput.type = "text";
-        toggleIcon.classList.remove("fa-eye-slash");
-        toggleIcon.classList.add("fa-eye");
-      } else {
-        passwordInput.type = "password";
-        toggleIcon.classList.remove("fa-eye");
-        toggleIcon.classList.add("fa-eye-slash");
-      }
-
-    }
-
-    // Add an event listener for form submission
-    document.addEventListener("DOMContentLoaded", function () {
-      const registrationForm = document.getElementById("registrationForm");
-
-      registrationForm.addEventListener("submit", async function (e) {
-        // Prevent the form from submitting as a standard POST request
-        e.preventDefault();
-
-        // Extract form data
-        const username = document.getElementById("username").value;
-        const email = document.getElementById("email").value;
-        const password = document.getElementById("password").value;
-
-        // Prepare registration data
-        const registrationData = { username, email, password };
-
-        try {
-          // Send a POST request to the server
-          const response = await fetch("/register", {
-            method: "POST",
-            headers: {
-              "Content-Type": "application/json",
-            },
-            body: JSON.stringify(registrationData),
-          });
-
-          if (response.status === 201) {
-            // Registration successful
-            showSuccessModal();
-            // You can choose to clear the form or take other actions here
-          } else {
-            // Registration failed
-            alert("Registration failed. Please try again.");
-          }
-        } catch (error) {
-          console.error("Error:", error);
-          alert("An error occurred while registering. Please try again.");
-        }
-      });
-    });
-
-    // Function to show the success modal
-    function showSuccessModal() {
-      const modal = new bootstrap.Modal(
-        document.getElementById("registrationSuccessModal")
-      );
-      modal.show();
-    }
-
-    </script>
-
-    <!-- Add Bootstrap JS and Popper.js scripts here if you haven't already -->
-    <script src="admin.js"></script>
-
-    <script
-      src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
-      integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
-      crossorigin="anonymous"
-    ></script>
-    <script src="https://unpkg.com/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
-    <script
-      src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js"
-      integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx"
-      crossorigin="anonymous"
-    ></script>
-  </body>
+<!doctype html>
+<html lang=en>
+<head>
+<meta charset=UTF-8>
+<meta name=viewport content="width=device-width,initial-scale=1">
+<title>Registration</title>
+<link rel=stylesheet type=text/html href=admin.css>
+<link rel=stylesheet href=https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css integrity=sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2 crossorigin=anonymous>
+<link rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css>
+</head>
+<body>
+<div class="container mt-5">
+<div class=row>
+<div class="col-md-6 offset-md-3">
+<div class="card my-5">
+<form class="card-body cardbody-color p-lg-5" id=registrationForm action=/register method=POST>
+<div class=text-center>
+<img src=/images/brand-dark.png alt=my_logo class="img-fluid profile-image-pic img-thumbnail rounded-circle my-3" width=200px alt=profile>
+</div>
+<div class=mb-3>
+<label for=username class=form-label>
+<i class="fas fa-user"></i> Username
+</label>
+<input class=form-control id=username name=username required>
+</div>
+<div class=mb-3>
+<label for=email class=form-label>
+<i class="fas fa-envelope"></i> Email
+</label>
+<input class=form-control id=email name=email required>
+</div>
+<div class=mb-3>
+<label for=password class=form-label>
+<i class="fas fa-lock"></i> Password
+</label>
+<div class=input-group>
+<input type=password class=form-control id=password name=password required>
+<span class=input-group-text>
+<i class="fa-regular fa-eye-slash" id=togglePassword style=cursor:pointer onclick=togglePasswordVisibility()></i>
+</span>
+</div>
+</div>
+<button type=submit class="btn btn-color px-5 mb-5 w-100">Register</button>
+<div id=emailHelp class="form-text text-center mb-5 text-dark">
+Already have an account?
+<a href=/login class="text-dark fw-bold">
+Log In</a>
+</div>
+</form>
+</div>
+</div>
+</div>
+<div class="modal fade" id=registrationSuccessModal tabindex=-1 role=dialog aria-labelledby=registrationSuccessModalLabel aria-hidden=true>
+<div class="modal-dialog modal-dialog-centered" role=document>
+<div class=modal-content>
+<div class=modal-header>
+<h5 class=modal-title id=registrationSuccessModalLabel>Registration Successful</h5>
+<button type=button class=close data-dismiss=modal aria-label=Close>
+<span aria-hidden=true>&times;</span>
+</button>
+</div>
+<div class=modal-body>
+Your account has been successfully registered.
+</div>
+<div class=modal-footer>
+<a href=/login class="btn btn-color">Log In</a>
+</div>
+</div>
+</div>
+</div>
+<style>.btn-color{background-color:#0e1c36;color:#fff}.profile-image-pic{height:180px;width:180px;object-fit:contain;padding:1rem}.cardbody-color{background-color:#ebf2fa}a{text-decoration:none}</style>
+<script>function togglePasswordVisibility(){const e=document.getElementById("password"),t=document.getElementById("togglePassword");"password"===e.type?(e.type="text",t.classList.remove("fa-eye-slash"),t.classList.add("fa-eye")):(e.type="password",t.classList.remove("fa-eye"),t.classList.add("fa-eye-slash"))}function showSuccessModal(){new bootstrap.Modal(document.getElementById("registrationSuccessModal")).show()}document.addEventListener("DOMContentLoaded",(function(){document.getElementById("registrationForm").addEventListener("submit",(async function(e){e.preventDefault();const t={username:document.getElementById("username").value,email:document.getElementById("email").value,password:document.getElementById("password").value};try{201===(await fetch("/register",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify(t)})).status?showSuccessModal():alert("Registration failed. Please try again.")}catch(e){console.error("Error:",e),alert("An error occurred while registering. Please try again.")}}))}))</script>
+<script src=admin.js></script>
+<script src=https://code.jquery.com/jquery-3.5.1.slim.min.js integrity=sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj crossorigin=anonymous></script>
+<script src=https://unpkg.com/@popperjs/core@2.9.3/dist/umd/popper.min.js></script>
+<script src=https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js integrity=sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx crossorigin=anonymous></script>
+</div></body>
 </html>

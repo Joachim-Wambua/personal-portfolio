@@ -1,294 +1,94 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Projects</title>
-    <!-- Add Bootstrap CSS link here if you haven't already -->
-    <link
-      rel="stylesheet"
-      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
-    />
-  </head>
-
-  <body>
-    <!-- Responsive Navigation Menu -->
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
-      <div class="container">
-        <!-- Logo -->
-        <a class="navbar-brand" href="/admin">
-          <img
-            src="/images/kim-brand-dark.png"
-            style="width: 72px"
-            alt="Joachim Wambua"
-            class="img-fluid"
-          />
-        </a>
-        <!-- Responsive Menu Button (Hamburger Icon) -->
-        <button
-          class="navbar-toggler"
-          type="button"
-          data-toggle="collapse"
-          data-target="#navbarNav"
-        >
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <!-- Menu Items (Collapsible on Smaller Screens) -->
-        <div class="collapse navbar-collapse" id="navbarNav">
-          <ul class="navbar-nav ml-auto">
-            <li class="nav-item">
-              <a class="nav-link text-center" href="admin.html">
-                <i class="fs-5 bi-house"></i> Home
-              </a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link text-center" href="projects.html">
-                <i class="fs-5 bi-speedometer2"></i> Projects
-              </a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link text-center" href="workexperience.html">
-                <i class="fs-5 bi-table"></i> Work Experience
-              </a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link text-center" href="clients.html">
-                <i class="fs-5 bi-grid"></i> Clients
-              </a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link text-center" href="contacts.html">
-                <i class="fs-5 bi-people"></i> Messages
-              </a>
-            </li>
-            <!-- Add a Logout Button -->
-            <li class="nav-item">
-              <a class="nav-link text-center" href="/logout">
-                <i class="fs-5 bi-box-arrow-right"></i> Logout
-              </a>
-            </li>
-          </ul>
-        </div>
-      </div>
-    </nav>
-
-    <!-- Tables for Displaying Data -->
-    <div id="projects" class="mt-4">
-      <h3>Projects</h3>
-      <table class="table table-striped table-bordered">
-        <thead class="thead-dark">
-          <tr>
-            <th>Title</th>
-            <th>Client</th>
-            <th>Author</th>
-            <th>Date</th>
-            <th>Category</th>
-            <th>Project Overview</th>
-            <th>Project Objectives</th>
-            <th>Key Features</th>
-            <th>Tech Stack</th>
-            <!-- <th>Images</th> -->
-            <th>Actions</th>
-          </tr>
-        </thead>
-        <tbody id="project-table-body">
-          <!-- Data from the API will be inserted here -->
-        </tbody>
-      </table>
-    </div>
-
-    <!-- Create the Edit Form (initially hidden) -->
-    <div id="edit-project-form" class="container d-none">
-      <h3>Edit Project</h3>
-      <form id="project-edit-form">
-        <!-- Form fields for editing project details go here -->
-        <div class="form-group">
-          <label for="edit-title">Title</label>
-          <input
-            type="text"
-            class="form-control"
-            id="edit-title"
-            name="title"
-            required
-          />
-        </div>
-        <!-- Add more form fields for other project details -->
-
-        <button type="submit" class="btn btn-primary">Save</button>
-        <button type="button" class="btn btn-secondary ml-2" id="cancel-edit">
-          Cancel
-        </button>
-      </form>
-    </div>
-
-    <script>
-      // Inside your HTML file or in a separate JavaScript file
-      const projectTableBody = document.getElementById("project-table-body");
-      const editProjectForm = document.getElementById("edit-project-form");
-      const projectEditForm = document.getElementById("project-edit-form");
-      const cancelEditButton = document.getElementById("cancel-edit");
-
-      let currentProjectId = null; // To track the currently edited project
-
-      // Function to populate the edit form with project details
-      function populateEditForm(projectData) {
-        document.getElementById("edit-title").value = projectData.title;
-        // Populate other form fields in a similar way
-      }
-
-      // Function to clear the edit form
-      function clearEditForm() {
-        projectEditForm.reset();
-      }
-
-      // Make an API request to retrieve projects
-      fetch("/get-projects") // Replace with the actual URL of your backend API
-        .then((response) => response.json())
-        .then((projects) => {
-          // Clear existing data
-          projectTableBody.innerHTML = "";
-
-          // Loop through the projects and append them to the table
-          projects.forEach((project) => {
-            const row = document.createElement("tr");
-
-            // Converting date to extract only year
-            const dateObject = new Date(project.date);
-
-            // Extract year from date
-            const year = dateObject.getFullYear();
-
-            row.innerHTML = `
-                        <td>${project.title}</td>
-                        <td>${project.client}</td>
-                        <td>${project.author}</td>
-                        <td>${year}</td>
-                        <td>${project.category}</td>
-                        <td>${project.project_overview}</td>
-                        <td>${project.project_objectives}</td>
-                        <td>${project.key_features}</td>
-                        <td>${project.tech_stack}</td>
-                        <td>
-                            <button class="btn btn-primary ml-2 mt-1" id=${project._id}>View</button>
-                            <button class="btn btn-danger ml-2 mt-1" id=${project._id}>Delete</button>
-                        </td>
-                    `;
-            projectTableBody.appendChild(row);
-          });
-        })
-        .catch((error) => {
-          console.error("Error retrieving projects:", error);
-        });
-
-      // Add a click event listener to the Delete buttons
-      projectTableBody.addEventListener("click", (event) => {
-        if (event.target.classList.contains("btn-danger")) {
-          const projectId = event.target.getAttribute("id");
-
-          // Confirm with the user before deleting
-          if (confirm("Are you sure you want to delete this project?")) {
-            // Send a DELETE request to the server
-            fetch(`/delete-project/${projectId}`, {
-              method: "DELETE",
-            })
-              .then((response) => response.json())
-              .then((data) => {
-                // Handle success or show an alert message
-                console.log("Deleting project with ID:", projectId);
-                alert(data.message);
-                // Reload the page or update the table as needed
-                // Add a 2-second (2000 milliseconds) delay before reloading
-                setTimeout(function () {
-                  // Using location.reload()
-                  // location.reload();
-
-                  // Using window.location
-                  window.location.href = window.location.href;
-                }, 2000); // 2000 milliseconds = 2 seconds
-              })
-              .catch((error) => {
-                console.error("Error deleting project:", error);
-              });
-          }
-        }
-      });
-
-      // Add a click event listener to the View buttons
-      projectTableBody.addEventListener("click", (event) => {
-        if (event.target.classList.contains("btn-primary")) {
-          const projectId = event.target.getAttribute("id");
-
-          // Store the current project ID
-          currentProjectId = projectId;
-
-          // Populate the form with project details
-          // You can fetch the project details from the server using an API request
-          fetch(`/get-project/${projectId}`) // Replace with the actual URL
-            .then((response) => response.json())
-            .then((projectData) => {
-              // Populate the edit form with project details
-              populateEditForm(projectData);
-
-              // Show the edit form
-              editProjectForm.classList.remove("d-none");
-            })
-            .catch((error) => {
-              console.error("Error fetching project details:", error);
-            });
-        }
-      });
-
-      // Add a submit event listener to the edit form for handling updates
-      projectEditForm.addEventListener("submit", (event) => {
-        event.preventDefault();
-
-        // Get the updated project details from the form
-        const updatedProject = {
-          title: document.getElementById("edit-title").value,
-          // Get other updated fields in a similar way
-        };
-
-        // Send an API request to update the project
-        fetch(`/update-project/${currentProjectId}`, {
-          method: "PUT",
-          headers: {
-            "Content-Type": "application/json",
-          },
-          body: JSON.stringify(updatedProject),
-        })
-          .then((response) => response.json())
-          .then((data) => {
-            // Handle success or show an alert message
-            alert(data.message);
-
-            // Clear the edit form
-            clearEditForm();
-
-            // Hide the edit form
-            editProjectForm.classList.add("d-none");
-
-            // Reload the page or update the table as needed
-          })
-          .catch((error) => {
-            console.error("Error updating project:", error);
-          });
-      });
-
-      // Add a click event listener to the Cancel button
-      cancelEditButton.addEventListener("click", () => {
-        // Clear the edit form
-        clearEditForm();
-
-        // Hide the edit form
-        editProjectForm.classList.add("d-none");
-      });
-    </script>
-
-    <!-- Include JavaScript to handle form submissions and interactions -->
-    <script src="admin.js"></script>
-    <!-- Add Bootstrap JS and Popper.js scripts here if you haven't already -->
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@1.16.0/dist/umd/popper.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-  </body>
+<!doctype html>
+<html lang=en>
+<head>
+<meta charset=UTF-8>
+<meta name=viewport content="width=device-width,initial-scale=1">
+<title>Projects</title>
+<link rel=stylesheet href=https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css>
+</head>
+<body>
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+<div class=container>
+<a class=navbar-brand href=/admin>
+<img src=/images/kim-brand-dark.png style=width:72px alt="Joachim Wambua" class=img-fluid>
+</a>
+<button class=navbar-toggler type=button data-toggle=collapse data-target=#navbarNav>
+<span class=navbar-toggler-icon></span>
+</button>
+<div class="collapse navbar-collapse" id=navbarNav>
+<ul class="navbar-nav ml-auto">
+<li class=nav-item>
+<a class="nav-link text-center" href=admin.html>
+<i class="fs-5 bi-house"></i> Home
+</a>
+</li>
+<li class=nav-item>
+<a class="nav-link text-center" href=projects.html>
+<i class="fs-5 bi-speedometer2"></i> Projects
+</a>
+</li>
+<li class=nav-item>
+<a class="nav-link text-center" href=workexperience.html>
+<i class="fs-5 bi-table"></i> Work Experience
+</a>
+</li>
+<li class=nav-item>
+<a class="nav-link text-center" href=clients.html>
+<i class="fs-5 bi-grid"></i> Clients
+</a>
+</li>
+<li class=nav-item>
+<a class="nav-link text-center" href=contacts.html>
+<i class="fs-5 bi-people"></i> Messages
+</a>
+</li>
+<li class=nav-item>
+<a class="nav-link text-center" href=/logout>
+<i class="fs-5 bi-box-arrow-right"></i> Logout
+</a>
+</li>
+</ul>
+</div>
+</div>
+</nav>
+<div id=projects class=mt-4>
+<h3>Projects</h3>
+<table class="table table-striped table-bordered">
+<thead class=thead-dark>
+<tr>
+<th>Title</th>
+<th>Client</th>
+<th>Author</th>
+<th>Date</th>
+<th>Category</th>
+<th>Project Overview</th>
+<th>Project Objectives</th>
+<th>Key Features</th>
+<th>Tech Stack</th>
+<th>Actions</th>
+</tr>
+</thead>
+<tbody id=project-table-body>
+</tbody>
+</table>
+</div>
+<div id=edit-project-form class="container d-none">
+<h3>Edit Project</h3>
+<form id=project-edit-form>
+<div class=form-group>
+<label for=edit-title>Title</label>
+<input class=form-control id=edit-title name=title required>
+</div>
+<button type=submit class="btn btn-primary">Save</button>
+<button type=button class="btn btn-secondary ml-2" id=cancel-edit>
+Cancel
+</button>
+</form>
+</div>
+<script>const projectTableBody=document.getElementById("project-table-body"),editProjectForm=document.getElementById("edit-project-form"),projectEditForm=document.getElementById("project-edit-form"),cancelEditButton=document.getElementById("cancel-edit");let currentProjectId=null;function populateEditForm(t){document.getElementById("edit-title").value=t.title}function clearEditForm(){projectEditForm.reset()}fetch("/get-projects").then((t=>t.json())).then((t=>{projectTableBody.innerHTML="",t.forEach((t=>{const e=document.createElement("tr"),o=new Date(t.date).getFullYear();e.innerHTML=`\n                        <td>${t.title}</td>\n                        <td>${t.client}</td>\n                        <td>${t.author}</td>\n                        <td>${o}</td>\n                        <td>${t.category}</td>\n                        <td>${t.project_overview}</td>\n                        <td>${t.project_objectives}</td>\n                        <td>${t.key_features}</td>\n                        <td>${t.tech_stack}</td>\n                        <td>\n                            <button class="btn btn-primary ml-2 mt-1" id=${t._id}>View</button>\n                            <button class="btn btn-danger ml-2 mt-1" id=${t._id}>Delete</button>\n                        </td>\n                    `,projectTableBody.appendChild(e)}))})).catch((t=>{console.error("Error retrieving projects:",t)})),projectTableBody.addEventListener("click",(t=>{if(t.target.classList.contains("btn-danger")){const e=t.target.getAttribute("id");confirm("Are you sure you want to delete this project?")&&fetch(`/delete-project/${e}`,{method:"DELETE"}).then((t=>t.json())).then((t=>{console.log("Deleting project with ID:",e),alert(t.message),setTimeout((function(){window.location.href=window.location.href}),2e3)})).catch((t=>{console.error("Error deleting project:",t)}))}})),projectTableBody.addEventListener("click",(t=>{if(t.target.classList.contains("btn-primary")){const e=t.target.getAttribute("id");currentProjectId=e,fetch(`/get-project/${e}`).then((t=>t.json())).then((t=>{populateEditForm(t),editProjectForm.classList.remove("d-none")})).catch((t=>{console.error("Error fetching project details:",t)}))}})),projectEditForm.addEventListener("submit",(t=>{t.preventDefault();const e={title:document.getElementById("edit-title").value};fetch(`/update-project/${currentProjectId}`,{method:"PUT",headers:{"Content-Type":"application/json"},body:JSON.stringify(e)}).then((t=>t.json())).then((t=>{alert(t.message),clearEditForm(),editProjectForm.classList.add("d-none")})).catch((t=>{console.error("Error updating project:",t)}))})),cancelEditButton.addEventListener("click",(()=>{clearEditForm(),editProjectForm.classList.add("d-none")}))</script>
+<script src=admin.js></script>
+<script src=https://code.jquery.com/jquery-3.5.1.slim.min.js></script>
+<script src=https://cdn.jsdelivr.net/npm/@popperjs/core@1.16.0/dist/umd/popper.min.js></script>
+<script src=https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js></script>
+</body>
 </html>
