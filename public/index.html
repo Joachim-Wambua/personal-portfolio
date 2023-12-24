@@ -1,1261 +1,729 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="description" content="" />
-    <meta name="author" content="Joachim Wambua" />
-    <meta name="msapplication-TileColor" content="#00aba9" />
-    <meta name="theme-color" content="#ffffff" />
-
-    <link rel="shortcut icon" href="favicon.ico" />
-    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
-    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
-    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
-    <link rel="manifest" href="/site.webmanifest" />
-    <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5" />
-    <link
-      rel="stylesheet"
-      href="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.15.1/devicon.min.css"
-    />
-
-    <title>Joachim | Portfolio</title>
-
-    <link
-      rel="stylesheet"
-      type="text/css"
-      href="css/style.css"
-      media="screen"
-    />
-
-    <link
-      rel="stylesheet"
-      type="text/css"
-      href="css/lightbox.css"
-      media="print"
-      onload="this.media='screen'"
-    />
-  </head>
-  <body>
-    <div class="animsition">
-      <div class="loader">
-        <div class="spinner">
-          <div class="double-bounce1"></div>
-          <div class="double-bounce2"></div>
-        </div>
-      </div>
-
-      <div class="click-capture"></div>
-
-      <!-- MENU BAR -->
-      <div class="menu">
-        <span class="close-menu icon-cross2 right-boxed"></span>
-        <ul class="menu-list right-boxed">
-          <li data-menuanchor="home">
-            <a href="#home">Home</a>
-          </li>
-          <li data-menuanchor="about">
-            <a href="#about">About</a>
-          </li>
-          <li data-menuanchor="experience">
-            <a href="#experience">Work Experience</a>
-          </li>
-          <li data-menuanchor="clients">
-            <a href="#clients">Clients</a>
-          </li>
-          <li data-menuanchor="projects">
-            <a href="#projects">Projects</a>
-          </li>
-          <!-- TODO: Add a Certifications Section = -->
-          <li data-menuanchor="certifications">
-            <a href="#certifications">Certifications</a>
-          </li>
-
-          <li data-menuanchor="contact">
-            <a href="#contact">Contact</a>
-          </li>
-        </ul>
-        <div class="menu-footer right-boxed">
-          <div class="social-list">
-            <a href="#" class="icon ion-social-googleplus"></a>
-            <a href="https://www.linkedin.com/in/joachim-wambua/" class="icon ion-social-linkedin"></a>
-          </div>
-        </div>
-      </div>
-
-      <header class="navbar boxed">
-        <div class="navbar-bg"></div>
-        <a class="brand" href="#home">
-          <!-- TODO;  -->
-          <img class="brand-img" alt="" src="images/brand.png" />
-          <div class="brand-info">
-            <div class="brand-name">Joachim</div>
-            <div class="brand-text">Mwengi</div>
-          </div>
-        </a>
-        <button
-          type="button"
-          class="navbar-toggle"
-          data-toggle="collapse"
-          data-target="#navbar-collapse"
-          aria-expanded="false"
-        >
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-        </button>
-        <div class="contacts d-none d-md-block">
-          <div class="contact-item">+254 719 417 307</div>
-          <div class="contact-item spacer">/</div>
-          <div class="contact-item">
-            <a href="mailto:kimwambua96@gmail.com"
-              ><span class="__cf_email__">kimwambua96@gmail.com</span></a
-            >
-          </div>
-        </div>
-      </header>
-
-      <!-- FOOTER SECTION -->
-      <div class="copy-bottom white boxed">
-        © Joachim <span id="currentYear">2019</span>.
-      </div>
-      <div class="social-list social-list-bottom boxed">
-        <a href="#" class="icon ion-social-googleplus"></a>
-        <a href="https://www.linkedin.com/in/joachim-wambua/" class="icon ion-social-linkedin"></a>
-      </div>
-      <div class="pagepiling">
-        <!-- LANDING PAGE -->
-        <div
-          data-anchor="home"
-          class="pp-scrollable text-white section section-1"
-        >
-          <div class="scroll-wrap">
-            <div
-              id="background"
-              class="section-bg"
-              style="
-                background-color: rgba(0, 47, 200, 0.5);
-                background-blend-mode: multiply;
-              "
-            ></div>
-
-            <div class="scrollable-content">
-              <div class="vertical-centred">
-                <div class="boxed boxed-inner">
-                  <div class="vertical-title d-none d-lg-block">
-                    <span>Welcome</span>
-                  </div>
-                  <div class="boxed">
-                    <div class="container">
-                      <div class="intro">
-                        <div class="row main-section">
-                          <div class="col-md-8 col-lg-6">
-                            <p class="subtitle-top" style="font-size: 1.2rem">
-                              Amplifying Your Web Prescence
-                            </p>
-
-                            <h2 class="display-2 text-white">
-                              Hi! I am
-                              <br />
-                              <span
-                                class="text-primary"
-                                style="font-family: 'Alegreya Sans', sans-serif"
-                                >Joachim</span
-                              >
-                            </h2>
-
-                            <p class="subtitle-bottom">
-                              Full Stack Engineer | Data Analyst
-                            </p>
-
-                            <!-- Button to download my resume -->
-                            <a
-                              href="https://drive.google.com/uc?export=download&id=1gbmhlA141VfCBS99ejDciMOxGgfH_6NP"
-                              target="_blank"
-                              rel="noopener noreferrer"
-                            >
-                              <button class="btn mb-5">Download Resume</button>
-                            </a>
-
-                            <!-- TODO: Consider adding Video Pitch -->
-                            <!-- <a
-                                href="https://www.youtube.com/watch?v=0O2aH4XLbto"
-                                class="popup-youtube icon ion-ios-play"
-                              ></a> -->
-                          </div>
-
-                          <div class="my-profile">
-                            <img
-                              src="/images/me.jpeg"
-                              alt="Joachim's Profile Image"
-                            />
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <!-- VALUE PROPOSITION SECTION -->
-        <div data-anchor="about" class="pp-scrollable section section-2">
-          <div class="scroll-wrap">
-            <div class="scrollable-content">
-              <div class="vertical-centred">
-                <div class="boxed boxed-inner">
-                  <div
-                    class="vertical-title text-white d-none d-lg-block"
-                    style="top: 5rem"
-                  >
-                    <span>About Me</span>
-                  </div>
-                  <div class="boxed">
-                    <div class="container">
-                      <div class="intro">
-                        <div class="row align-items-center">
-                          <div class="col-xl-7">
-                            <div class="experience-box pb-5">
-                              <div class="experience-content">
-                                <img
-                                  class="avatar"
-                                  alt="Kim's Avatar"
-                                  src="/images/Kim.png"
-                                />
-                              </div>
-                            </div>
-                          </div>
-                          <div class="col-xl-5">
-                            <h2 class="title-uppercase">
-                              Turning
-                              <span class="text-primary"> Your Ideas</span>
-                              To <span class="text-primary">Reality</span>
-                            </h2>
-                            <p class="about-text">
-                              Hello, I'm Joachim, your web maestro! With over 3
-                              years in the game, I've been crafting captivating
-                              web apps and I'm all about using the latest tech
-                              to enhance user experiences. Let's connect and
-                              turn your web visions into reality, making the
-                              internet even more exciting together!
-                            </p>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <!-- TECH STACK SECTION -->
-        <div data-anchor="tech-stack" class="pp-scrollable section section-3">
-          <div class="scroll-wrap">
-            <div class="scrollable-content">
-              <div class="vertical-centred">
-                <div class="boxed boxed-inner">
-                  <div class="text-white vertical-title d-none d-lg-block">
-                    <span style="margin-right: 10rem">Tech Stack</span>
-                  </div>
-                  <!-- ADD STACKS -->
-                  <section class="stack-section">
-                    <div class="container">
-                      <div class="accordion">
-                        <div class="accordion-item active" id="question1">
-                          <a class="accordion-link" href="#question1">
-                            <div class="flex">
-                              <h3>FRONTEND DEVELOPMENT</h3>
-                              <ul>
-                                <li>#ReactJS</li>
-                                <li>#VueJS</li>
-                                <li>#Flutter</li>
-                                <li>#HTML/CSS</li>
-                                <li>#ThreeJS</li>
-                                <li>#Javascript</li>
-                                <li>#Typescript</li>
-                              </ul>
-                            </div>
-                            <i class="icon ion-md-arrow-forward"></i>
-                            <i class="icon ion-md-arrow-down"></i>
-                          </a>
-                          <div class="answer">
-                            <div class="tech-stack" style="color: aliceblue">
-                              <!-- ReactJS -->
-                              <div class="stack-logo" data-tooltip="ReactJS">
-                                <i class="devicon-react-original"></i>
-                                <!-- <p>ReactJS</p> -->
-                              </div>
-
-                              <!-- VueJS -->
-                              <div class="stack-logo" data-tooltip="VueJS">
-                                <i class="devicon-vuejs-plain"></i>
-                                <!-- <p>VueJS</p> -->
-                              </div>
-
-                              <!-- Flutter -->
-                              <div class="stack-logo" data-tooltip="Flutter">
-                                <i class="devicon-flutter-plain"></i>
-                              </div>
-
-                              <!-- HTML -->
-                              <div class="stack-logo" data-tooltip="HTML">
-                                <i class="devicon-html5-plain"></i>
-                              </div>
-
-                              <!-- CSS -->
-                              <div class="stack-logo" data-tooltip="CSS">
-                                <i class="devicon-css3-plain"></i>
-                              </div>
-
-                              <!-- ThreeJS -->
-                              <div class="stack-logo" data-tooltip="ThreeJS">
-                                <i
-                                  class="devicon-threejs-original-wordmark"
-                                ></i>
-                              </div>
-
-                              <!-- Javascript -->
-                              <div class="stack-logo" data-tooltip="JavaScript">
-                                <i class="devicon-javascript-plain"></i>
-                              </div>
-
-                              <!-- TypeScript -->
-                              <div class="stack-logo" data-tooltip="TypeScript">
-                                <i class="devicon-typescript-plain"></i>
-                              </div>
-                            </div>
-                          </div>
-                          <hr />
-                        </div>
-                        <div class="accordion-item" id="question2">
-                          <a class="accordion-link" href="#question2">
-                            <div>
-                              <h3>BACKEND DEVELOPMENT</h3>
-                              <ul>
-                                <li>#NodeJS</li>
-                                <li>#ExpressJS</li>
-                                <li>#Firebase</li>
-                                <li>#MongoDB</li>
-                                <li>#MySQL</li>
-                                <li>#Python</li>
-                                <li>#Flask</li>
-                                <li>#PHP</li>
-                              </ul>
-                            </div>
-                            <i class="icon ion-md-arrow-forward"></i>
-                            <i class="icon ion-md-arrow-down"></i>
-                          </a>
-                          <div class="answer">
-                            <div class="tech-stack" style="color: aliceblue">
-                              <!-- NodeJS -->
-                              <div class="stack-logo">
-                                <i
-                                  class="devicon-nodejs-plain-wordmark"
-                                  data-tooltip="NodeJS"
-                                ></i>
-                              </div>
-
-                              <!-- ExpressJS -->
-                              <div class="stack-logo" data-tooltip="ExpressJS">
-                                <i
-                                  class="devicon-express-original-wordmark"
-                                ></i>
-                              </div>
-
-                              <!-- Firebase -->
-                              <div class="stack-logo" data-tooltip="Firebase">
-                                <i class="devicon-firebase-plain"></i>
-                              </div>
-
-                              <!-- MongoDB -->
-                              <div class="stack-logo" data-tooltip="MongoDB">
-                                <i class="devicon-mongodb-plain-wordmark"></i>
-                              </div>
-
-                              <!-- MySQL -->
-                              <div class="stack-logo" data-tooltip="MySQL">
-                                <i class="devicon-mysql-plain-wordmark"></i>
-                              </div>
-
-                              <!-- Python -->
-                              <div class="stack-logo" data-tooltip="Python">
-                                <i class="devicon-python-plain-wordmark"></i>
-                              </div>
-
-                              <!-- Flask -->
-                              <div class="stack-logo" data-tooltip="Flask">
-                                <i class="devicon-flask-original-wordmark"></i>
-                              </div>
-
-                              <!-- PHP -->
-                              <div class="stack-logo" data-tooltip="PHP">
-                                <i class="devicon-php-plain"></i>
-                              </div>
-                            </div>
-                          </div>
-                          <hr />
-                        </div>
-                        <div class="accordion-item" id="question3">
-                          <a class="accordion-link" href="#question3">
-                            <div class="flex">
-                              <h3>UX/UI DESIGN</h3>
-                              <ul>
-                                <li>#Figma</li>
-                                <li>#Adobe Photoshop</li>
-                                <li>#Adobe Illustrator</li>
-                                <li>#Adobe After Effects</li>
-                              </ul>
-                            </div>
-                            <i class="icon ion-md-arrow-forward"></i>
-                            <i class="icon ion-md-arrow-down"></i>
-                          </a>
-                          <div class="answer">
-                            <div class="tech-stack" style="color: aliceblue">
-                              <!-- Figma -->
-                              <div class="stack-logo" data-tooltip="Figma">
-                                <i class="devicon-figma-plain"></i>
-                              </div>
-                              <!-- Photoshop -->
-                              <div class="stack-logo" data-tooltip="JavaScript">
-                                <i class="devicon-photoshop-line"></i>
-                              </div>
-
-                              <!-- Illustrator -->
-                              <div
-                                class="stack-logo"
-                                data-tooltip="Adobe Illustrator"
-                              >
-                                <i class="devicon-illustrator-line"></i>
-                              </div>
-
-                              <!-- After Effects -->
-                              <div
-                                class="stack-logo"
-                                data-tooltip="Adobe After Effects"
-                              >
-                                <i class="devicon-aftereffects-plain"></i>
-                              </div>
-                            </div>
-                          </div>
-                          <hr />
-                        </div>
-                        <div class="accordion-item" id="question4">
-                          <a class="accordion-link" href="#question4">
-                            <div class="flex">
-                              <h3>DATA ANALYTICS</h3>
-                              <ul>
-                                <li>#Jupyter Notebook</li>
-                                <li>#Python</li>
-                                <li>#Pandas</li>
-                                <li>#Numpy</li>
-                              </ul>
-                            </div>
-                            <i class="icon ion-md-arrow-forward"></i>
-                            <i class="icon ion-md-arrow-down"></i>
-                          </a>
-                          <div class="answer">
-                            <div class="tech-stack" style="color: aliceblue">
-                              <!-- Add your logos here -->
-                              <!-- Jupyter Notebook -->
-                              <div
-                                class="stack-logo"
-                                data-tooltip="Jupyter Notebook"
-                              >
-                                <i class="devicon-jupyter-plain-wordmark"></i>
-                              </div>
-
-                              <!-- Python  -->
-                              <div class="stack-logo" data-tooltip="Python">
-                                <i class="devicon-python-plain-wordmark"></i>
-                              </div>
-
-                              <!-- Pandas -->
-                              <div class="stack-logo" data-tooltip="Pandas">
-                                <i class="devicon-pandas-original-wordmark"></i>
-                              </div>
-
-                              <!-- Numpy -->
-                              <div class="stack-logo" data-tooltip="NumPy">
-                                <i class="devicon-numpy-original-wordmark"></i>
-                              </div>
-                            </div>
-                          </div>
-                          <hr />
-                        </div>
-                      </div>
-                    </div>
-                  </section>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <!-- WORK EXPERIENCE SECTION -->
-        <div
-          data-anchor="experience"
-          class="pp-scrollable text-white section section-4"
-        >
-          <div class="scroll-wrap">
-            <div
-              class="section-bg"
-              style="
-                background-image: url(images/bg/experience.jpg);
-                background-color: rgba(0, 47, 200, 0.5);
-                background-blend-mode: multiply;
-              "
-            ></div>
-            <div class="scrollable-content">
-              <div class="vertical-centred">
-                <div class="boxed boxed-inner">
-                  <div class="vertical-title d-none d-lg-block">
-                    <span>Work Experience</span>
-                  </div>
-                  <div class="boxed">
-                    <div class="container">
-                      <!-- Experience Design 1 -->
-                      <div class="timeline">
-                        <div id="experience-container">
-                          <!-- tabs -->
-                          <div
-                            class="pcss3t pcss3t-effect-scale pcss3t-theme-1"
-                          >
-                            <input
-                              type="radio"
-                              name="pcss3t"
-                              checked
-                              id="tab1"
-                              class="tab-content-first"
-                            />
-                            <label for="tab1">KomezArt</label>
-
-                            <input
-                              type="radio"
-                              name="pcss3t"
-                              id="tab2"
-                              class="tab-content-2"
-                            />
-                            <label for="tab2">SENL</label>
-
-                            <input
-                              type="radio"
-                              name="pcss3t"
-                              id="tab3"
-                              class="tab-content-3"
-                            />
-                            <label for="tab3">The ROOM</label>
-
-                            <input
-                              type="radio"
-                              name="pcss3t"
-                              id="tab5"
-                              class="tab-content-last"
-                            />
-                            <label for="tab5">ALU SoWC</label>
-
-                            <ul>
-                              <li
-                                class="tab-content tab-content-first typography"
-                              >
-                                <h1>
-                                  Full Stack Engineer
-
-                                  <span style="float: right"
-                                    ><img
-                                      class="role-logo"
-                                      src="images/companies/kmz-logo.png"
-                                      alt="KomezArt"
-                                  /></span>
-                                </h1>
-                                <h4
-                                  style="
-                                    color: #0d0d45;
-                                    font-size: 1.3rem;
-                                    margin-top: 1.5rem;
-                                    margin-bottom: 1rem;
-                                    margin-left: 0;
-                                    font-weight: 800;
-                                  "
-                                >
-                                  KomezArt
-                                  <span style="float: right"
-                                    >Kigali, Rwanda</span
-                                  >
-                                </h4>
-
-                                <ul class="role-duty">
-                                  <li>
-                                    Managed the ALU School of Wildlife &
-                                    Conservation's website ensuring regular
-                                    design & content updates.
-                                  </li>
-                                  <li>
-                                    Supervised the company’s social media
-                                    platforms by strategising content & posting
-                                    schedules. Consequently increased social
-                                    platform following by 21%.
-                                  </li>
-                                  <li>
-                                    Designed Social Media Content Calendar
-                                    informed by research on effective posting
-                                    schedules to maximise engagement.
-                                  </li>
-                                </ul>
-                              </li>
-
-                              <li class="tab-content tab-content-2 typography">
-                                <h1>
-                                  Junior Software Engineer
-                                  <span style="float: right"
-                                    ><img
-                                      class="role-logo"
-                                      src="images/companies/SENL-bnw.png"
-                                      alt="SENL"
-                                  /></span>
-                                </h1>
-                                <h4
-                                  style="
-                                    color: #0d0d45;
-                                    font-size: 1.3rem;
-                                    margin-top: 1.5rem;
-                                    margin-bottom: 1rem;
-                                    margin-left: 0;
-                                    font-weight: 800;
-                                  "
-                                >
-                                  Social Enterprise - Netherlands
-                                  <span style="float: right"
-                                    >Amsterdam, Netherlands</span
-                                  >
-                                </h4>
-
-                                <ul>
-                                  <li>
-                                    Integrated RESTful APIs, enhancing website
-                                    functionality and enabling seamless data
-                                    exchange.
-                                  </li>
-
-                                  <li>
-                                    Designed & developed front-end components &
-                                    dynamically rendered back-end API data to
-                                    the frontend.
-                                  </li>
-
-                                  <li>
-                                    Optimized database queries, resulting in a
-                                    25% reduction in query response times.
-                                  </li>
-
-                                  <li>
-                                    Deployed web services to the Social Change
-                                    Innovators' website on AWS, serving 700+
-                                    users with optimized performance.
-                                  </li>
-                                </ul>
-                              </li>
-
-                              <li class="tab-content tab-content-3 typography">
-                                <h1>
-                                  Front-End Engineer - Intern
-                                  <span style="float: right"
-                                    ><img
-                                      class="role-logo"
-                                      src="images/companies/TheRoom.png"
-                                      alt="TheROOM"
-                                  /></span>
-                                </h1>
-                                <h4
-                                  style="
-                                    color: #0d0d45;
-                                    font-size: 1.3rem;
-                                    margin-top: 1.5rem;
-                                    margin-bottom: 1rem;
-                                    margin-left: 0;
-                                    font-weight: 800;
-                                  "
-                                >
-                                  The ROOM
-                                  <span style="float: right"
-                                    >Nairobi, Kenya</span
-                                  >
-                                </h4>
-
-                                <ul>
-                                  <li>
-                                    Collaborated in a team of 4 to build The
-                                    ROOM's Young Leader Portal, serving 800+
-                                    young leaders. I oversaw development of 7+
-                                    front-end components using VueJS &
-                                    TailwindCSS.
-                                  </li>
-                                  <li>
-                                    Designed compelling U.I. wireframes in
-                                    Figma, leading to a 15% reduction in design
-                                    revision cycles.
-                                  </li>
-                                  <li>
-                                    Implemented LinkedIn Authentication,
-                                    enabling 800+ users to register and log in
-                                    via their LinkedIn profiles.
-                                  </li>
-                                </ul>
-                              </li>
-
-                              <li
-                                class="tab-content tab-content-last typography"
-                              >
-                                <div class="typography">
-                                  <h1>
-                                    Social Media & Website Management Intern
-                                    <span style="float: right"
-                                      ><img
-                                        class="role-logo"
-                                        src="images/companies/ALUSoWC.png"
-                                        alt="ALUSoWC"
-                                    /></span>
-                                  </h1>
-                                  <h4
-                                    style="
-                                      color: #0d0d45;
-                                      font-size: 1.3rem;
-                                      margin-top: 1.5rem;
-                                      margin-bottom: 1rem;
-                                      margin-left: 0;
-                                      font-weight: 800;
-                                    "
-                                  >
-                                    ALU School of Wildlife & Conservation
-                                    <span style="float: right"
-                                      >Kigali, Rwanda</span
-                                    >
-                                  </h4>
-                                  <ul>
-                                    <li>
-                                      Managed the ALU School of Wildlife &
-                                      Conservation's website ensuring regular
-                                      design & content updates.
-                                    </li>
-                                    <li>
-                                      Supervised the company’s social media
-                                      platforms by strategising content &
-                                      posting schedules. Consequently increased
-                                      social platform following by 21%.
-                                    </li>
-                                    <li>
-                                      Designed Social Media Content Calendar
-                                      informed by research on effective posting
-                                      schedules to maximise engagement.
-                                    </li>
-                                  </ul>
-                                </div>
-                              </li>
-                            </ul>
-                          </div>
-                          <!--/ tabs -->
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <!-- PROJECTS SECTION START -->
-        <div
-          data-anchor="projects"
-          class="pp-scrollable text-white section section-5"
-        >
-          <div class="scroll-wrap">
-            <div class="bg-changer">
-              <div
-                class="section-bg"
-                style="
-                  background-image: url(images/bg/kmz-portal-cover-1.png);
-                  background-color: rgba(0, 0, 26, 0.5);
-                  background-blend-mode: multiply;
-                "
-              ></div>
-              <div
-                class="section-bg"
-                style="background-image: url(images/bg/quiztime-cover.png)"
-              ></div>
-              <div
-                class="section-bg"
-                style="background-image: url(images/bg/medichat-bg.png)"
-              ></div>
-              <div
-                class="section-bg"
-                style="background-image: url(images/bg/cleatstore-bg.png)"
-              ></div>
-              <div
-                class="section-bg"
-                style="background-image: url(images/bg/gamestore-bg.png)"
-              ></div>
-              <div
-                class="section-bg"
-                style="background-image: url(images/bg/kmz-bg.png)"
-              ></div>
-            </div>
-            <div class="scrollable-content">
-              <div class="vertical-centred">
-                <div class="boxed boxed-inner">
-                  <div class="vertical-title d-none d-lg-block">
-                    <span>my work</span>
-                  </div>
-                  <div class="boxed">
-                    <div class="container">
-                      <div class="intro">
-                        <div class="row">
-                          <div class="col-md-12">
-                            <h2 class="title-uppercase text-white">
-                              TOP PROJECTS
-                            </h2>
-                            <div class="row-project-box row">
-                              <div
-                                class="col-project-box col-sm-6 col-md-4 col-lg-4"
-                              >
-                                <a
-                                  href="/project/655fbf4cea7c65fb83636197"
-                                  class="project-box"
-                                >
-                                  <div class="project-box-inner">
-                                    <h5>KomezArt<br />Dashboard</h5>
-                                    <div class="project-category">
-                                      2023 / WEB DEV
-                                    </div>
-                                  </div>
-                                </a>
-                              </div>
-                              <div
-                                class="col-project-box col-sm-6 col-md-4 col-lg-4"
-                              >
-                                <a
-                                  href="/project/656262c7f785af62b4b3312b"
-                                  class="project-box"
-                                >
-                                  <div class="project-box-inner">
-                                    <h5>Quiz<br />Time</h5>
-                                    <div class="project-category">
-                                      2020 / MOBILE APP DEV
-                                    </div>
-                                  </div>
-                                </a>
-                              </div>
-                              <div
-                                class="col-project-box col-sm-6 col-md-4 col-lg-4"
-                              >
-                                <a
-                                  href="project/6566448982f3f9af9cf6fd07"
-                                  class="project-box"
-                                >
-                                  <div class="project-box-inner">
-                                    <h5>
-                                      MediChat<br />
-                                      Chatbot
-                                    </h5>
-                                    <div class="project-category">
-                                      2022 / WEB DEV | MACHINE LEARNING
-                                    </div>
-                                  </div>
-                                </a>
-                              </div>
-                              <div
-                                class="col-project-box col-sm-6 col-md-4 col-lg-4"
-                              >
-                                <a
-                                  href="project/6566482282f3f9af9cf6fd09"
-                                  class="project-box"
-                                >
-                                  <div class="project-box-inner">
-                                    <h5>
-                                      Nike Cleat<br />
-                                      Store
-                                    </h5>
-                                    <div class="project-category">
-                                      2021 / UI DESIGN | FRONT-END DEV
-                                    </div>
-                                  </div>
-                                </a>
-                              </div>
-                              <div
-                                class="col-project-box col-sm-6 col-md-4 col-lg-4"
-                              >
-                                <a
-                                  href="project/6566529a82f3f9af9cf6fd11"
-                                  class="project-box"
-                                >
-                                  <div class="project-box-inner">
-                                    <h5>
-                                      Online Gaming<br />
-                                      Store
-                                    </h5>
-                                    <div class="project-category">
-                                      2021 / UI/UX DESIGN | MOBILE APP DEV
-                                    </div>
-                                  </div>
-                                </a>
-                              </div>
-
-                              <div
-                                class="col-project-box col-sm-6 col-md-4 col-lg-4"
-                              >
-                                <a
-                                  href="project/657225fbe6fd3a0d8a05b0ed"
-                                  class="project-box"
-                                >
-                                  <div class="project-box-inner">
-                                    <h5>
-                                      KomezArt<br />
-                                      Website
-                                    </h5>
-                                    <div class="project-category">
-                                      2022 / WEB DEV | UI/UX DESIGN
-                                    </div>
-                                  </div>
-                                </a>
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <!-- PROJECTS SECTION END -->
-
-        <div
-          data-anchor="certifications"
-          class="pp-scrollable text-white section section-6"
-        >
-          <div class="scroll-wrap">
-            <div class="section-bg" style="background-image: url()"></div>
-            <div class="scrollable-content">
-              <!-- Certification Image PopUp Modal -->
-              <div id="imageModal" class="modal">
-                <span class="close" id="closeModal">&times;</span>
-                <img class="modal-content" id="modalImage" />
-              </div>
-              <div class="vertical-centred">
-                <div class="boxed boxed-inner">
-                  <div class="vertical-title d-none d-lg-block">
-                    <!-- <span>Certifications</span> -->
-                  </div>
-                  <div class="boxed">
-                    <div class="container">
-                      <div class="intro">
-                        <div class="row">
-                          <div class="col-md-12">
-                            <h2 class="title-uppercase text-white pb-8">
-                              CERTIFICATIONS
-                            </h2>
-                            <figure class="snip1577">
-                              <a
-                                href="images/certifications/dataanalyst-udacity.jpg"
-                                data-lightbox="data-analyst-cert"
-                              >
-                                <img
-                                  src="images/certifications/dataanalyst-udacity.jpg"
-                                  alt="Udacity Data Analyst"
-                                />
-                              </a>
-
-                              <figcaption>
-                                <h3>Data Analyst Nanodegree</h3>
-                                <h4>Udacity</h4>
-                              </figcaption>
-                              <!-- <a type href="#" ></a> -->
-                            </figure>
-                            <figure class="snip1577">
-                              <a
-                                href="images/certifications/webdev-udacity.jpg"
-                                data-lightbox="webdev-cert"
-                              >
-                                <img
-                                  src="images/certifications/webdev-udacity.jpg"
-                                  alt="Web Dev Certification"
-                                />
-                              </a>
-                              <figcaption>
-                                <h3>Wev Development Foundations</h3>
-                                <h4>Udacity</h4>
-                              </figcaption>
-                              <!-- <a href="#"></a> -->
-                            </figure>
-                            <figure class="snip1577">
-                              <a
-                                href="images/certifications/python-udacity.jpg"
-                                data-lightbox="python-udacity-cert"
-                              >
-                                <img
-                                  src="images/certifications/python-udacity.jpg"
-                                  alt="WebDev-Certification"
-                                />
-                              </a>
-                              <figcaption>
-                                <h3>Python Programming Foundations</h3>
-                                <h4>Udacity</h4>
-                              </figcaption>
-                              <!-- <a href="#"></a> -->
-                            </figure>
-                            <!-- <figure class="snip1577" style="margin: auto">
-                            <img
-                              src="https://res.cloudinary.com/dltjv8zbh/image/upload/v1698772397/Coursera_-_IT_Project_Management_vtygay.jpg"
-                              alt="IT Project Management"
-                            />
-                            <figcaption>
-                              <h3>IT Project Management</h3>
-                              <h4>Coursera</h4>
-                            </figcaption>
-                            <a href="#"></a>
-                          </figure> -->
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <!-- CONTACT SECTION START -->
-        <div data-anchor="contact" class="pp-scrollable section section-7">
-          <div class="scroll-wrap">
-            <div
-              class="section-bg"
-              style="
-                background-image: url(images/bg/ContactPageBG2.jpg);
-                background-color: rgba(0, 47, 200, 0.5);
-                background-blend-mode: multiply;
-              "
-            ></div>
-            <div class="scrollable-content">
-              <div class="vertical-centred">
-                <div class="boxed boxed-inner">
-                  <div class="vertical-title text-white d-none d-lg-block">
-                    <span>contact</span>
-                  </div>
-                  <div class="boxed">
-                    <div class="container">
-                      <div class="intro overflow-hidden">
-                        <div class="row">
-                          <div class="col-md-6">
-                            <h3
-                              class="title-uppercase"
-                              style="font-size: 2.7rem"
-                            >
-                              LET'S CHAT
-                            </h3>
-                            <h1
-                              class=""
-                              style="font-size: 2.1rem; margin-bottom: 0.5rem"
-                            >
-                              <span class="text-primary">Nairobi</span>, Kenya
-                            </h1>
-                            <section class="contact-address">
-                              <h1 style="font-size: 1.8rem">
-                                <a class="mail" href="kimwambua96@gmail.com">
-                                  <span class="__cf_email__"
-                                    >kimwambua96@gmail.com</span
-                                  ></a
-                                >
-                              </h1>
-                              <h1 style="font-size: 1.8rem; margin-top: 2.5rem">
-                                <span class="phone">+254 719 417 307</span>
-                              </h1>
-                            </section>
-                          </div>
-                          <div class="col-md-6">
-                            <div class="contact-info">
-                              <form
-                                class="js-form"
-                                id="contact-form"
-                                action="/submit-contact-message"
-                                method="POST"
-                              >
-                                <div class="row">
-                                  <div class="form-group col-sm-6">
-                                    <input
-                                      id="name"
-                                      type="text"
-                                      name="name"
-                                      required
-                                      placeholder="Name*"
-                                    />
-                                  </div>
-                                  <div class="form-group col-sm-6">
-                                    <input
-                                      id="email"
-                                      type="email"
-                                      required
-                                      name="email"
-                                      placeholder="Email*"
-                                    />
-                                  </div>
-                                  <div class="form-group col-sm-12">
-                                    <input
-                                      id="subject"
-                                      type="text"
-                                      name="subject"
-                                      placeholder="Subject (Optional)"
-                                    />
-                                  </div>
-                                  <div class="form-group col-sm-12">
-                                    <textarea
-                                      id="message"
-                                      name="message"
-                                      required
-                                      placeholder="Message*"
-                                    ></textarea>
-                                  </div>
-                                  <div
-                                    class="form-group form-group-message col-sm-12"
-                                  >
-                                    <span id="success" class="text-primary"
-                                      >Thank You, your message is successfully
-                                      sent!</span
-                                    >
-                                    <span id="error" class="text-primary"
-                                      >Sorry, something went wrong
-                                    </span>
-                                  </div>
-                                  <div class="col-sm-12">
-                                    <button type="submit" class="btn">
-                                      SEND
-                                    </button>
-                                  </div>
-                                </div>
-                              </form>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <!-- MESSAGE MODAL -->
-    <div id="popup-modal" class="modal-message">
-      <div class="modal-content">
-        <span class="close_btn" id="close-modal">&times;</span>
-        <div id="popup-text"></div>
-      </div>
-    </div>
-
-    <script data-cfasync="false" src="/js/email.decode.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
-    <script src="js/vanta.net.min.js"></script>
-
-    <script>
-      // Initialize Vanta.js effect
-      VANTA.NET({
-        el: "#background",
-        mouseControls: true,
-        touchControls: true,
-        gyroControls: false,
-        minHeight: 200.0,
-        minWidth: 200.0,
-        scale: 1.0,
-        scaleMobile: 1.0,
-        color: 0x21e6c1,
-        backgroundColor: 0xd0d45,
-        points: 7.0,
-        maxDistance: 12.0,
-        spacing: 12.0, // Shininess of the waves
-      });
-    </script>
-
-    <script
-      async
-      type="text/javascript"
-      src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"
-    ></script>
-    <script async type="text/javascript">
-      (function () {
-        // https://dashboard.emailjs.com/admin/account
-        emailjs.init("tiafEIHi0ikrfYrPc");
-      })();
-    </script>
-    <script async type="text/javascript">
-      document.addEventListener("DOMContentLoaded", function () {
-        const modal = document.getElementById("popup-modal");
-        const closeBtn = document.getElementById("close-modal");
-        const popupText = document.getElementById("popup-text");
-
-        document
-          .getElementById("contact-form")
-          .addEventListener("submit", function (event) {
-            event.preventDefault();
-
-            // Initialise EmailJS
-            emailjs.init("tiafEIHi0ikrfYrPc");
-
-            // Prepping form data for EmailJS
-            // Get form data
-            const formData_ = new FormData(this);
-
-            // Prepare email params
-            const emailParams = {
-              to_email: "kimwambua96@gmail.com",
-              from_name: formData_.get("name"),
-              from_email: formData_.get("email"),
-              subject: formData_.get("subject"),
-              message: formData_.get("message"),
-            };
-
-            // these IDs from the previous steps
-            emailjs
-              .sendForm("service_iwmjtkh", "template_fo2fg2o", this)
-              .then(function () {
-                popupText.innerHTML =
-                  "Message Sent! Thank You For Reaching Out!";
-
-                // Clear the form after successful submission
-                document.getElementById("contact-form").reset();
-                console.log("SUCCESS!");
-              })
-              .catch(function (error) {
-                popupText.innerHTML =
-                  "Message Not Sent! Please Try Again!" + error;
-                console.log("FAILED...", error);
-              })
-              .finally(function () {
-                modal.style.display = "block";
-              });
-          });
-        // Close Button When X is clicked
-        closeBtn.addEventListener("click", function () {
-          modal.style.display = "none";
-        });
-      });
-    </script>
-
-    <script src="js/lightbox-plus-jquery.js"></script>
-    <script src="js/wow.min.js"></script>
-    <script src="js/smoothscroll.js"></script>
-    <script src="js/animsition.js"></script>
-    <script src="js/jquery.validate.min.js"></script>
-    <script src="js/jquery.magnific-popup.min.js"></script>
-    <script src="js/owl.carousel.min.js"></script>
-    <script src="js/jquery.pagepiling.min.js"></script>
-    <script type="module" src="js/script.js"></script>
-  </body>
+<!doctype html>
+<html lang=en>
+<head>
+<meta charset=utf-8>
+<meta name=viewport content="width=device-width,initial-scale=1">
+<meta name=description content="">
+<meta name=author content="Joachim Wambua">
+<meta name=msapplication-TileColor content=#00aba9>
+<meta name=theme-color content=#ffffff>
+<link rel="shortcut icon" href=favicon.ico>
+<link rel=apple-touch-icon sizes=180x180 href=/apple-touch-icon.png>
+<link rel=icon type=image/png sizes=32x32 href=/favicon-32x32.png>
+<link rel=icon type=image/png sizes=16x16 href=/favicon-16x16.png>
+<link rel=manifest href=/site.webmanifest>
+<link rel=mask-icon href=/safari-pinned-tab.svg color=#5bbad5>
+<link rel=stylesheet href=https://cdn.jsdelivr.net/gh/devicons/devicon@v2.15.1/devicon.min.css>
+<title>Joachim | Portfolio</title>
+<link rel=stylesheet href=css/style.css media=screen>
+<link rel=stylesheet href=css/lightbox.css media=print onload='this.media="screen"'>
+</head>
+<body>
+<div class=animsition>
+<div class=loader>
+<div class=spinner>
+<div class=double-bounce1></div>
+<div class=double-bounce2></div>
+</div>
+</div>
+<div class=click-capture></div>
+<div class=menu>
+<span class="close-menu icon-cross2 right-boxed"></span>
+<ul class="menu-list right-boxed">
+<li data-menuanchor=home>
+<a href=#home>Home</a>
+</li>
+<li data-menuanchor=about>
+<a href=#about>About</a>
+</li>
+<li data-menuanchor=experience>
+<a href=#experience>Work Experience</a>
+</li>
+<li data-menuanchor=clients>
+<a href=#clients>Clients</a>
+</li>
+<li data-menuanchor=projects>
+<a href=#projects>Projects</a>
+</li>
+<li data-menuanchor=certifications>
+<a href=#certifications>Certifications</a>
+</li>
+<li data-menuanchor=contact>
+<a href=#contact>Contact</a>
+</li>
+</ul>
+<div class="menu-footer right-boxed">
+<div class=social-list>
+<a href=https://www.linkedin.com/in/joachim-wambua/ class="icon ion-social-linkedin"></a>
+</div>
+</div>
+</div>
+<header class="navbar boxed">
+<div class=navbar-bg></div>
+<a class=brand href=#home>
+<img class=brand-img alt="" src=images/brand.png>
+<div class=brand-info>
+<div class=brand-name>Joachim</div>
+<div class=brand-text>Mwengi</div>
+</div>
+</a>
+<button type=button class=navbar-toggle data-toggle=collapse data-target=#navbar-collapse aria-expanded=false>
+<span class=icon-bar></span>
+<span class=icon-bar></span>
+<span class=icon-bar></span>
+</button>
+<div class="contacts d-none d-md-block">
+<div class=contact-item>+254 719 417 307</div>
+<div class="contact-item spacer">/</div>
+<div class=contact-item>
+<a href=mailto:kimwambua96@gmail.com><span class=__cf_email__>kimwambua96@gmail.com</span></a>
+</div>
+</div>
+</header>
+<div class="copy-bottom white boxed">
+© Joachim <span id=currentYear>2019</span>.
+</div>
+<div class="social-list social-list-bottom boxed">
+<a href=https://www.linkedin.com/in/joachim-wambua/ class="icon ion-social-linkedin"></a>
+</div>
+<div class=pagepiling>
+<div data-anchor=home class="pp-scrollable text-white section section-1">
+<div class=scroll-wrap>
+<div id=background class=section-bg style=background-color:rgba(0,47,200,.5);background-blend-mode:multiply></div>
+<div class=scrollable-content>
+<div class=vertical-centred>
+<div class="boxed boxed-inner">
+<div class="vertical-title d-none d-lg-block">
+<span>Welcome</span>
+</div>
+<div class=boxed>
+<div class=container>
+<div class=intro>
+<div class="row main-section">
+<div class="col-md-8 col-lg-6">
+<p class=subtitle-top style=font-size:1.2rem>
+Amplifying Your Web Prescence
+</p>
+<h2 class="display-2 text-white">
+Hi! I am
+<br>
+<span class=text-primary style="font-family:'Alegreya Sans',sans-serif">Joachim</span>
+</h2>
+<p class=subtitle-bottom>
+Full Stack Engineer | Data Analyst
+</p>
+<a href="https://drive.google.com/uc?export=download&id=1gbmhlA141VfCBS99ejDciMOxGgfH_6NP" target=_blank rel="noopener noreferrer">
+<button class="btn mb-5">Download Resume</button>
+</a>
+</div>
+<div class=my-profile>
+<img src=/images/me.jpeg alt="Joachim's Profile Image">
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div data-anchor=about class="pp-scrollable section section-2">
+<div class=scroll-wrap>
+<div class=scrollable-content>
+<div class=vertical-centred>
+<div class="boxed boxed-inner">
+<div class="vertical-title text-white d-none d-lg-block" style=top:5rem>
+<span>About Me</span>
+</div>
+<div class=boxed>
+<div class=container>
+<div class=intro>
+<div class="row align-items-center">
+<div class=col-xl-7>
+<div class="experience-box pb-5">
+<div class=experience-content>
+<img class=avatar alt="Kim's Avatar" src=/images/Kim.png>
+</div>
+</div>
+</div>
+<div class=col-xl-5>
+<h2 class=title-uppercase>
+Turning
+<span class=text-primary> Your Ideas</span>
+To <span class=text-primary>Reality</span>
+</h2>
+<p class=about-text>
+Hello, I'm Joachim, your web maestro! With over 3 years in the game, I've been crafting captivating web apps and I'm all about using the latest tech to enhance user experiences. Let's connect and turn your web visions into reality, making the internet even more exciting together!
+</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div data-anchor=tech-stack class="pp-scrollable section section-3">
+<div class=scroll-wrap>
+<div class=scrollable-content>
+<div class=vertical-centred>
+<div class="boxed boxed-inner">
+<div class="text-white vertical-title d-none d-lg-block">
+<span style=margin-right:10rem>Tech Stack</span>
+</div>
+<section class=stack-section>
+<div class=container>
+<div class=accordion>
+<div class="accordion-item active" id=question1>
+<a class=accordion-link href=#question1>
+<div class=flex>
+<h3>FRONTEND DEVELOPMENT</h3>
+<ul>
+<li>#ReactJS</li>
+<li>#VueJS</li>
+<li>#Flutter</li>
+<li>#HTML/CSS</li>
+<li>#ThreeJS</li>
+<li>#Javascript</li>
+<li>#Typescript</li>
+</ul>
+</div>
+<i class="icon ion-md-arrow-forward"></i>
+<i class="icon ion-md-arrow-down"></i>
+</a>
+<div class=answer>
+<div class=tech-stack style=color:#f0f8ff>
+<div class=stack-logo data-tooltip=ReactJS>
+<i class=devicon-react-original></i>
+</div>
+<div class=stack-logo data-tooltip=VueJS>
+<i class=devicon-vuejs-plain></i>
+</div>
+<div class=stack-logo data-tooltip=Flutter>
+<i class=devicon-flutter-plain></i>
+</div>
+<div class=stack-logo data-tooltip=HTML>
+<i class=devicon-html5-plain></i>
+</div>
+<div class=stack-logo data-tooltip=CSS>
+<i class=devicon-css3-plain></i>
+</div>
+<div class=stack-logo data-tooltip=ThreeJS>
+<i class=devicon-threejs-original-wordmark></i>
+</div>
+<div class=stack-logo data-tooltip=JavaScript>
+<i class=devicon-javascript-plain></i>
+</div>
+<div class=stack-logo data-tooltip=TypeScript>
+<i class=devicon-typescript-plain></i>
+</div>
+</div>
+</div>
+<hr>
+</div>
+<div class=accordion-item id=question2>
+<a class=accordion-link href=#question2>
+<div>
+<h3>BACKEND DEVELOPMENT</h3>
+<ul>
+<li>#NodeJS</li>
+<li>#ExpressJS</li>
+<li>#Firebase</li>
+<li>#MongoDB</li>
+<li>#MySQL</li>
+<li>#Python</li>
+<li>#Flask</li>
+<li>#PHP</li>
+</ul>
+</div>
+<i class="icon ion-md-arrow-forward"></i>
+<i class="icon ion-md-arrow-down"></i>
+</a>
+<div class=answer>
+<div class=tech-stack style=color:#f0f8ff>
+<div class=stack-logo>
+<i class=devicon-nodejs-plain-wordmark data-tooltip=NodeJS></i>
+</div>
+<div class=stack-logo data-tooltip=ExpressJS>
+<i class=devicon-express-original-wordmark></i>
+</div>
+<div class=stack-logo data-tooltip=Firebase>
+<i class=devicon-firebase-plain></i>
+</div>
+<div class=stack-logo data-tooltip=MongoDB>
+<i class=devicon-mongodb-plain-wordmark></i>
+</div>
+<div class=stack-logo data-tooltip=MySQL>
+<i class=devicon-mysql-plain-wordmark></i>
+</div>
+<div class=stack-logo data-tooltip=Python>
+<i class=devicon-python-plain-wordmark></i>
+</div>
+<div class=stack-logo data-tooltip=Flask>
+<i class=devicon-flask-original-wordmark></i>
+</div>
+<div class=stack-logo data-tooltip=PHP>
+<i class=devicon-php-plain></i>
+</div>
+</div>
+</div>
+<hr>
+</div>
+<div class=accordion-item id=question3>
+<a class=accordion-link href=#question3>
+<div class=flex>
+<h3>UX/UI DESIGN</h3>
+<ul>
+<li>#Figma</li>
+<li>#Adobe Photoshop</li>
+<li>#Adobe Illustrator</li>
+<li>#Adobe After Effects</li>
+</ul>
+</div>
+<i class="icon ion-md-arrow-forward"></i>
+<i class="icon ion-md-arrow-down"></i>
+</a>
+<div class=answer>
+<div class=tech-stack style=color:#f0f8ff>
+<div class=stack-logo data-tooltip=Figma>
+<i class=devicon-figma-plain></i>
+</div>
+<div class=stack-logo data-tooltip=JavaScript>
+<i class=devicon-photoshop-line></i>
+</div>
+<div class=stack-logo data-tooltip="Adobe Illustrator">
+<i class=devicon-illustrator-line></i>
+</div>
+<div class=stack-logo data-tooltip="Adobe After Effects">
+<i class=devicon-aftereffects-plain></i>
+</div>
+</div>
+</div>
+<hr>
+</div>
+<div class=accordion-item id=question4>
+<a class=accordion-link href=#question4>
+<div class=flex>
+<h3>DATA ANALYTICS</h3>
+<ul>
+<li>#Jupyter Notebook</li>
+<li>#Python</li>
+<li>#Pandas</li>
+<li>#Numpy</li>
+</ul>
+</div>
+<i class="icon ion-md-arrow-forward"></i>
+<i class="icon ion-md-arrow-down"></i>
+</a>
+<div class=answer>
+<div class=tech-stack style=color:#f0f8ff>
+<div class=stack-logo data-tooltip="Jupyter Notebook">
+<i class=devicon-jupyter-plain-wordmark></i>
+</div>
+<div class=stack-logo data-tooltip=Python>
+<i class=devicon-python-plain-wordmark></i>
+</div>
+<div class=stack-logo data-tooltip=Pandas>
+<i class=devicon-pandas-original-wordmark></i>
+</div>
+<div class=stack-logo data-tooltip=NumPy>
+<i class=devicon-numpy-original-wordmark></i>
+</div>
+</div>
+</div>
+<hr>
+</div>
+</div>
+</div>
+</section>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div data-anchor=experience class="pp-scrollable text-white section section-4">
+<div class=scroll-wrap>
+<div class=section-bg style=background-image:url(images/bg/experience.jpg);background-color:rgba(0,47,200,.5);background-blend-mode:multiply></div>
+<div class=scrollable-content>
+<div class=vertical-centred>
+<div class="boxed boxed-inner">
+<div class="vertical-title d-none d-lg-block">
+<span>Work Experience</span>
+</div>
+<div class=boxed>
+<div class=container>
+<div class=timeline>
+<div id=experience-container>
+<div class="pcss3t pcss3t-effect-scale pcss3t-theme-1">
+<input type=radio name=pcss3t checked id=tab1 class=tab-content-first>
+<label for=tab1>KomezArt</label>
+<input type=radio name=pcss3t id=tab2 class=tab-content-2>
+<label for=tab2>SENL</label>
+<input type=radio name=pcss3t id=tab3 class=tab-content-3>
+<label for=tab3>The ROOM</label>
+<input type=radio name=pcss3t id=tab5 class=tab-content-last>
+<label for=tab5>ALU SoWC</label>
+<ul>
+<li class="tab-content tab-content-first typography">
+<h1>
+Full Stack Engineer
+<span style=float:right><img class=role-logo src=images/companies/kmz-logo.png alt=KomezArt></span>
+</h1>
+<h4 style=color:#0d0d45;font-size:1.3rem;margin-top:1.5rem;margin-bottom:1rem;margin-left:0;font-weight:800>
+KomezArt
+<span style=float:right>Kigali, Rwanda</span>
+</h4>
+<ul class=role-duty>
+<li>
+Managed the ALU School of Wildlife & Conservation's website ensuring regular design & content updates.
+</li>
+<li>
+Supervised the company’s social media platforms by strategising content & posting schedules. Consequently increased social platform following by 21%.
+</li>
+<li>
+Designed Social Media Content Calendar informed by research on effective posting schedules to maximise engagement.
+</li>
+</ul>
+</li>
+<li class="tab-content tab-content-2 typography">
+<h1>
+Junior Software Engineer
+<span style=float:right><img class=role-logo src=images/companies/SENL-bnw.png alt=SENL></span>
+</h1>
+<h4 style=color:#0d0d45;font-size:1.3rem;margin-top:1.5rem;margin-bottom:1rem;margin-left:0;font-weight:800>
+Social Enterprise - Netherlands
+<span style=float:right>Amsterdam, Netherlands</span>
+</h4>
+<ul>
+<li>
+Integrated RESTful APIs, enhancing website functionality and enabling seamless data exchange.
+</li>
+<li>
+Designed & developed front-end components & dynamically rendered back-end API data to the frontend.
+</li>
+<li>
+Optimized database queries, resulting in a 25% reduction in query response times.
+</li>
+<li>
+Deployed web services to the Social Change Innovators' website on AWS, serving 700+ users with optimized performance.
+</li>
+</ul>
+</li>
+<li class="tab-content tab-content-3 typography">
+<h1>
+Front-End Engineer - Intern
+<span style=float:right><img class=role-logo src=images/companies/TheRoom.png alt=TheROOM></span>
+</h1>
+<h4 style=color:#0d0d45;font-size:1.3rem;margin-top:1.5rem;margin-bottom:1rem;margin-left:0;font-weight:800>
+The ROOM
+<span style=float:right>Nairobi, Kenya</span>
+</h4>
+<ul>
+<li>
+Collaborated in a team of 4 to build The ROOM's Young Leader Portal, serving 800+ young leaders. I oversaw development of 7+ front-end components using VueJS & TailwindCSS.
+</li>
+<li>
+Designed compelling U.I. wireframes in Figma, leading to a 15% reduction in design revision cycles.
+</li>
+<li>
+Implemented LinkedIn Authentication, enabling 800+ users to register and log in via their LinkedIn profiles.
+</li>
+</ul>
+</li>
+<li class="tab-content tab-content-last typography">
+<div class=typography>
+<h1>
+Social Media & Website Management Intern
+<span style=float:right><img class=role-logo src=images/companies/ALUSoWC.png alt=ALUSoWC></span>
+</h1>
+<h4 style=color:#0d0d45;font-size:1.3rem;margin-top:1.5rem;margin-bottom:1rem;margin-left:0;font-weight:800>
+ALU School of Wildlife & Conservation
+<span style=float:right>Kigali, Rwanda</span>
+</h4>
+<ul>
+<li>
+Managed the ALU School of Wildlife & Conservation's website ensuring regular design & content updates.
+</li>
+<li>
+Supervised the company’s social media platforms by strategising content & posting schedules. Consequently increased social platform following by 21%.
+</li>
+<li>
+Designed Social Media Content Calendar informed by research on effective posting schedules to maximise engagement.
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div data-anchor=projects class="pp-scrollable text-white section section-5">
+<div class=scroll-wrap>
+<div class=bg-changer>
+<div class=section-bg style=background-image:url(images/bg/kmz-portal-cover-1.png);background-color:rgba(0,0,26,.5);background-blend-mode:multiply></div>
+<div class=section-bg style=background-image:url(images/bg/quiztime-cover.png)></div>
+<div class=section-bg style=background-image:url(images/bg/medichat-bg.png)></div>
+<div class=section-bg style=background-image:url(images/bg/cleatstore-bg.png)></div>
+<div class=section-bg style=background-image:url(images/bg/gamestore-bg.png)></div>
+<div class=section-bg style=background-image:url(images/bg/kmz-bg.png)></div>
+</div>
+<div class=scrollable-content>
+<div class=vertical-centred>
+<div class="boxed boxed-inner">
+<div class="vertical-title d-none d-lg-block">
+<span>my work</span>
+</div>
+<div class=boxed>
+<div class=container>
+<div class=intro>
+<div class=row>
+<div class=col-md-12>
+<h2 class="title-uppercase text-white">
+TOP PROJECTS
+</h2>
+<div class="row-project-box row">
+<div class="col-project-box col-sm-6 col-md-4 col-lg-4">
+<a href=/project/655fbf4cea7c65fb83636197 class=project-box>
+<div class=project-box-inner>
+<h5>KomezArt<br>Dashboard</h5>
+<div class=project-category>
+2023 / WEB DEV
+</div>
+</div>
+</a>
+</div>
+<div class="col-project-box col-sm-6 col-md-4 col-lg-4">
+<a href=/project/656262c7f785af62b4b3312b class=project-box>
+<div class=project-box-inner>
+<h5>Quiz<br>Time</h5>
+<div class=project-category>
+2020 / MOBILE APP DEV
+</div>
+</div>
+</a>
+</div>
+<div class="col-project-box col-sm-6 col-md-4 col-lg-4">
+<a href=project/6566448982f3f9af9cf6fd07 class=project-box>
+<div class=project-box-inner>
+<h5>
+MediChat<br>
+Chatbot
+</h5>
+<div class=project-category>
+2022 / WEB DEV | MACHINE LEARNING
+</div>
+</div>
+</a>
+</div>
+<div class="col-project-box col-sm-6 col-md-4 col-lg-4">
+<a href=project/6566482282f3f9af9cf6fd09 class=project-box>
+<div class=project-box-inner>
+<h5>
+Nike Cleat<br>
+Store
+</h5>
+<div class=project-category>
+2021 / UI DESIGN | FRONT-END DEV
+</div>
+</div>
+</a>
+</div>
+<div class="col-project-box col-sm-6 col-md-4 col-lg-4">
+<a href=project/6566529a82f3f9af9cf6fd11 class=project-box>
+<div class=project-box-inner>
+<h5>
+Online Gaming<br>
+Store
+</h5>
+<div class=project-category>
+2021 / UI/UX DESIGN | MOBILE APP DEV
+</div>
+</div>
+</a>
+</div>
+<div class="col-project-box col-sm-6 col-md-4 col-lg-4">
+<a href=project/657225fbe6fd3a0d8a05b0ed class=project-box>
+<div class=project-box-inner>
+<h5>
+KomezArt<br>
+Website
+</h5>
+<div class=project-category>
+2022 / WEB DEV | UI/UX DESIGN
+</div>
+</div>
+</a>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div data-anchor=certifications class="pp-scrollable text-white section section-6">
+<div class=scroll-wrap>
+<div class=section-bg></div>
+<div class=scrollable-content>
+<div id=imageModal class=modal>
+<span class=close id=closeModal>&times;</span>
+<img class=modal-content id=modalImage>
+</div>
+<div class=vertical-centred>
+<div class="boxed boxed-inner">
+<div class="vertical-title d-none d-lg-block">
+</div>
+<div class=boxed>
+<div class=container>
+<div class=intro>
+<div class=row>
+<div class=col-md-12>
+<h2 class="title-uppercase text-white pb-8">
+CERTIFICATIONS
+</h2>
+<figure class=snip1577>
+<a href=images/certifications/dataanalyst-udacity.jpg data-lightbox=data-analyst-cert>
+<img src=images/certifications/dataanalyst-udacity.jpg alt="Udacity Data Analyst">
+</a>
+<figcaption>
+<h3>Data Analyst Nanodegree</h3>
+<h4>Udacity</h4>
+</figcaption>
+</figure>
+<figure class=snip1577>
+<a href=images/certifications/webdev-udacity.jpg data-lightbox=webdev-cert>
+<img src=images/certifications/webdev-udacity.jpg alt="Web Dev Certification">
+</a>
+<figcaption>
+<h3>Wev Development Foundations</h3>
+<h4>Udacity</h4>
+</figcaption>
+</figure>
+<figure class=snip1577>
+<a href=images/certifications/python-udacity.jpg data-lightbox=python-udacity-cert>
+<img src=images/certifications/python-udacity.jpg alt=WebDev-Certification>
+</a>
+<figcaption>
+<h3>Python Programming Foundations</h3>
+<h4>Udacity</h4>
+</figcaption>
+</figure>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div data-anchor=contact class="pp-scrollable section section-7">
+<div class=scroll-wrap>
+<div class=section-bg style=background-image:url(images/bg/ContactPageBG2.jpg);background-color:rgba(0,47,200,.5);background-blend-mode:multiply></div>
+<div class=scrollable-content>
+<div class=vertical-centred>
+<div class="boxed boxed-inner">
+<div class="vertical-title text-white d-none d-lg-block">
+<span>contact</span>
+</div>
+<div class=boxed>
+<div class=container>
+<div class="intro overflow-hidden">
+<div class=row>
+<div class=col-md-6>
+<h3 class=title-uppercase style=font-size:2.7rem>
+LET'S CHAT
+</h3>
+<h1 style=font-size:2.1rem;margin-bottom:.5rem>
+<span class=text-primary>Nairobi</span>, Kenya
+</h1>
+<section class=contact-address>
+<h1 style=font-size:1.8rem>
+<a class=mail href=kimwambua96@gmail.com>
+<span class=__cf_email__>kimwambua96@gmail.com</span></a>
+</h1>
+<h1 style=font-size:1.8rem;margin-top:2.5rem>
+<span class=phone>+254 719 417 307</span>
+</h1>
+</section>
+</div>
+<div class=col-md-6>
+<div class=contact-info>
+<form class=js-form id=contact-form action=/submit-contact-message method=POST>
+<div class=row>
+<div class="form-group col-sm-6">
+<input id=name name=name required placeholder=Name*>
+</div>
+<div class="form-group col-sm-6">
+<input id=email type=email required name=email placeholder=Email*>
+</div>
+<div class="form-group col-sm-12">
+<input id=subject name=subject placeholder="Subject (Optional)">
+</div>
+<div class="form-group col-sm-12">
+<textarea id=message name=message required placeholder=Message*></textarea>
+</div>
+<div class="form-group form-group-message col-sm-12">
+<span id=success class=text-primary>Thank You, your message is successfully sent!</span>
+<span id=error class=text-primary>Sorry, something went wrong
+</span>
+</div>
+<div class=col-sm-12>
+<button type=submit class=btn>
+SEND
+</button>
+</div>
+</div>
+</form>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div id=popup-modal class=modal-message>
+<div class=modal-content>
+<span class=close_btn id=close-modal>&times;</span>
+<div id=popup-text></div>
+</div>
+</div>
+<script data-cfasync=false src=/js/email.decode.min.js></script>
+<script src=https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js></script>
+<script src=js/vanta.net.min.js></script>
+<script>VANTA.NET({el:"#background",mouseControls:!0,touchControls:!0,gyroControls:!1,minHeight:200,minWidth:200,scale:1,scaleMobile:1,color:2221761,backgroundColor:855365,points:7,maxDistance:12,spacing:12})</script>
+<script async src=https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js></script>
+<script async>emailjs.init("tiafEIHi0ikrfYrPc")</script>
+<script async>document.addEventListener("DOMContentLoaded",(function(){const e=document.getElementById("popup-modal"),t=document.getElementById("close-modal"),n=document.getElementById("popup-text");document.getElementById("contact-form").addEventListener("submit",(function(t){t.preventDefault(),emailjs.init("tiafEIHi0ikrfYrPc");const o=new FormData(this);o.get("name"),o.get("email"),o.get("subject"),o.get("message");emailjs.sendForm("service_iwmjtkh","template_fo2fg2o",this).then((function(){n.innerHTML="Message Sent! Thank You For Reaching Out!",document.getElementById("contact-form").reset(),console.log("SUCCESS!")})).catch((function(e){n.innerHTML="Message Not Sent! Please Try Again!"+e,console.log("FAILED...",e)})).finally((function(){e.style.display="block"}))})),t.addEventListener("click",(function(){e.style.display="none"}))}))</script>
+<script src=js/lightbox-plus-jquery.js></script>
+<script src=js/wow.min.js></script>
+<script src=js/smoothscroll.js></script>
+<script src=js/animsition.js></script>
+<script src=js/jquery.validate.min.js></script>
+<script src=js/jquery.magnific-popup.min.js></script>
+<script src=js/owl.carousel.min.js></script>
+<script src=js/jquery.pagepiling.min.js></script>
+<script type=module src=js/script.js></script>
+</body>
 </html>
